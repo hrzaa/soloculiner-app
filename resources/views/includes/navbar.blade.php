@@ -14,6 +14,7 @@
                     <a href="{{ route('kuliner') }}" class="nav-item nav-link">Surga Kuliner</a>
                     <a href="{{ route('event') }}" class="nav-item nav-link">Semangat Festival</a>
                     <a href="{{ route('gallery') }}" class="nav-item nav-link">Gallery</a>
+                    <a href="" class="nav-item nav-link">Locations</a>
                     <!-- {{-- <a href="{{ route('home') }}" class="nav-item nav-link {{ (request()->is('home')) ? 'active' : '' }}">Home</a>
                     <a href="{{ route('event') }}" class="nav-item nav-link {{ (request()->is('event/*')) ? 'active' : '' }}" >Semangat Festival</a>
                     <a href="{{ route('kuliner') }}" class="nav-item nav-link {{ (request()->is('kuliner/*')) ? 'active' : '' }}" >Surga Kuliner</a>
