@@ -5,10 +5,10 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\CulinerController;
 use App\Http\Controllers\GalleryController;
-use App\Http\Controllers\Dashboard\CulinaryController as CulinaryAdminController;
-use App\Http\Controllers\Dashboard\DashboardController as DashboardAdminController;
-use App\Http\Controllers\Dashboard\EventController as EventAdminController;
-use App\Http\Controllers\Dashboard\CategoriesController as CategoriesAdminController;
+use App\Http\Controllers\Admin\CulinaryController as CulinaryAdminController;
+use App\Http\Controllers\Admin\DashboardController as DashboardAdminController;
+use App\Http\Controllers\Admin\EventController as EventAdminController;
+use App\Http\Controllers\Admin\CategoryController as CategoryAdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,7 +42,7 @@ Route::prefix('admin')
         Route::get('/', [DashboardAdminController::class, 'index'])->name('admin-dashboard');
         Route::resource('culinary', CulinaryAdminController::class);
         Route::resource('event', EventAdminController::class);
-        Route::resource('categories', CategoriesAdminController::class);
+        Route::resource('category', CategoryAdminController::class);
 });
 
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Dashboard;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -14,7 +14,7 @@ class CulinaryController extends Controller
      */
     public function index()
     {
-        return view('admin.culinary.index');
+        return view('pages.admin.culinary.index');
     }
 
     /**

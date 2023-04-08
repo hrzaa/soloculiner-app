@@ -16,6 +16,9 @@
   <!-- Template CSS -->
   <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="stylesheet" href="/assets/css/components.css">
+
+  {{-- datatables --}}
+  <link href="https://cdn.datatables.net/v/bs4/dt-1.13.4/datatables.min.css" rel="stylesheet"/>
 </head>
 
 <body>
@@ -66,7 +69,7 @@
               <li><a class="nav-link" href="{{ route('culinary.index') }}"><i class="fas fa-utensils"></i> <span>Culinary</span></a></li>
               <li><a class="nav-link" href="{{ route('event.index') }}"><i class="fas fa-calendar-week"></i> <span>Event</span></a></li>
               <li><a class="nav-link" href="{{ url('galleries') }}"><i class="fas fa-camera"></i> <span>Galleries</span></a></li>
-              <li><a class="nav-link" href="{{ route('categories.index') }}"><i class="fas fa-clipboard-list"></i> <span>Categories</span></a></li>
+              <li class="{{ (request()->is('admin/category*')) ? 'active' : '' }}"><a class="nav-link" href="{{ route('category.index') }}"><i class="fas fa-clipboard-list"></i> <span>Categories</span></a></li>
               <li><a class="nav-link" href="{{ url('users') }}"><i class="fas fa-users"></i> <span>users</span></a></li>
               <li><a class="nav-link" href="{{ url('review') }}"><i class="fas fa-pen-square"></i> <span>Review</span></a></li>
               <li><a class="nav-link" href="{{ url('SignOut') }}"><i class="fas fa-comments"></i> <span>SignOut</span></a></li>
@@ -111,6 +114,12 @@
   <script src="/assets/js/scripts.js"></script>
   <script src="/assets/js/custom.js"></script>
 
+  {{-- datatables --}}
+  <script src="https://cdn.datatables.net/v/bs4/dt-1.13.4/datatables.min.js"></script>
+
+
   <!-- Page Specific JS File -->
+
+  @stack('addon-script')
 </body>
 </html>
