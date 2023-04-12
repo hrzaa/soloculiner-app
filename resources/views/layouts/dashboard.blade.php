@@ -70,7 +70,7 @@
               <li><a class="nav-link" href="{{ route('event.index') }}"><i class="fas fa-calendar-week"></i> <span>Event</span></a></li>
               <li><a class="nav-link" href="{{ url('galleries') }}"><i class="fas fa-camera"></i> <span>Galleries</span></a></li>
               <li class="{{ (request()->is('admin/category*')) ? 'active' : '' }}"><a class="nav-link" href="{{ route('category.index') }}"><i class="fas fa-clipboard-list"></i> <span>Categories</span></a></li>
-              <li><a class="nav-link" href="{{ url('users') }}"><i class="fas fa-users"></i> <span>users</span></a></li>
+              <li class="{{ (request()->is('admin/user*')) ? 'active' : '' }}"><a class="nav-link" href="{{ route('user.index') }}"><i class="fas fa-users"></i> <span>users</span></a></li>
               <li><a class="nav-link" href="{{ url('review') }}"><i class="fas fa-pen-square"></i> <span>Review</span></a></li>
               <li><a class="nav-link" href="{{ url('SignOut') }}"><i class="fas fa-comments"></i> <span>SignOut</span></a></li>
             </ul>

@@ -22,7 +22,7 @@ return new class extends Migration
             $table->integer('user_id');
             $table->longText('event_history');
             $table->longText('event_desc');
-            $table->integer('location_id_id');
+            $table->integer('location_id');
             $table->integer('gallery_id');
 
             $table->timestamps();

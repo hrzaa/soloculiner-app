@@ -21,8 +21,7 @@ return new class extends Migration
             $table->longText('food_history');
             $table->longText('food_desc');
             $table->integer('category_id');
-            $table->integer('location_id_id');
-            $table->integer('gallery_id');
+            $table->integer('location_id');
 
             $table->softDeletes();
             $table->timestamps();
