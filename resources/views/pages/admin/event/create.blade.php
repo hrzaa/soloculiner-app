@@ -24,7 +24,7 @@
                   </div>
                   <div class="form-group">
                     <label>Uploader</label>
-                    <select name="user_id" class="form-control">
+                    <select name="users_id" class="form-control">
                       @foreach ($users as $user)
                           <option value="{{ $user->id }}">{{ $user->name }}</option>
                       @endforeach

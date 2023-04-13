@@ -4,7 +4,7 @@ namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class EventRequest extends FormRequest
+class RestoRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,12 +24,10 @@ class EventRequest extends FormRequest
     public function rules()
     {
         return [
-            'event_name' => 'required|max:255', 
-            'users_id' => 'required|exists:users,id', 
-            'date_start' => 'required', 
-            'date_end' => 'required', 
-            'event_history' => 'required', 
-            'event_desc' => 'required', 
+            'resto_name' => 'required|max:255',
+            'users_id' => 'required|exists:users,id',
+            'food_id' => 'required|exists:food,id',
+            'price' => 'required|integer',
         ];
     }
 }
