@@ -70,7 +70,7 @@
           <ul class="sidebar-menu">
               <li class="menu-header">Dashboard</li>
               <li><a class="nav-link" href="{{ route('admin-dashboard') }}"><i class="fas fa-fire"></i> <span>Dashboard</span></a></li>
-              <li><a class="nav-link" href="{{ route('culinary.index') }}"><i class="fas fa-utensils"></i> <span>Culinary</span></a></li>
+              <li><a class="nav-link" href="{{ route('food.index') }}"><i class="fas fa-utensils"></i> <span>Culinary</span></a></li>
               <li class="nav-item dropdown {{ (request()->is('admin/event*')) ? 'active' : '' }}">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire" class="{{ (request()->is('admin/event*')) ? 'active' : '' }}"></i><span>Event</span></a>
                 <ul class="dropdown-menu">
