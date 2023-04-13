@@ -76,7 +76,7 @@
                 <ul class="dropdown-menu">
                   <li><a class="nav-link" href="{{ route('event.index') }}">List</a></li>
                   <li><a class="nav-link" href="{{ route('event.index') }}">Location</a></li>
-                  <li><a class="nav-link" href="{{ route('event.index') }}">Gallery</a></li>
+                  <li><a class="nav-link" href="{{ route('event-gallery.index') }}">Gallery</a></li>
                 </ul>
               </li>
               <li><a class="nav-link" href="{{ url('galleries') }}"><i class="fas fa-camera"></i> <span>Galleries</span></a></li>

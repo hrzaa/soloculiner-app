@@ -8,6 +8,7 @@ use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\Admin\CulinaryController as CulinaryAdminController;
 use App\Http\Controllers\Admin\DashboardController as DashboardAdminController;
 use App\Http\Controllers\Admin\EventController as EventAdminController;
+use App\Http\Controllers\Admin\EventGalleryController as EventGalleryAdminController;
 use App\Http\Controllers\Admin\CategoryController as CategoryAdminController;
 use App\Http\Controllers\Admin\UserController as UserAdminController;
 
@@ -43,6 +44,7 @@ Route::prefix('admin')
         Route::get('/', [DashboardAdminController::class, 'index'])->name('admin-dashboard');
         Route::resource('culinary', CulinaryAdminController::class);
         Route::resource('event', EventAdminController::class);
+        Route::resource('event-gallery', EventGalleryAdminController::class);
         Route::resource('category', CategoryAdminController::class);
         Route::resource('user', UserAdminController::class);
 });
