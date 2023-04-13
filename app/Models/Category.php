@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Category extends Model
 {
     use SoftDeletes;
+    
     protected $fillable = [
         'name', 'photo', 'slug'
     ];
