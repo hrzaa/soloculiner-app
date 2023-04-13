@@ -19,6 +19,15 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('roles')->default('USER'); //USER(landing page and review), ADMIN(all access)
+
+            $table->longText('address_one')->nullable();
+            $table->longText('address_two')->nullable(); 
+            $table->integer('zip_code')->nullable();
+            $table->string('country')->nullable();
+            $table->string('phone_number')->nullable();
+
+            $table->softDeletes();
             $table->rememberToken();
             $table->timestamps();
         });

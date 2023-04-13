@@ -124,7 +124,7 @@
                            <h5 class="mb-0">Sate Kere</h5>
                             <!-- Add icon library -->
                             <small> 
-                                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                                {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> --}}
                                 <span class="fa fa-star checked"></span>
                                 <span class="fa fa-star checked"></span>
                                 <span class="fa fa-star checked"></span>
@@ -132,8 +132,8 @@
                                 <span class="fa fa-star"></span>
                             </small>
                            <div class="d-flex justify-content-center mt-3">
-                               <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                               <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                               <a class="btn btn-square btn-primary mx-1" href=""><i class="fa fa-map-marker"></i></a>
+                               <a class="btn btn-square btn-primary mx-1" href=""><i class="fa fa-shopping-cart"></i></a>
                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
                            </div>
                        </div>
