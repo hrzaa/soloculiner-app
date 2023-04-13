@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('resto_locations', function (Blueprint $table) {
             $table->id();
 
-            $table->string('location');
+            $table->string('address');
             $table->double('langtitude');
             $table->double('latitude');
             $table->foreignId('event_id');

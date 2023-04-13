@@ -17,14 +17,9 @@ return new class extends Migration
             $table->id();
 
             $table->string('resto_name');
-            $table->foreignId('user_id');
+            $table->foreignId('users_id');
             $table->foreignId('food_id');
-            $table->string('menu');
             $table->integer('price');
-            $table->string('address');
-            $table->string('phone_number')->nullable();
-            $table->string('instagram')->nullable();
-            $table->string('email')->unique();
             $table->string('slug');
 
             $table->timestamps();

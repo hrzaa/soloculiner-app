@@ -24,14 +24,13 @@
                   <input type="text" name="event_name" class="form-control" value="{{ $item->event_name }}">
                 </div>
                 <div class="form-group">
-                  <label>Uploader</label>
-                 
-                  <select name="user_id" class="form-control">
-                    <option value="{{ $item->user_id }}">{{ $item->user->name }}(Tidak diganti)</option>
-                    @foreach ($users as $user)
-                        <option value="{{ $user->id }}">{{ $user->name }}</option>
-                    @endforeach
-                  </select>
+                 <label>Uploader</label>
+                    <select name="users_id" class="form-control">
+                       <option value="{{ $item->users_id }}" selected>{{ $item->user->name }}</option>
+                      @foreach ($users as $user)
+                          <option value="{{ $user->id }}">{{ $user->name }}</option>
+                      @endforeach
+                    </select>
                 </div>
                 <div class="form-row">
                   <div class="form-group col-md-6">

@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Food;
 use App\Models\User;
-use App\Models\Event;
+use App\Models\Resto;
+use App\Models\Category;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 use Yajra\DataTables\Facades\DataTables;
-use App\Http\Requests\Admin\EventRequest;
-use App\Models\EventLocation;
+use App\Http\Requests\Admin\RestoRequest;
 
-class EventController extends Controller
+class RestoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,7 +24,7 @@ class EventController extends Controller
     {
         if(request()->ajax())
         {
-            $query = Event::with(['user', 'event_galleries', 'location']);
+            $query = Resto::with(['user', 'food']);
             return Datatables::of($query)
                 ->addColumn('action', function ($item) {
                     return '
@@ -37,10 +38,10 @@ class EventController extends Controller
                                         Aksi
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="action' .  $item->id . '">
-                                    <a class="dropdown-item" href="' . route('event.edit', $item->id) . '">
+                                    <a class="dropdown-item" href="' . route('resto.edit', $item->id) . '">
                                         Sunting
                                     </a>
-                                    <form action="' . route('event.destroy', $item->id) . '" method="POST">
+                                    <form action="' . route('resto.destroy', $item->id) . '" method="POST">
                                         ' . method_field('delete') . csrf_field() . '
                                         <button type="submit" class="dropdown-item text-danger">
                                             Hapus
@@ -57,7 +58,7 @@ class EventController extends Controller
                 ->rawColumns(['action'])
                 ->make();
         }
-        return view('pages.admin.event.index');
+        return view('pages.admin.resto.index');
     }
 
     /**
@@ -68,11 +69,12 @@ class EventController extends Controller
     public function create()
     {
         $users = User::all();
-        // $locations = EventLocation::all();
-         return view('pages.admin.event.create',[
-            'users' =>$users,
-            // 'locations' => $locations
+        $foods = Food::all();
+        return view('pages.admin.resto.create',[
+            'users' => $users,
+            'foods' => $foods
          ]);
+       
     }
 
     /**
@@ -81,15 +83,16 @@ class EventController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(EventRequest $request)
+    public function store(RestoRequest $request)
     {
         $data = $request->all();
 
-        $data['slug'] = Str::slug($request->event_name);
+        $data['slug'] = Str::slug($request->resto_name);
+        // dd($data);
 
-        Event::create($data);
+        Resto::create($data);
 
-        return redirect()->route('event.index');
+        return redirect()->route('resto.index');
     }
 
     /**
@@ -111,13 +114,14 @@ class EventController extends Controller
      */
     public function edit($id)
     {
-        $item = Event::findOrFail($id);
+        $item = Resto::findOrFail($id);
         $users = User::all();
+         $foods = Food::all();
 
-        // dd($users);
-        return view('pages.admin.event.edit', [
+        return view('pages.admin.resto.edit', [
             'item' => $item,
-            'users' => $users
+            'users' => $users,
+            'foods' => $foods
         ]);
     }
 
@@ -128,17 +132,17 @@ class EventController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(EventRequest $request, $id)
+    public function update(RestoRequest $request, $id)
     {
         $data = $request->all();
 
-        $item = Event::findOrFail($id);
+        $item = Resto::findOrFail($id);
 
-        $data['slug'] = Str::slug($request->event_name);
+        $data['slug'] = Str::slug($request->resto_name);
 
         $item->update($data);
 
-        return redirect()->route('event.index');
+        return redirect()->route('resto.index');
     }
 
     /**
@@ -149,9 +153,9 @@ class EventController extends Controller
      */
     public function destroy($id)
     {
-        $item = Event::findOrFail($id);
+        $item = Resto::findOrFail($id);
         $item->delete();
 
-        return redirect()->route('event.index');
+        return redirect()->route('resto.index');
     }
 }
