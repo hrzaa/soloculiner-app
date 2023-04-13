@@ -27,6 +27,7 @@ return new class extends Migration
             $table->string('country')->nullable();
             $table->string('phone_number')->nullable();
 
+            $table->softDeletes();
             $table->rememberToken();
             $table->timestamps();
         });

@@ -6,11 +6,10 @@ use App\Models\Event;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class EventGallery extends Model
+class EventLocation extends Model
 {
-
-    protected $fillable = [
-        'photos', 'event_id'
+     protected $fillable = [
+        'location', 'latitude', 'langtitude', 'event_id'
     ];
 
     use HasFactory;
@@ -19,6 +18,4 @@ class EventGallery extends Model
     {
         return $this->belongsTo(Event::class);
     }
-
-
 }

@@ -17,14 +17,14 @@ return new class extends Migration
             $table->id();
 
             $table->string('event_name');
+            $table->foreignId('user_id');
             $table->date('date_start');
             $table->date('date_end');
-            $table->integer('user_id');
             $table->longText('event_history');
             $table->longText('event_desc');
-            $table->integer('location_id');
-            $table->integer('gallery_id');
+            $table->string('slug');
 
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
 
             $table->string('photos');
-            $table->integer('event_id');
+            $table->foreignId('event_id');
 
             $table->timestamps();
         });

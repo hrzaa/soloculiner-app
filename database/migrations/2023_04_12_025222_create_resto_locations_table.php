@@ -13,12 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('food_galleries', function (Blueprint $table) {
+        Schema::create('resto_locations', function (Blueprint $table) {
             $table->id();
 
-            $table->string('photos');
-            $table->foreignId('food_id');
-
+            $table->string('location');
+            $table->double('langtitude');
+            $table->double('latitude');
+            $table->foreignId('event_id');
+            
             $table->timestamps();
         });
     }
@@ -30,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('food_galleries');
+        Schema::dropIfExists('resto_locations');
     }
 };

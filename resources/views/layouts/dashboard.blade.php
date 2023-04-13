@@ -19,6 +19,10 @@
 
   {{-- datatables --}}
   <link href="https://cdn.datatables.net/v/bs4/dt-1.13.4/datatables.min.css" rel="stylesheet"/>
+
+   <!-- ck editor -->
+  <script src="https://cdn.ckeditor.com/4.21.0/standard/ckeditor.js"></script>
+
 </head>
 
 <body>
@@ -67,7 +71,14 @@
               <li class="menu-header">Dashboard</li>
               <li><a class="nav-link" href="{{ route('admin-dashboard') }}"><i class="fas fa-fire"></i> <span>Dashboard</span></a></li>
               <li><a class="nav-link" href="{{ route('culinary.index') }}"><i class="fas fa-utensils"></i> <span>Culinary</span></a></li>
-              <li><a class="nav-link" href="{{ route('event.index') }}"><i class="fas fa-calendar-week"></i> <span>Event</span></a></li>
+              <li class="nav-item dropdown {{ (request()->is('admin/event*')) ? 'active' : '' }}">
+                <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire" class="{{ (request()->is('admin/event*')) ? 'active' : '' }}"></i><span>Event</span></a>
+                <ul class="dropdown-menu">
+                  <li><a class="nav-link" href="{{ route('event.index') }}">List</a></li>
+                  <li><a class="nav-link" href="{{ route('event.index') }}">Location</a></li>
+                  <li><a class="nav-link" href="{{ route('event.index') }}">Gallery</a></li>
+                </ul>
+              </li>
               <li><a class="nav-link" href="{{ url('galleries') }}"><i class="fas fa-camera"></i> <span>Galleries</span></a></li>
               <li class="{{ (request()->is('admin/category*')) ? 'active' : '' }}"><a class="nav-link" href="{{ route('category.index') }}"><i class="fas fa-clipboard-list"></i> <span>Categories</span></a></li>
               <li class="{{ (request()->is('admin/user*')) ? 'active' : '' }}"><a class="nav-link" href="{{ route('user.index') }}"><i class="fas fa-users"></i> <span>users</span></a></li>

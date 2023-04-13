@@ -17,11 +17,11 @@ return new class extends Migration
             $table->id();
 
             $table->string('food_name');
-            $table->integer('user_id');
+            $table->foreignId('user_id');
             $table->longText('food_history');
             $table->longText('food_desc');
-            $table->integer('category_id');
-            $table->integer('location_id');
+            $table->foreignId('category_id');
+            $table->string('slug');
 
             $table->softDeletes();
             $table->timestamps();
