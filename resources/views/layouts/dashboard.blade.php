@@ -73,6 +73,7 @@
               <li class="{{ (request()->is('admin/category*')) ? 'active' : '' }}"><a class="nav-link" href="{{ route('category.index') }}"><i class="fas fa-clipboard-list"></i> <span>Categories</span></a></li>
               <li><a class="nav-link" href="{{ route('food.index') }}"><i class="fas fa-utensils"></i> <span>Culinary</span></a></li>
               <li><a class="nav-link" href="{{ route('resto.index') }}"><i class="fas fa-store"></i></i> <span>Resto</span></a></li>
+              <li><a class="nav-link" href="{{ route('resto-gallery.index') }}"><i class="fas fa-store"></i></i> <span>Resto Gallery</span></a></li>
               <li class="nav-item dropdown {{ (request()->is('admin/event*')) ? 'active' : '' }}">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire" class="{{ (request()->is('admin/event*')) ? 'active' : '' }}"></i><span>Event</span></a>
                 <ul class="dropdown-menu">

@@ -37,7 +37,7 @@ class EventGalleryController extends Controller
                                         Aksi
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="action' .  $item->id . '">
-                                    <form action="' . route('event.destroy', $item->id) . '" method="POST">
+                                    <form action="' . route('event-gallery.destroy', $item->id) . '" method="POST">
                                         ' . method_field('delete') . csrf_field() . '
                                         <button type="submit" class="dropdown-item text-danger">
                                             Hapus
@@ -144,7 +144,7 @@ class EventGalleryController extends Controller
      */
     public function destroy($id)
     {
-        $item = Event::findOrFail($id);
+        $item = EventGallery::findOrFail($id);
         $item->delete();
 
         return redirect()->route('event-gallery.index');
