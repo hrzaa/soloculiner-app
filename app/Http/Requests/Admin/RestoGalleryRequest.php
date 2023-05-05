@@ -4,7 +4,7 @@ namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class EventRequest extends FormRequest
+class RestoGalleryRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,13 +23,9 @@ class EventRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'event_name' => 'required|max:255', 
-            'users_id' => 'required|exists:users,id', 
-            'date_start' => 'required', 
-            'date_end' => 'required', 
-            'event_history' => 'required', 
-            'event_desc' => 'required', 
+         return [
+            'photos' => 'required|image', 
+            'resto_id' => 'required|exists:restos,id'
         ];
     }
 }

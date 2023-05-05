@@ -1,27 +1,53 @@
 <!-- Navbar & Hero Start -->
-    <div class="container-fluid position-relative p-0">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
-            <a href="" class="navbar-brand p-0">
-                {{-- <h1 class="text-primary m-0"><i class="fa fa-utensils me-3"></i>Restoran</h1> --}}
+<div class="container-fluid position-relative p-0">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
+        <a href="" class="navbar-brand p-0">
                 <img src="/vendor/img/logo-image.png" alt="Logo">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="fa fa-bars"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto py-0 pe-4">
-                    <a href="{{ route('home') }}" class="nav-item nav-link">Home</a>
-                    <a href="{{ route('kuliner') }}" class="nav-item nav-link">Surga Kuliner</a>
-                    <a href="{{ route('event') }}" class="nav-item nav-link">Semangat Festival</a>
-                    <a href="{{ route('gallery') }}" class="nav-item nav-link">Gallery</a>
-                    <a href="" class="nav-item nav-link">Locations</a>
-                    <!-- {{-- <a href="{{ route('home') }}" class="nav-item nav-link {{ (request()->is('home')) ? 'active' : '' }}">Home</a>
-                    <a href="{{ route('event') }}" class="nav-item nav-link {{ (request()->is('event/*')) ? 'active' : '' }}" >Semangat Festival</a>
-                    <a href="{{ route('kuliner') }}" class="nav-item nav-link {{ (request()->is('kuliner/*')) ? 'active' : '' }}" >Surga Kuliner</a>
-                    <a href="{{ route('gallery') }}" class="nav-item nav-link {{ (request()->is('gallery')) ? 'active' : '' }} ">Gallery</a> --}} -->
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="fa fa-bars"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav ms-auto py-0 pe-4">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="{{ route('home') }}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('kuliner') }}">Kuliner</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('event') }}">Event</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('gallery') }}">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Locations</a>
+                </li>
+            </ul>
+            @guest
+                {{-- <a class="nav-item nav-link" href="{{ route('register') }}">{{ __('Register') }}</a> --}}
+                <a class="btn btn-primary py-2 px-4" href="{{ route('login') }}">{{ __('Login') }}</a>
+            @else
+            <img alt="image" src="assets/img/avatar/avatar-1.png" style="max-height: 40px" class="rounded-circle mr-1">
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"> {{ Auth::user()->name }}</a>
+                <div class="dropdown-menu m-0">
+                    <a href="" class="dropdown-item">Dashboard</a>
+                    <a href="" class="dropdown-item">Settings</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
                 </div>
-                <a href="" class="btn btn-primary py-2 px-4">Login</a>
             </div>
-        </nav>   
-    </div>
-    <!-- Navbar & Hero End -->
+            @endguest
+        </div>
+    </nav>
+</div>
+<!-- Navbar & Hero End -->

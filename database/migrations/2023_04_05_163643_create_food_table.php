@@ -17,10 +17,10 @@ return new class extends Migration
             $table->id();
 
             $table->string('food_name');
-            $table->foreignId('user_id');
+            $table->foreignId('users_id');
             $table->longText('food_history');
             $table->longText('food_desc');
-            $table->foreignId('category_id');
+            $table->foreignId('categories_id');
             $table->string('slug');
 
             $table->softDeletes();

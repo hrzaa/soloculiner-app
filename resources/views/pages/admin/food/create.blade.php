@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
 @section('title')
-     Create Event Page
+     Create Food Page
 @endsection
 @section('content')
     <div class="row">
@@ -16,11 +16,19 @@
         @endif
         <div class="card">
           <div class="card-body">
-             <form action="{{ route('event.store') }}" method="POST" enctype="multipart/form-data">
+             <form action="{{ route('food.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                   <div class="form-group">
-                    <label>Nama Event</label>
-                    <input type="text" name="event_name" class="form-control" required>
+                    <label>Nama Food</label>
+                    <input type="text" name="food_name" class="form-control" required>
+                  </div>
+                  <div class="form-group">
+                    <label>Category</label>
+                    <select name="categories_id" class="form-control">
+                       @foreach ($categories as $category)
+                          <option value="{{ $category->id }}">{{ $category->name }}</option>
+                      @endforeach
+                    </select>
                   </div>
                   <div class="form-group">
                     <label>Uploader</label>
@@ -30,32 +38,20 @@
                       @endforeach
                     </select>
                   </div>
-                  <div class="form-row">
-                    <div class="form-group col-md-6">
-                      <label for="date_start">Date Start</label>
-                      <input type="date" class="form-control" id="date_start" name="date_start">
-                    </div>
-                    <div class="form-group col-md-6">
-                      <label for="date_end">Date End</label>
-                      <input type="date" class="form-control" id="date_end" name="date_end">
-                    </div>
-                    </div>
                   <div class="form-group">
-                      <label>Event Desc</label>
-                      <textarea name="event_desc"></textarea>
+                      <label>Food Desc</label>
+                      <textarea name="food_desc"></textarea>
                         <script>
-                                CKEDITOR.replace( 'event_desc' );
+                                CKEDITOR.replace( 'food_desc' );
                         </script>
                     </div>
                     <div class="form-group">
-                      <label>Event History</label>
-                       <textarea name="event_history"></textarea>
+                      <label>Food History</label>
+                       <textarea name="food_history"></textarea>
                         <script>
-                                CKEDITOR.replace( 'event_history' );
+                                CKEDITOR.replace( 'food_history' );
                         </script>
                     </div>
-                  
-                 
                   <div class="card-footer text-right">
                     <button class="btn btn-primary mr-1" type="submit">Submit</button>
                     <button class="btn btn-secondary" type="reset">Reset</button>

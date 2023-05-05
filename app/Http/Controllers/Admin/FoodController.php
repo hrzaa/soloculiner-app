@@ -2,17 +2,19 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Food;
+use App\Models\User;
 use App\Models\Category;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\Admin\FoodRequest;
 use Yajra\DataTables\Facades\DataTables;
-use App\Http\Requests\Admin\CategoryRequest;
 
-class CategoryController extends Controller
+class FoodController extends Controller
 {
-     /**
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -21,7 +23,7 @@ class CategoryController extends Controller
     {
         if(request()->ajax())
         {
-            $query = Category::query();
+            $query = Food::with(['user', 'category']);
             return Datatables::of($query)
                 ->addColumn('action', function ($item) {
                     return '
@@ -35,10 +37,10 @@ class CategoryController extends Controller
                                         Aksi
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="action' .  $item->id . '">
-                                    <a class="dropdown-item" href="' . route('category.edit', $item->id) . '">
+                                    <a class="dropdown-item" href="' . route('food.edit', $item->id) . '">
                                         Sunting
                                     </a>
-                                    <form action="' . route('category.destroy', $item->id) . '" method="POST">
+                                    <form action="' . route('food.destroy', $item->id) . '" method="POST">
                                         ' . method_field('delete') . csrf_field() . '
                                         <button type="submit" class="dropdown-item text-danger">
                                             Hapus
@@ -48,13 +50,14 @@ class CategoryController extends Controller
                             </div>
                     </div>';
                 })
-                ->editColumn('photo', function ($item) {
-                    return $item->photo ? '<img src="' . Storage::url($item->photo) . '" style="max-height: 40px;"/>' : '';
-                })
-                ->rawColumns(['action', 'photo'])
+                // ->editColumn('photo', function ($item) {
+                //     return $item->photo ? '<img src="' . Storage::url($item->photo) . '" style="max-height: 40px;"/>' : '';
+                // })
+                // ->rawColumns(['action', 'photo'])
+                ->rawColumns(['action'])
                 ->make();
         }
-        return view('pages.admin.category.index');
+        return view('pages.admin.food.index');
     }
 
     /**
@@ -64,7 +67,12 @@ class CategoryController extends Controller
      */
     public function create()
     {
-         return view('pages.admin.category.create');
+        $users = User::all();
+        $categories = Category::all();
+        return view('pages.admin.food.create',[
+            'users' =>$users,
+            'categories' => $categories
+         ]);
     }
 
     /**
@@ -73,15 +81,16 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CategoryRequest $request)
+    public function store(FoodRequest $request)
     {
         $data = $request->all();
-        $data['slug'] = Str::slug($request->name);
-        $data['photo'] = $request->file('photo')->store('assets/category', 'public');
 
-        Category::create($data);
+        $data['slug'] = Str::slug($request->food_name);
+        // dd($data);
 
-        return redirect()->route('category.index');
+        Food::create($data);
+
+        return redirect()->route('food.index');
     }
 
     /**
@@ -103,9 +112,14 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        $item = Category::findOrFail($id);
-        return view('pages.admin.category.edit', [
-            'item' => $item
+        $item = Food::findOrFail($id);
+        $users = User::all();
+        $categories = Category::all();
+
+        return view('pages.admin.food.edit', [
+            'item' => $item,
+            'users' => $users,
+            'categories' => $categories
         ]);
     }
 
@@ -116,16 +130,17 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(CategoryRequest $request, $id)
+    public function update(FoodRequest $request, $id)
     {
         $data = $request->all();
-        $data['slug'] = Str::slug($request->name);
-        $data['photo'] = $request->file('photo')->store('assets/category', 'public');
 
-        $item = Category::findOrFail($id);
+        $item = Food::findOrFail($id);
+
+        $data['slug'] = Str::slug($request->food_name);
+
         $item->update($data);
 
-        return redirect()->route('category.index');
+        return redirect()->route('food.index');
     }
 
     /**
@@ -136,9 +151,9 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        $item = Category::findOrFail($id);
+        $item = Food::findOrFail($id);
         $item->delete();
 
-        return redirect()->route('category.index');
+        return redirect()->route('food.index');
     }
 }

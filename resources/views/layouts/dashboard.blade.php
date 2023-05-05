@@ -8,7 +8,7 @@
 
   <!-- General CSS Files -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/all.min.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
   <!-- CSS Libraries -->
 
@@ -70,18 +70,20 @@
           <ul class="sidebar-menu">
               <li class="menu-header">Dashboard</li>
               <li><a class="nav-link" href="{{ route('admin-dashboard') }}"><i class="fas fa-fire"></i> <span>Dashboard</span></a></li>
-              <li><a class="nav-link" href="{{ route('culinary.index') }}"><i class="fas fa-utensils"></i> <span>Culinary</span></a></li>
+              <li class="{{ (request()->is('admin/category*')) ? 'active' : '' }}"><a class="nav-link" href="{{ route('category.index') }}"><i class="fas fa-clipboard-list"></i> <span>Categories</span></a></li>
+              <li><a class="nav-link" href="{{ route('food.index') }}"><i class="fas fa-utensils"></i> <span>Culinary</span></a></li>
+              <li><a class="nav-link" href="{{ route('resto.index') }}"><i class="fas fa-store"></i></i> <span>Resto</span></a></li>
+              <li><a class="nav-link" href="{{ route('resto-gallery.index') }}"><i class="fas fa-store"></i></i> <span>Resto Gallery</span></a></li>
               <li class="nav-item dropdown {{ (request()->is('admin/event*')) ? 'active' : '' }}">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire" class="{{ (request()->is('admin/event*')) ? 'active' : '' }}"></i><span>Event</span></a>
                 <ul class="dropdown-menu">
                   <li><a class="nav-link" href="{{ route('event.index') }}">List</a></li>
                   <li><a class="nav-link" href="{{ route('event.index') }}">Location</a></li>
-                  <li><a class="nav-link" href="{{ route('event.index') }}">Gallery</a></li>
+                  <li><a class="nav-link" href="{{ route('event-gallery.index') }}">Gallery</a></li>
                 </ul>
               </li>
-              <li><a class="nav-link" href="{{ url('galleries') }}"><i class="fas fa-camera"></i> <span>Galleries</span></a></li>
-              <li class="{{ (request()->is('admin/category*')) ? 'active' : '' }}"><a class="nav-link" href="{{ route('category.index') }}"><i class="fas fa-clipboard-list"></i> <span>Categories</span></a></li>
               <li class="{{ (request()->is('admin/user*')) ? 'active' : '' }}"><a class="nav-link" href="{{ route('user.index') }}"><i class="fas fa-users"></i> <span>users</span></a></li>
+              <li><a class="nav-link" href="{{ url('galleries') }}"><i class="fas fa-camera"></i> <span>Galleries</span></a></li>
               <li><a class="nav-link" href="{{ url('review') }}"><i class="fas fa-pen-square"></i> <span>Review</span></a></li>
               <li><a class="nav-link" href="{{ url('SignOut') }}"><i class="fas fa-comments"></i> <span>SignOut</span></a></li>
             </ul>

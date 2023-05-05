@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
 
             $table->string('event_name');
-            $table->foreignId('user_id');
+            $table->foreignId('users_id');
             $table->date('date_start');
             $table->date('date_end');
             $table->longText('event_history');

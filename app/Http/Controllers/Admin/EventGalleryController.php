@@ -2,17 +2,19 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Category;
+use App\Models\Event;
 use Illuminate\Support\Str;
+use App\Models\EventGallery;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+
 use Illuminate\Support\Facades\Storage;
 use Yajra\DataTables\Facades\DataTables;
-use App\Http\Requests\Admin\CategoryRequest;
+use App\Http\Requests\Admin\EventGalleryRequest;
 
-class CategoryController extends Controller
+class EventGalleryController extends Controller
 {
-     /**
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -21,7 +23,7 @@ class CategoryController extends Controller
     {
         if(request()->ajax())
         {
-            $query = Category::query();
+            $query = EventGallery::with(['event']);
             return Datatables::of($query)
                 ->addColumn('action', function ($item) {
                     return '
@@ -35,10 +37,7 @@ class CategoryController extends Controller
                                         Aksi
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="action' .  $item->id . '">
-                                    <a class="dropdown-item" href="' . route('category.edit', $item->id) . '">
-                                        Sunting
-                                    </a>
-                                    <form action="' . route('category.destroy', $item->id) . '" method="POST">
+                                    <form action="' . route('event-gallery.destroy', $item->id) . '" method="POST">
                                         ' . method_field('delete') . csrf_field() . '
                                         <button type="submit" class="dropdown-item text-danger">
                                             Hapus
@@ -49,12 +48,12 @@ class CategoryController extends Controller
                     </div>';
                 })
                 ->editColumn('photo', function ($item) {
-                    return $item->photo ? '<img src="' . Storage::url($item->photo) . '" style="max-height: 40px;"/>' : '';
+                    return $item->photos ? '<img src="' . Storage::url($item->photos) . '" style="max-height: 80px;"/>' : '';
                 })
                 ->rawColumns(['action', 'photo'])
                 ->make();
         }
-        return view('pages.admin.category.index');
+        return view('pages.admin.event-gallery.index');
     }
 
     /**
@@ -64,7 +63,12 @@ class CategoryController extends Controller
      */
     public function create()
     {
-         return view('pages.admin.category.create');
+        $events = Event::all();
+
+         return view('pages.admin.event-gallery.create',[
+            'events' =>$events
+         ]);
+        // dd($events);
     }
 
     /**
@@ -73,15 +77,15 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CategoryRequest $request)
+    public function store(EventGalleryRequest $request)
     {
         $data = $request->all();
-        $data['slug'] = Str::slug($request->name);
-        $data['photo'] = $request->file('photo')->store('assets/category', 'public');
 
-        Category::create($data);
+        $data['photos'] = $request->file('photos')->store('assets/event', 'public');
 
-        return redirect()->route('category.index');
+        EventGallery::create($data);
+
+        return redirect()->route('event-gallery.index');
     }
 
     /**
@@ -101,13 +105,16 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        $item = Category::findOrFail($id);
-        return view('pages.admin.category.edit', [
-            'item' => $item
-        ]);
-    }
+    // public function edit($id)
+    // {
+    //     $item = Event::findOrFail($id);
+    //     $users = User::all();
+
+    //     return view('pages.admin.event-gallery.edit', [
+    //         'item' => $item,
+    //         'users' => $users
+    //     ]);
+    // }
 
     /**
      * Update the specified resource in storage.
@@ -116,17 +123,18 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(CategoryRequest $request, $id)
-    {
-        $data = $request->all();
-        $data['slug'] = Str::slug($request->name);
-        $data['photo'] = $request->file('photo')->store('assets/category', 'public');
+    // public function update(EventRequest $request, $id)
+    // {
+    //     $data = $request->all();
 
-        $item = Category::findOrFail($id);
-        $item->update($data);
+    //     $item = Event::findOrFail($id);
 
-        return redirect()->route('category.index');
-    }
+    //     $data['slug'] = Str::slug($request->event_name);
+
+    //     $item->update($data);
+
+    //     return redirect()->route('event-gallery.index');
+    // }
 
     /**
      * Remove the specified resource from storage.
@@ -136,9 +144,9 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        $item = Category::findOrFail($id);
+        $item = EventGallery::findOrFail($id);
         $item->delete();
 
-        return redirect()->route('category.index');
+        return redirect()->route('event-gallery.index');
     }
 }
