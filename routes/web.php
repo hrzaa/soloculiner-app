@@ -41,7 +41,7 @@ Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
 
 
 Route::prefix('admin')
-    // ->middleware(['auth', 'admin']) 
+    ->middleware(['auth', 'admin'])
     ->group(function(){
         Route::get('/', [DashboardAdminController::class, 'index'])->name('admin-dashboard');
         Route::resource('food', FoodAdminController::class);
