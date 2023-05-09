@@ -11,7 +11,6 @@
            </div>
        </div>
        <!-- Spinner End -->
-
          <section class="home" id="home" >
             <div class="container-fluid py-5 bg-dark hero-home mb-5" >
                 <div class="container my-5 py-5">
@@ -21,55 +20,39 @@
                             <p class="text-white animated slideInLeft mb-4 pb-2">Keberagaman dan kelezatan kuliner Nusantara merupakan gambaran cita rasa budaya bangsa indonesia di samping kekayaan alam.</p>
                             <a href="" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">Read More</a>
                         </div>
-                        <div class="col-lg-6 text-center text-lg-end overflow-hidden">
+                        <div class="col-lg-6 text-center text-lg-end overflow-hidden animated slideInRight">
                             <img class="img-fluid" src="/vendor/img/group-92.png" alt="">
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
+        
         <!-- Category Start -->
         <div class="container-fluid py-5">
             <div class="container">
-                <div class="row g-4">
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="service-item rounded pt-3">
-                            <div class="p-4">
-                                <i class="fas fa-3x fa-calendar-check text-primary mb-4"></i>
-                                <h5>Semangat Festival</h5>
-                                <p>Provide information on various festivals held in Solo</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="service-item rounded pt-3">
-                            <div class="p-4">
-                                <i class="fas fa-3x fa-utensils text-primary mb-4"></i>
-                                <h5>Surga Kuliner</h5>
-                                <p>Presents recommendations for various typical Solo foods</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="service-item rounded pt-3">
-                            <div class="p-4">
-                                <i class="fas fa-3x fa-images text-primary mb-4"></i>
-                                <h5>Gallery</h5>
-                                <p>You can find interesting photos and videos about food in Solo</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-                        <div class="service-item rounded pt-3">
-                            <div class="p-4">
-                                <i class="fas fa-3x fa-headset text-primary mb-4"></i>
-                                <h5>Contact</h5>
-                                <p>find out more about the website, contact the contact provided</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                   <h5 class="section-title ff-secondary text-center text-primary fw-normal">Solo Foods</h5>
+                   <h1 class="mb-5">Trends Categories</h1>
                 </div>
+                <div class="row">
+                @php
+                    $incrementCategory = 0
+                @endphp
+                @forelse ($categories as $category)
+                    <div class="col-6 col-md-3 col-lg-2" data-aos="fade-up" data-aos-delay="{{ $incrementCategory+=100 }}">
+                        <a href="{{ route('kuliner') }}" class="component-categories d-block">
+                            <div class="categories-images">
+                                <img src="{{ Storage::url($category->photo) }}" alt="" class="w-100"/>
+                            </div>
+                            <p class="categories-text">{{ $category->name }}</p>
+                        </a>
+                    </div>
+                @empty
+                    <div class="col-12 text-center py-5">
+                    No Categories Found!
+                    </div>
+                @endforelse
             </div>
         </div>
         <!-- Category End -->
@@ -174,7 +157,7 @@
                            <div class=" overflow-hidden m-4">
                                <img class="img-fluid" src="/vendor/img/team-1.jpeg" alt="">
                            </div>
-                           <h5 class="mb-0">Sate Kere</h5>
+                           <h5 class="mb-0">Sate Kere </h5>
                             <!-- Add icon library -->
                             <small> 
                                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">

@@ -19,7 +19,7 @@
              <form action="{{ route('food.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                   <div class="form-group">
-                    <label>Nama Food</label>
+                    <label>Nama Culinary</label>
                     <input type="text" name="food_name" class="form-control" required>
                   </div>
                   <div class="form-group">

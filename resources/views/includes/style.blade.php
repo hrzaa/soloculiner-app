@@ -15,6 +15,9 @@
 <link href="/vendor/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 <link href="/vendor/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
 
+{{-- data aos --}}
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 <!-- Customized Bootstrap Stylesheet -->
 <link href="/vendor/css/bootstrap.min.css" rel="stylesheet">
 

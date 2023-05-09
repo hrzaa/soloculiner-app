@@ -218,24 +218,57 @@
     position: relative;
 }
 
+/*  */
+
+.component-categories{
+    background: #f4f4f4;
+    border-radius: 8px;
+    padding: 30px 30px 10px 30px;
+    margin-bottom: 20px;
+    transition: all 0.2s ease-in-out;
+}
+
+.component-categories:hover{
+    transform: scale(1.05);
+    text-decoration: none;
+}
+
+.categories-text{
+    font-size: 18px;
+    text-align: center;
+    color: #0c0d36;
+    font-weight: normal;
+    margin-top: 12px;
+}
+
 /*** Service ***/
 .service-item {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 30px 30px 10px 30px;
+    margin-bottom: 20px;
+    /* height: 200px; */
+    width: 100%;
     box-shadow: 0 0 45px rgba(0, 0, 0, .08);
-    transition: .5s;
 }
 
 .service-item:hover {
-    background: var(--primary);
+    /* background: var(--primary); */
+    transform: scale(1.05);
+    text-decoration: none;
 }
 
 .service-item * {
     transition: .5s;
 }
 
-.service-item:hover * {
-    color: var(--light) !important;
+.service-text{
+    font-size: 18px;
+    text-align: center;
+    color: #0c0d36;
+    font-weight: 600;
+    margin-top: 12px;
 }
-
 
 /*** Food Menu ***/
 .nav-pills .nav-item .active {

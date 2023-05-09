@@ -40,7 +40,13 @@ Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
 // Route::get('/dashboard/culinary', [CulinaryController::class, 'index'])->name('dashboard-culinary');
 
 
+Route::group(['middleware' => ['auth']], function(){
+   
+});
+
+
 Route::prefix('admin')
+    // ->namespace('Admin')
     ->middleware(['auth', 'admin'])
     ->group(function(){
         Route::get('/', [DashboardAdminController::class, 'index'])->name('admin-dashboard');

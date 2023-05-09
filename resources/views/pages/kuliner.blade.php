@@ -1,6 +1,6 @@
 @extends('layouts.app')
     @section('title')
-    Event Page
+    Kuliner Page
     @endsection
     @section('content')
     <div class="container-fluid py-5 bg-dark hero-heder" style="background: linear-gradient(rgba(15, 23, 43, .9), rgba(15, 23, 43, .9)), url(/vendor/img/bg-hero.jpg);
@@ -12,8 +12,7 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb justify-content-center text-uppercase">
                     <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                    <li class="breadcrumb-item text-white active" aria-current="page">About</li>
+                    <li class="breadcrumb-item text-white active" aria-current="page">Kuliner</li>
                 </ol>
             </nav>
         </div>
@@ -26,46 +25,34 @@
                 <h5 class="section-title ff-secondary text-center text-primary fw-normal">Food Menu</h5>
                 <h1 class="mb-5">Most Popular Items</h1>
             </div>
-            <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.1s">
+            <div class="tab-class text-center">
                 <div class="tab-content">
-                    <div id="tab-1" class="tab-pane fade show p-0 active">
+                    <div id="tab-1" class="tab-pane p-0 active">
                         <div class="row g-4">
-                            <div class="col-lg-4">
-                                <div class="d-flex align-items-center">
-                                    <img class="flex-shrink-0 img-fluid rounded" src="/vendor/img/satekere.jpg" alt="" style="width: 80px;">
-                                    <div class="w-100 d-flex flex-column text-start ps-4">
-                                        <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                            <span>Sate Kere</span>
-                                        </h5>
-                                        <small class="fst-italic">Sate kere becomes food traveler’s favorite satay in Solo, made from tempe gembus (tempe made from soybean bagasse, byproduct from tofu production). Sate Kere’s served with beef offal satay like lungs, lymphatic, liver, intestines, torpedo, kidneys and tripe.</small>
-                                        <a href="" class="text-primary">Think to Try</a>
+                            @php
+                                $incrementCategory = 0
+                            @endphp
+                            @forelse ($foods as $food)
+                                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="{{ $incrementCategory+=100 }}">
+                                    <div class="d-flex align-items-center">
+                                        {{-- image resto belum muncul --}}
+                                        <img class="flex-shrink-0 img-fluid rounded" src="/vendor/img/satekere.jpg" alt="" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                                <span>{{ $food->food_name }}</span>
+                                            </h5>
+                                            <small class="fst-italic">{!! Str::words($food->food_desc, 20) !!}</small>
+                                            <a href="{{ route('kuliner-detail') }}" class="text-primary">Think to Try</a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="d-flex align-items-center">
-                                    <img class="flex-shrink-0 img-fluid rounded" src="/vendor/img/selat-solo.jpg" alt="" style="width: 80px;">
-                                    <div class="w-100 d-flex flex-column text-start ps-4">
-                                        <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                            <span>Selat Solo</span>
-                                        </h5>
-                                        <small class="fst-italic">Selat Solo is one of unique foods in Solo which engaging western cuisine with local taste. A concoction of Selat Solo is adapted from western salad, consisted of sliced meats, boiled beans, potatoes, carrots, egg and mayonnaise then the formula’s poured with soy sauce.</small>
-                                            <a href="" class="text-primary">Think to Try</a>
-                                    </div>
+                            @empty
+                                <div class="col-12 text-center py-5">
+                                    No Categories Found!
                                 </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="d-flex align-items-center">
-                                    <img class="flex-shrink-0 img-fluid rounded" src="/vendor/img/selat-solo.jpg" alt="" style="width: 80px;">
-                                    <div class="w-100 d-flex flex-column text-start ps-4">
-                                        <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                            <span>Selat Solo</span>
-                                        </h5>
-                                        <small class="fst-italic">Selat Solo is one of unique foods in Solo which engaging western cuisine with local taste. A concoction of Selat Solo is adapted from western salad, consisted of sliced meats, boiled beans, potatoes, carrots, egg and mayonnaise then the formula’s poured with soy sauce.</small>
-                                            <a href="" class="text-primary">Think to Try</a>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforelse
+
+                            {{-- @dd($restos) --}}
                             </div>
                         </div>
                     </div>

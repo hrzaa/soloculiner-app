@@ -12,10 +12,10 @@
                 </div>
                 <div class="card-wrap">
                     <div class="card-header">
-                    <h4>Total Admin</h4>
+                    <h4>Total User</h4>
                     </div>
                     <div class="card-body">
-                    10
+                   {{ $user }}
                     </div>
                 </div>
                 </div>
@@ -27,10 +27,10 @@
                 </div>
                 <div class="card-wrap">
                     <div class="card-header">
-                    <h4>News</h4>
+                    <h4>Total Culinary</h4>
                     </div>
                     <div class="card-body">
-                    42
+                    {{ $food }}
                     </div>
                 </div>
                 </div>
@@ -42,10 +42,10 @@
                 </div>
                 <div class="card-wrap">
                     <div class="card-header">
-                    <h4>Reports</h4>
+                    <h4>Total Resto</h4>
                     </div>
                     <div class="card-body">
-                    1,201
+                    {{ $resto }}
                     </div>
                 </div>
                 </div>
@@ -57,10 +57,10 @@
                 </div>
                 <div class="card-wrap">
                     <div class="card-header">
-                    <h4>Online Users</h4>
+                    <h4>Total Event</h4>
                     </div>
                     <div class="card-body">
-                    47
+                    {{ $resto }}
                     </div>
                 </div>
                 </div>

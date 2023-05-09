@@ -33,7 +33,7 @@
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"> {{ Auth::user()->name }}</a>
                 <div class="dropdown-menu m-0">
-                    <a href="" class="dropdown-item">Dashboard</a>
+                    <a href="{{ route('admin-dashboard') }}" class="dropdown-item">Dashboard</a>
                     <a href="" class="dropdown-item">Settings</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="{{ route('logout') }}"

@@ -10,5 +10,11 @@
 <script src="/vendor/lib/tempusdominus/js/moment-timezone.min.js"></script>
 <script src="/vendor/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
+{{-- data aos --}}
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+
 <!-- Template Javascript -->
 <script src="/vendor/js/main.js"></script>

@@ -67,7 +67,7 @@
                             </span>
                             @endif
                         </div>
-                        <div class="col-12">
+                        <div class="col-12 pt-3">
                             <button type="submit" class="btn btn-primary text-white btn-block shadow rounded">Login </button>
                         </div>
                         <p class="text-center">Dont Have an account?
