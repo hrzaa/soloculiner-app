@@ -21,14 +21,21 @@
             </nav>
         </div>
     </div>
-
+    
     <!-- About Start -->
         <div class="container-fluid py-5 bg-white">
            <div class="container">
                <div class="row g-5 align-items-center">
                    <div class="col-lg-6">
                        <div class="row g-3">
-                           <div class="col-6 text-start">
+                        
+                        {{-- style gambar belum ketemu --}}
+                        @foreach ($restos as $resto)
+                            <div class="col-6 text-start">
+                               <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.1s" src="{{ Storage::url($resto->photos) }}">
+                           </div>
+                        @endforeach
+                           {{-- <div class="col-6 text-start">
                                <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.1s" src="/vendor/img/satekere2.jpg">
                            </div>
                            <div class="col-6 text-start">
@@ -39,17 +46,17 @@
                            </div>
                            <div class="col-6 text-end">
                                <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.3s" src="/vendor/img/satekere4.jpg">
-                           </div>
+                           </div> --}}
                        </div>
                    </div>
                    <div class="col-lg-6">
                     <h5 class="section-title ff-secondary text-start text-primary fw-normal">About Us</h5>
-                    <h1 class="mb-4">What About Sate Kere <i class="fa fa-utensils text-primary me-2"></i></h1>
-                       <p class="mb-4">Sate Kere adalah sebutan untuk salah satu kuliner khas Solo yang terbuat dari tempe gambus yaitu tempe yang dibuat dari ampas tahu. Selain tempe, bahan dasar pembuatan sate ini juga menggunakan jeroan sapi seperti paru dan usus sapi. Sate ini juga dilengkapi dengan bumbu kacang atau sambal kecap yang sama seperti sate pada umumnya.</p>
+                    <h1 class="mb-4">What About {{ $foods->food_name }} <i class="fa fa-utensils text-primary me-2"></i></h1>
+                       <p class="mb-4">{!! $foods->food_desc !!}</p>
                        <div class="row g-4 mb-4">
                            <div class="col-sm-6">
                                <div class="d-flex align-items-center border-start border-5 border-primary px-3">
-                                   <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">18</h1>
+                                   <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">{{ $food }}</h1>
                                    <div class="ps-4">
                                        <p class="mb-0">Typical</p>
                                        <h6 class="text-uppercase mb-0">Solo Foods</h6>
@@ -58,7 +65,7 @@
                            </div>
                            <div class="col-sm-6">
                                <div class="d-flex align-items-center border-start border-5 border-primary px-3">
-                                   <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">36</h1>
+                                   <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up"> {{ $resto }}</h1>
                                    <div class="ps-4">
                                        <p class="mb-0">Popular</p>
                                        <h6 class="text-uppercase mb-0">Place to Eat</h6>
@@ -81,14 +88,12 @@
                            Theme
                        </h5>
                        <h1 class="mb-4">
-                           Story of Sate Kere
+                           Story of {{ $foods->food_name }}
                        </h1>
                        <p class="mb-4">
-                           Di zaman dahulu, sate menjadi salah satu makanan termewah yang hanya bisa disantap oleh kalangan menengah ke atas. Istilah kere yang berarti gelandangan merupakan salah satu pencitraan terhadap kalangan bawah yang terlalu sayang untuk membeli setusuk sate. Atas alasan inilah para kalangan bawah melakukan intervensi. Mereka membuat bentuk lain sate dengan bahan dasar jeroan sapi yang mana jika dilihat, sate ini menyerupai sate pada umumnya. 
+                            {!! $foods->food_desc !!}
                        </p>
-                       <p class="mb-4">
-                        Cara inilah yang menjadi daya tarik bagi kalangan bawah untuk menikmati sate yang kemudian melahirkan sate kere (satenya orang miskin). Selain itu, sate ini merupakan perwujudan perlawanan dari kalangan bawah kepada kalangan bangsawan dalam budaya feodal yang zaman dahulu masih sangat kental dirasakan oleh masyarakat jawa. 
-                       </p>
+                       
                    </div>
                    <div class="col-lg-4">
                        <div class="row g-3">
@@ -219,9 +224,9 @@
                 </div>
                 <div class="row g-4">
                     <div class="col-md-12 wow fadeIn" data-wow-delay="0.1s">
-                         <iframe class="position-relative rounded w-100 h-100"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd"
-                            frameborder="0" style="min-height: 350px; border:0;" allowfullscreen="" aria-hidden="false"
+
+                            <iframe class="position-relative rounded w-100 h-100"
+                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.1098190545263!2d110.83339197465479!3d-7.563004192450958!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a17bfca3568f1%3A0x52872ee12cf2fa57!2sKampus%20UNS%20Mesen!5e0!3m2!1sen!2sid!4v1683777846264!5m2!1sen!2sid" frameborder="0" style="min-height: 350px; border:0;" allowfullscreen="" aria-hidden="false"
                             tabindex="0"></iframe>
                     </div>
                 </div>

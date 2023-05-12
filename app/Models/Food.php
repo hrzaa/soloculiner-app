@@ -33,4 +33,9 @@ class Food extends Model
     {
         return $this->belongsTo(Category::class, 'categories_id', 'id');
     }
+
+    public function restos()
+    {
+        return $this->belongsToMany(Resto::class);
+    }
 }

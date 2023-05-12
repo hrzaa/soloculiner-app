@@ -29,4 +29,14 @@ class Resto extends Model
     public function resto_galleries(){
         return $this->hasMany(RestoGallery::class);
     }
+
+     public function foods()
+    {
+        return $this->belongsToMany(Food::class);
+    }
+
+     public function galleries()
+    {
+        return $this->hasMany(RestoGallery::class);
+    }
 }

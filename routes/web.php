@@ -31,9 +31,9 @@ use App\Http\Controllers\Admin\UserController as UserAdminController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/kuliner', [CulinerController::class, 'index'])->name('kuliner');
-Route::get('/kuliner/detail', [CulinerController::class, 'detail'])->name('kuliner-detail');
+Route::get('/kuliner/{id}', [CulinerController::class, 'detail'])->name('kuliner-detail');
 Route::get('/event', [EventController::class, 'index'])->name('event');
-Route::get('/event/detail', [EventController::class, 'detail'])->name('event-detail');
+Route::get('/event/{id}', [EventController::class, 'detail'])->name('event-detail');
 Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
 
 // Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');

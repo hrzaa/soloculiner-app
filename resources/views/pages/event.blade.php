@@ -22,82 +22,38 @@
         </div>
     </div>
 
+     {{-- @dd($events) --}}
+
      <!-- Event Start -->
         <div class="container-fluid bg-white py-5">
             <div class="container mt-3">
                 <div class="row g-4">
-                    <a href="" class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="service-item rounded pt-3">
-                            <div class="p-4">
-                                <i class="far fa-3x fa-calendar-check text-primary mb-4"></i>
-                                <h5>Semangat Festival</h5>
-                                <p>Provide information on various festivals held in Solo</p>
+                    @php
+                        $incrementCategory = 0
+                    @endphp
+                    @forelse ($events as $event)
+                    <div class="col-lg-3 col-md-6"  data-aos="fade-up" data-aos-delay="{{ $incrementCategory+=100 }}" style="color: #0c0d36;">
+                        <div class="team-item rounded overflow-hidden">
+                            <h4 class="mt-4 text-center">{{ $event->event_name }}</h4>
+                            <div class="rounded overflow-hidden m-4">
+                                <a href="{{ route('event-detail', $event->id) }}"><img class="img-event" src="{{ Storage::url($event->event_galleries->first()->photos) }}" alt=""></a>
+                            </div>
+                            <div class="maps">
+                                 <i class="fas fa-map-marked-alt p-3"></i><a href="">Kota Surakarta, Jawa Tengah</a> 
+                            </div>
+                            <div class="date mb-2">
+                               <i class="fas fa-calendar-alt p-3"></i>{{ date('d F Y', strtotime($event->date_start)) }} - {{ date('d F Y', strtotime($event->date_end)) }}
                             </div>
                         </div>
-                    </a>
-                    <a href="" class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="service-item rounded pt-3">
-                            <div class="p-4">
-                                <i class="far fa-3x fa-calendar-check text-primary mb-4"></i>
-                                <h5>Semangat Festival</h5>
-                                <p>Provide information on various festivals held in Solo</p>
-                            </div>
+                    </div>
+                    @empty
+                        <div class="col-12 text-center py-5">
+                            No Categories Found!
                         </div>
-                    </a>
-                    <a href="" class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="service-item rounded pt-3">
-                            <div class="p-4">
-                                <i class="far fa-3x fa-calendar-check text-primary mb-4"></i>
-                                <h5>Semangat Festival</h5>
-                                <p>Provide information on various festivals held in Solo</p>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="" class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="service-item rounded pt-3">
-                            <div class="p-4">
-                                <i class="far fa-3x fa-calendar-check text-primary mb-4"></i>
-                                <h5>Semangat Festival</h5>
-                                <p>Provide information on various festivals held in Solo</p>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="" class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="service-item rounded pt-3">
-                            <div class="p-4">
-                                <i class="far fa-3x fa-calendar-check text-primary mb-4"></i>
-                                <h5>Semangat Festival</h5>
-                                <p>Provide information on various festivals held in Solo</p>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="" class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="service-item rounded pt-3">
-                            <div class="p-4">
-                                <i class="far fa-3x fa-calendar-check text-primary mb-4"></i>
-                                <h5>Semangat Festival</h5>
-                                <p>Provide information on various festivals held in Solo</p>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="" class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="service-item rounded pt-3">
-                            <div class="p-4">
-                                <i class="far fa-3x fa-calendar-check text-primary mb-4"></i>
-                                <h5>Semangat Festival</h5>
-                                <p>Provide information on various festivals held in Solo</p>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="" class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="service-item rounded pt-3">
-                            <div class="p-4">
-                                <i class="far fa-3x fa-calendar-check text-primary mb-4"></i>
-                                <h5>Semangat Festival</h5>
-                                <p>Provide information on various festivals held in Solo</p>
-                            </div>
-                        </div>
-                    </a>
+                    @endforelse
+
+                    
+                    
                    
                 </div>
             </div>
@@ -115,12 +71,12 @@
                 </div>
                 <div class="row g-4">
                    <div class="container-fluid py-5 bg-dark hero-header mb-5" style="background: linear-gradient(0deg,
-            rgba(15, 23, 43, 0.75),
-            rgba(15, 23, 43, 0.75)),
-        url(/vendor/img/header-event.JPG), #0f172b;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;">
+                    rgba(15, 23, 43, 0.75),
+                    rgba(15, 23, 43, 0.75)),
+                    url(/vendor/img/header-event.JPG), #0f172b;
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    background-size: cover;">
                         <div class="container text-start my-5 pt-5 pb-4">
                             <h1 class="display-3 text-white mb-3 animated slideInDown">Semangat Festival</h1>
                             <h6 class="text-white">This year, the theme is the taste of Indonesian culinary satay. which starts March 9-12, 2023 at the Vastenburg Fortress</h6>

@@ -20,7 +20,7 @@
                 @csrf
                   <div class="form-group">
                     <label>Nama Culinary</label>
-                    <input type="text" name="food_name" class="form-control" required>
+                    <input type="text" name="food_name" class="form-control" autocomplete="off" required>
                   </div>
                   <div class="form-group">
                     <label>Category</label>
@@ -33,9 +33,7 @@
                   <div class="form-group">
                     <label>Uploader</label>
                     <select name="users_id" class="form-control">
-                      @foreach ($users as $user)
-                          <option value="{{ $user->id }}">{{ $user->name }}</option>
-                      @endforeach
+                      <option value="{{ Auth::user()->id }}">{{ Auth::user()->name }}</option>
                     </select>
                   </div>
                   <div class="form-group">

@@ -29,7 +29,7 @@
                 {{-- <a class="nav-item nav-link" href="{{ route('register') }}">{{ __('Register') }}</a> --}}
                 <a class="btn btn-primary py-2 px-4" href="{{ route('login') }}">{{ __('Login') }}</a>
             @else
-            <img alt="image" src="assets/img/avatar/avatar-1.png" style="max-height: 40px" class="rounded-circle mr-1">
+            <img alt="image" src="{{ url('assets/img/avatar/avatar-1.png') }}" style="max-height: 40px" class="rounded-circle mr-1">
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"> {{ Auth::user()->name }}</a>
                 <div class="dropdown-menu m-0">

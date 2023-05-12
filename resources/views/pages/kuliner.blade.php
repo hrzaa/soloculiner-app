@@ -42,7 +42,7 @@
                                                 <span>{{ $food->food_name }}</span>
                                             </h5>
                                             <small class="fst-italic">{!! Str::words($food->food_desc, 20) !!}</small>
-                                            <a href="{{ route('kuliner-detail') }}" class="text-primary">Think to Try</a>
+                                            <a href="{{ route('kuliner-detail', $food->id) }}" class="text-primary">Think to Try</a>
                                         </div>
                                     </div>
                                 </div>

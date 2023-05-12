@@ -220,6 +220,16 @@
 
 /*  */
 
+.img-event{
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+}
+
+.img-event:hover{
+    transform: scale(1.05);
+    text-decoration: none;
+}
+
 .component-categories{
     background: #f4f4f4;
     border-radius: 8px;
