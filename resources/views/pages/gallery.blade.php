@@ -38,8 +38,12 @@
      <!-- Gallery Start -->
         <div class="container-fluid py-5 bg-white">
             <div class="container">
-                 <div class="text-center">
-                     <div class="row mb-3">
+                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Solo Foods</h5>
+                    <h1 class="mb-5">Our Resto Gallery</h1>
+                 </div>
+                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="row mb-3">
                         @php
                             $incrementProduct = 0
                         @endphp
@@ -48,8 +52,6 @@
                             <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="{{ $incrementProduct+=100 }}"> 
                               <div class="content bg-dark">
                                     <img src="{{ Storage::url($resto->photos) }}" class="img-content">
-                                    <h4>Mountains</h4>
-                                    <p>Lorem ipsum dolor..</p>
                                 </div>
                             </div>  
                             {{-- <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="{{ $incrementProduct+=100 }}"> 
@@ -60,8 +62,7 @@
                                 No Categories Found!
                             </div>
                         @endforelse
-                    </div>
-                     
+                    </div> 
                 </div>  
             </div>
         </div>

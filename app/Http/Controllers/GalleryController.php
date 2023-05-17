@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Food;
 use App\Models\Resto;
 use Illuminate\Http\Request;
 
@@ -17,7 +16,7 @@ class GalleryController extends Controller
             ->get();
 
         return view('pages.gallery', [
-             'restos' =>  $restos
+            'restos' => $restos
         ]);
     }
 }
