@@ -10,16 +10,16 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav ms-auto py-0 pe-4">
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="{{ route('home') }}">Home</a>
+                    <a class="nav-link {{ (request()->is('/')) ? 'active' : '' }}" aria-current="page" href="{{ route('home') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('kuliner') }}">Kuliner</a>
+                    <a class="nav-link  {{ (request()->is('kuliner*')) ? 'active' : '' }}" href="{{ route('kuliner') }}">Kuliner</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('event') }}">Event</a>
+                    <a class="nav-link  {{ (request()->is('event*')) ? 'active' : '' }}" href="{{ route('event') }}">Event</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('gallery') }}">Gallery</a>
+                    <a class="nav-link  {{ (request()->is('gallery')) ? 'active' : '' }}" href="{{ route('gallery') }}">Gallery</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Locations</a>
