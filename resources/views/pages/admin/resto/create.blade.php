@@ -32,7 +32,7 @@
                         </select>
                       </div>
                       <div class="form-group col-md-6">
-                        <label>Food Category </label>
+                        <label>Food</label>
                         <select name="food_id" class="form-control">
                           @foreach ($foods as $food)
                               <option value="{{ $food->id }}">{{ $food->food_name }}</option>
