@@ -23,18 +23,6 @@
         </div>
     </div>
 
-    <!-- Menu Start -->
-        <div class="container-fluid py-5 bg-white">
-            <div class="container">
-                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Food Menu</h5>
-                    <h1 class="mb-5">Most Popular Items</h1>
-                </div>
-                
-            </div>
-        </div>
-        <!-- Menu End -->
-
      <!-- Gallery Start -->
         <div class="container-fluid py-5 bg-white">
             <div class="container">
@@ -54,12 +42,9 @@
                                     <img src="{{ Storage::url($resto->photos) }}" class="img-content">
                                 </div>
                             </div>  
-                            {{-- <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="{{ $incrementProduct+=100 }}"> 
-                                <img class="flex-shrink-0 img-fluid rounded mb-3" src="{{ Storage::url($resto->photos) }}" alt="" >
-                            </div>   --}}
                         @empty
                             <div class="col-12 text-center py-5">
-                                No Categories Found!
+                                No Gallery Found!
                             </div>
                         @endforelse
                     </div> 
