@@ -23,24 +23,45 @@
         </div>
     </div>
 
+    <!-- Menu Start -->
+        <div class="container-fluid py-5 bg-white">
+            <div class="container">
+                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Food Menu</h5>
+                    <h1 class="mb-5">Most Popular Items</h1>
+                </div>
+                
+            </div>
+        </div>
+        <!-- Menu End -->
+
      <!-- Gallery Start -->
         <div class="container-fluid py-5 bg-white">
             <div class="container">
-                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                 <div class="text-center">
                      <div class="row mb-3">
-                        <div class="col-md-4"> <img class="flex-shrink-0 img-fluid rounded mb-3" src="vendor/img/hero-event.jpg" alt=""></div>
-                        
-                        <div class="col-md-4"> <img class="flex-shrink-0 img-fluid rounded mb-3" src="vendor/img/hero-event.jpg" alt=""></div>
-                        
-                        <div class="col-md-4"> <img class="flex-shrink-0 img-fluid rounded mb-3" src="vendor/img/hero-event.jpg" alt=""></div>                        
+                        @php
+                            $incrementProduct = 0
+                        @endphp
+                        @forelse ($restos as $resto)
+                            
+                            <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="{{ $incrementProduct+=100 }}"> 
+                              <div class="content bg-dark">
+                                    <img src="{{ Storage::url($resto->photos) }}" class="img-content">
+                                    <h4>Mountains</h4>
+                                    <p>Lorem ipsum dolor..</p>
+                                </div>
+                            </div>  
+                            {{-- <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="{{ $incrementProduct+=100 }}"> 
+                                <img class="flex-shrink-0 img-fluid rounded mb-3" src="{{ Storage::url($resto->photos) }}" alt="" >
+                            </div>   --}}
+                        @empty
+                            <div class="col-12 text-center py-5">
+                                No Categories Found!
+                            </div>
+                        @endforelse
                     </div>
-                     <div class="row mb-3">
-                        <div class="col-md-4"> <img class="flex-shrink-0 img-fluid rounded mb-3" src="vendor/img/hero-event.jpg" alt="" ></div>
-                        
-                        <div class="col-md-4"> <img class="flex-shrink-0 img-fluid rounded mb-3" src="vendor/img/hero-event.jpg" alt="" ></div>
-                        
-                        <div class="col-md-4"> <img class="flex-shrink-0 img-fluid rounded mb-3" src="vendor/img/hero-event.jpg" alt="" ></div>                     
-                    </div>    
+                     
                 </div>  
             </div>
         </div>

@@ -5,14 +5,15 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\CulinerController;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\LocationController;
 use App\Http\Controllers\Admin\FoodController as FoodAdminController;
-use App\Http\Controllers\Admin\RestoController as RestoAdminController;
-use App\Http\Controllers\Admin\RestoGalleryController as RestoGalleryAdminController;
-use App\Http\Controllers\Admin\DashboardController as DashboardAdminController;
-use App\Http\Controllers\Admin\EventController as EventAdminController;
-use App\Http\Controllers\Admin\EventGalleryController as EventGalleryAdminController;
-use App\Http\Controllers\Admin\CategoryController as CategoryAdminController;
 use App\Http\Controllers\Admin\UserController as UserAdminController;
+use App\Http\Controllers\Admin\EventController as EventAdminController;
+use App\Http\Controllers\Admin\RestoController as RestoAdminController;
+use App\Http\Controllers\Admin\CategoryController as CategoryAdminController;
+use App\Http\Controllers\Admin\DashboardController as DashboardAdminController;
+use App\Http\Controllers\Admin\EventGalleryController as EventGalleryAdminController;
+use App\Http\Controllers\Admin\RestoGalleryController as RestoGalleryAdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +36,7 @@ Route::get('/kuliner/{id}', [CulinerController::class, 'detail'])->name('kuliner
 Route::get('/event', [EventController::class, 'index'])->name('event');
 Route::get('/event/{id}', [EventController::class, 'detail'])->name('event-detail');
 Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
+Route::get('/locations', [LocationController::class, 'index'])->name('location');
 
 // Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 // Route::get('/dashboard/culinary', [CulinaryController::class, 'index'])->name('dashboard-culinary');

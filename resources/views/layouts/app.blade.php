@@ -5,7 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    @include('includes.style')
+      {{-- Style.css --}}
+      @stack('prepend-style')
+      @include('includes.style')
+      @stack('addon-style')
 
     <title>@yield('title')</title>
   </head>
@@ -20,6 +23,8 @@
     @include('includes.footer')
     
     {{-- Script --}}
-    @include('includes.script')
+    @stack('prepend-script')
+    @include('includes.script');
+    @stack('addon-script')
   </body>
 </html>
