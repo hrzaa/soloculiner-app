@@ -30,6 +30,7 @@ use App\Http\Controllers\Admin\UserController as UserAdminController;
 // });
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/mappu', [HomeController::class, 'index2'])->name('mappu');
 Route::get('/kuliner', [CulinerController::class, 'index'])->name('kuliner');
 Route::get('/kuliner/{id}', [CulinerController::class, 'detail'])->name('kuliner-detail');
 Route::get('/event', [EventController::class, 'index'])->name('event');
@@ -41,7 +42,7 @@ Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
 
 
 Route::group(['middleware' => ['auth']], function(){
-   
+
 });
 
 
