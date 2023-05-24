@@ -17,7 +17,10 @@ return new class extends Migration
             $table->id();
             $table->foreignId('food_id');
             $table->foreignId('resto_id');
-            $table->timestamps();
+
+            $table->foreign('food_id')->references('id')->on('food')->onDelete('cascade');
+            $table->foreign('resto_id')->references('id')->on('restos')->onDelete('cascade');
+
         });
     }
 

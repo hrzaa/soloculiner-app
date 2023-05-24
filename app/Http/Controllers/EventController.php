@@ -17,9 +17,9 @@ class EventController extends Controller
 
     public function detail(Request $request, $id)
     {
-        $data = Event::findOrFail($id);
+        $event = Event::with(['event_galleries', 'user'])->where('slug', $id)->firstOrFail();
         return view('pages.detail-event',[
-            'data' => $data
+            'event' => $event
         ]);
     }
 }

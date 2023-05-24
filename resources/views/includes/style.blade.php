@@ -18,6 +18,10 @@
 {{-- data aos --}}
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
+{{-- leaflet --}}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+
+
 <!-- Customized Bootstrap Stylesheet -->
 <link href="/vendor/css/bootstrap.min.css" rel="stylesheet">
 

@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Resto extends Model
 {
     protected $fillable =[
-        'resto_name', 'users_id', 'food_id', 'price','slug'
+        'resto_name', 'users_id', 'food_id', 'price','address', 'longtitude', 'latitude', 'slug'
     ];
 
     use HasFactory;
@@ -32,11 +32,13 @@ class Resto extends Model
 
      public function foods()
     {
-        return $this->belongsToMany(Food::class);
+       return $this->belongsToMany(Food::class, 'food_resto', 'resto_id', 'food_id');
     }
 
      public function galleries()
     {
         return $this->hasMany(RestoGallery::class);
     }
+
+    
 }

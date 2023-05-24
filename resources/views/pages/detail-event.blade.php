@@ -11,7 +11,7 @@
     background-repeat: no-repeat;
     background-size: cover;">
         <div class="container text-center my-5 pt-5 pb-4">
-            <h1 class="display-3 text-white mb-3 animated slideInDown"></h1>
+            <h1 class="display-3 text-white mb-3 animated slideInDown">{{ $event->event_name }}</h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb justify-content-center text-uppercase">
                     <li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -24,7 +24,7 @@
     </div>
 
 
-    {{-- @dd($data) --}}
+    {{-- @dd($event) --}}
       <!-- About Start -->
        <div class="container-fluid py-5 bg-white">
            <div class="container">
@@ -33,11 +33,7 @@
                      <div class="row g-3">
                            <div class="col-6 text-end static">
                                <img class="img-fluid rounded w-250 wow zoomIn" data-wow-delay="0.5s"
-                                   src="/vendor/img/bg-solo2.jpeg" />
-                           </div>
-                           <div class="col-6 text-end absolute ">
-                               <img class="img-fluid rounded w-250 wow zoomIn" data-wow-delay="0.7s"
-                                   src="/vendor/img/bg-solo1.jpeg" />
+                                   src="{{ Storage::url($event->event_galleries->first()->photos) }}" />
                            </div>
                        </div>
                        
@@ -47,10 +43,10 @@
                            About Us
                        </h5>
                        <h1 class="mb-4">
-                           Welcome to {{ $data->event_name }}
+                           Welcome to {{ $event->event_name }}
                        </h1>
                        <p class="mb-4">
-                           {!! $data->event_desc !!}
+                           {!! $event->event_desc !!}
                        </p>
                        
                    </div>
@@ -66,36 +62,16 @@
                <div class="row g-5 align-items-center">
                    <div class="col-lg-6">
                         <h5 class="section-title ff-secondary text-start text-primary fw-normal">Theme</h5>
-                    <h1 class="mb-4">What About {{ $data->event_name }} <i class="fa fa-utensils text-primary me-2"></i></h1>
-                       <p class="mb-4">{!! $data->event_history !!}</p>
+                    <h1 class="mb-4">What About {{ $event->event_name }} <i class="fa fa-utensils text-primary me-2"></i></h1>
+                       <p class="mb-4">{!! $event->event_history !!}</p>
                       
-                       <div class="row g-4 mb-4">
-                           <div class="col-sm-6">
-                               <div class="d-flex align-items-center border-start border-5 border-primary px-3">
-                                   <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">18</h1>
-                                   <div class="ps-4">
-                                       <p class="mb-0">Typical</p>
-                                       <h6 class="text-uppercase mb-0">Solo Foods</h6>
-                                   </div>
-                               </div>
-                           </div>
-                           <div class="col-sm-6">
-                               <div class="d-flex align-items-center border-start border-5 border-primary px-3">
-                                   <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">36</h1>
-                                   <div class="ps-4">
-                                       <p class="mb-0">Popular</p>
-                                       <h6 class="text-uppercase mb-0">Place to Eat</h6>
-                                   </div>
-                               </div>
-                           </div>
-                       </div>
                    </div>
                    <div class="col-lg-6">
                     <div class="row g-3">
                            <div class="col-6 text-start">
-                               <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.1s" src="/vendor/img/about-1.jpg">
+                               <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.1s" src="{{ Storage::url($event->event_galleries->skip(1)->first()->photos) }}">
                            </div>
-                           <div class="col-6 text-start">
+                           {{-- <div class="col-6 text-start">
                                <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.3s" src="/vendor/img/about-2.jpg" style="margin-top: 25%;">
                            </div>
                            <div class="col-6 text-end">
@@ -103,7 +79,7 @@
                            </div>
                            <div class="col-6 text-end">
                                <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.3s" src="/vendor/img/about-4.jpg">
-                           </div>
+                           </div> --}}
                        </div>
                    
                    </div>

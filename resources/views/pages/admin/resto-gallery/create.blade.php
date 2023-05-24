@@ -26,7 +26,7 @@
                       @endforeach
                     </select>
                   </div>
-                   <div class="form-group">
+                  <div class="form-group">
                     <label>Thumnails Resto</label>
                     <input type="file" name="photos" class="form-control" required>
                   </div>

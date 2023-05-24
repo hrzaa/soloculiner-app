@@ -16,6 +16,8 @@
                     <th>Nama Culinary</th>
                     <th>Uploader</th>
                     <th>Category</th>
+                    <th>Food Desc</th>
+                    <th>Food History</th>
                     <th>Aksi</th>
                   </tr>
                 </thead>
@@ -42,6 +44,8 @@
             {data:'food_name', name:'food_name'},
             {data:'user.name', name:'user.name'},
             {data:'category.name', name:'category.name'},
+            {data:'food_desc', name:'food_desc'},
+            {data:'food_history', name:'food_history'},
             {
                 data:'action',
                 name:'action',

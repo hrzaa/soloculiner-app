@@ -35,15 +35,10 @@ class CulinerController extends Controller
             ->take(4)
             ->get();
 
-        $food = Food::count();
-        $resto = Resto::count();
+        $foodCount = Food::count();
+        $restoCount = Resto::count();
 
-        return view('pages.detail-kuliner', [
-            'foods' => $foods,
-            'restos' => $restos,
-            'food' => $food,
-            'resto' => $resto
-        ]);
+        return view('pages.detail-kuliner', compact('foods', 'restos', 'foodCount', 'restoCount'));
 
     }
 }

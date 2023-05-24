@@ -46,11 +46,23 @@
                   <label>Harga Menu</label>
                   <input type="number" name="price" class="form-control" value="{{ $item->price }}">
                 </div>
+                <div class="form-group">
+                  <label>alamat</label>
+                  <input type="text" name="address" class="form-control"value="{{ $item->alamat }}">
+                </div>
+                <div class="form-group">
+                  <label>Latitude</label>
+                  <input type="text" step="0.01" name="latitude" class="form-control" value="{{ $item->latitude }}">
+                </div>
+                <div class="form-group">
+                  <label>Longtitude</label>
+                  <input type="text" step="0.01" name="longtitude" class="form-control" value="{{ $item->longtitude }}">
+                </div>
 
-                  <div class="card-footer text-right">
-                    <button class="btn btn-primary mr-1" type="submit">Submit</button>
-                    <button class="btn btn-secondary" type="reset">Reset</button>
-                  </div>
+                <div class="card-footer text-right">
+                  <button class="btn btn-primary mr-1" type="submit">Submit</button>
+                  <button class="btn btn-secondary" type="reset">Reset</button>
+                </div>
                 </form>
           </div>
         </div>

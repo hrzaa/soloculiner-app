@@ -18,6 +18,7 @@
         </div>
     </div>
 
+        
     <!-- Menu Start -->
     <div class="container-fluid py-5 bg-white">
         <div class="container">
@@ -36,7 +37,7 @@
                                 <div class="col-lg-4" data-aos="fade-up" data-aos-delay="{{ $incrementCategory+=100 }}">
                                     <div class="d-flex align-items-center">
                                         {{-- image resto belum muncul --}}
-                                        <img class="flex-shrink-0 img-fluid rounded" src="/vendor/img/satekere.jpg" alt="" style="width: 80px;">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="{{ Storage::url($food->restos->first()->resto_galleries->first()->photos) }}" alt="" style="width: 80px;">
                                         <div class="w-100 d-flex flex-column text-start ps-4">
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
                                                 <span>{{ $food->food_name }}</span>
@@ -47,8 +48,8 @@
                                     </div>
                                 </div>
                             @empty
-                                <div class="col-12 text-center py-5">
-                                    No Categories Found!
+                                 <div class="col-12 text-center py-5 wow fadeInUp" data-wow-delay="0.1s">
+                                    No Culinary Found!
                                 </div>
                             @endforelse
 

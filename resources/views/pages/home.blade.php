@@ -49,48 +49,13 @@
                         </a>
                     </div>
                 @empty
-                    <div class="col-12 text-center py-5">
+                     <div class="col-12 text-center py-5 wow fadeInUp" data-wow-delay="0.1s">
                     No Categories Found!
                     </div>
                 @endforelse
             </div>
         </div>
         <!-- Category End -->
-
-
-       <!-- About Start -->
-       <div class="container-xxl py-5">
-           <div class="container">
-               <div class="row g-5 align-items-center">
-                   <div class="col-lg-6">
-                       <div class="row g-3">
-                           <div class="col-6 text-end static">
-                               <img class="img-fluid rounded w-250 wow zoomIn" data-wow-delay="0.5s"
-                                   src="/vendor/img/bg-solo2.jpeg" />
-                           </div>
-                           <div class="col-6 text-end absolute ">
-                               <img class="img-fluid rounded w-250 wow zoomIn" data-wow-delay="0.7s"
-                                   src="/vendor/img/bg-solo1.jpeg" />
-                           </div>
-                       </div>
-                   </div>
-                   <div class="col-lg-6">
-                       <h5 class="section-title ff-secondary text-start text-primary fw-normal">
-                           About Us
-                       </h5>
-                       <h1 class="mb-4">
-                           History of Solo
-                       </h1>
-                       <p class="mb-4">
-                           The ancient history of Solo dates back to the time series of events, started when the first “Java Man” was found in Sangiran, Sragen Regency. Then, a research that mentioned that Surakarta was established in a village called Village Sala, on the edge of the River Solo.
-                           Up until 1744, Solo was little more than a quiet backwater village, 10km east of Kartasura, the contemporary capital of the Mataram kingdom. But in that year the Mataram susuhunan (king), Pakubuwono II , backed the Chinese against the Dutch, and the court at Kartasura was sacked as a result. Pakubuwono II searched for a more auspicious spot to rebuild his capital, and in 1745 the entire court was dismantled and transported in a great procession to Surakarta, on the banks of the Kali Solo.
-                           However, the decline continued, and in 1757 a rival royal house of Mangkunegoro was established right in the centre of Solo. Thereafter, Solo’s royal houses wisely avoided fighting and instead threw their energies into the arts, developing a highly sophisticated and graceful court culture. The gamelan pavilions became the new theatres of war, with each city competing to produce the more refined court culture – a situation that continues to this day.
-                       </p>
-                   </div>
-               </div>
-           </div>
-       </div>
-       <!-- About End -->
 
 
         <!-- About Start -->
@@ -138,6 +103,40 @@
                            </div>
                        </div>
                        <a class="btn btn-primary py-3 px-5 mt-2" href="">Read More</a>
+                   </div>
+               </div>
+           </div>
+       </div>
+       <!-- About End -->
+
+       <!-- About Start -->
+       <div class="container-xxl py-5">
+           <div class="container">
+               <div class="row g-5 align-items-center">
+                   <div class="col-lg-6">
+                       <div class="row g-3">
+                           <div class="col-6 text-end static">
+                               <img class="img-fluid rounded w-250 wow zoomIn" data-wow-delay="0.5s"
+                                   src="/vendor/img/bg-solo2.jpeg" />
+                           </div>
+                           <div class="col-6 text-end absolute ">
+                               <img class="img-fluid rounded w-250 wow zoomIn" data-wow-delay="0.7s"
+                                   src="/vendor/img/bg-solo1.jpeg" />
+                           </div>
+                       </div>
+                   </div>
+                   <div class="col-lg-6">
+                       <h5 class="section-title ff-secondary text-start text-primary fw-normal">
+                           About Us
+                       </h5>
+                       <h1 class="mb-4">
+                           History of Solo
+                       </h1>
+                       <p class="mb-4">
+                           The ancient history of Solo dates back to the time series of events, started when the first “Java Man” was found in Sangiran, Sragen Regency. Then, a research that mentioned that Surakarta was established in a village called Village Sala, on the edge of the River Solo.
+                           Up until 1744, Solo was little more than a quiet backwater village, 10km east of Kartasura, the contemporary capital of the Mataram kingdom. But in that year the Mataram susuhunan (king), Pakubuwono II , backed the Chinese against the Dutch, and the court at Kartasura was sacked as a result. Pakubuwono II searched for a more auspicious spot to rebuild his capital, and in 1745 the entire court was dismantled and transported in a great procession to Surakarta, on the banks of the Kali Solo.
+                           However, the decline continued, and in 1757 a rival royal house of Mangkunegoro was established right in the centre of Solo. Thereafter, Solo’s royal houses wisely avoided fighting and instead threw their energies into the arts, developing a highly sophisticated and graceful court culture. The gamelan pavilions became the new theatres of war, with each city competing to produce the more refined court culture – a situation that continues to this day.
+                       </p>
                    </div>
                </div>
            </div>
@@ -244,69 +243,6 @@
            </div>
        </div>
        <!-- Popular End -->
-
-       <!-- conto map -->
-       <div id="map"></div>
-
-        <!-- Ulasan Start -->
-        <div class="container-xxl py-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
-           <div class="row g-0">
-               <div class="col-md-6">
-                   <div class="video">
-                       <button type="button" class="btn-play" data-bs-toggle="modal" data-src="img/video.mp4" data-bs-target="#videoModal">
-                           <span></span>
-                       </button>
-                   </div>
-               </div>
-               <div class="col-md-6 bg-dark d-flex align-items-center">
-                   <div class="p-5 wow fadeInUp" data-wow-delay="0.2s">
-                       <h5 class="section-title ff-secondary text-start text-primary fw-normal">Ulasan</h5>
-                       <h1 class="text-white mb-4">Give Your Review</h1>
-                       <form>
-                           <div class="row g-3">
-                               <div class="col-md-6">
-                                   <div class="form-floating">
-                                       <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                       <label for="name">Your Name</label>
-                                   </div>
-                               </div>
-                               <div class="col-md-6">
-                                   <div class="form-floating">
-                                       <input type="email" class="form-control" id="email" placeholder="Your Email">
-                                       <label for="email">Your Email</label>
-                                   </div>
-                               </div>
-                               <div class="col-md-6">
-                                   <div class="form-floating date" id="date3" data-target-input="nearest">
-                                       <input type="text" class="form-control datetimepicker-input" id="datetime" placeholder="Date & Time" data-target="#date3" data-toggle="datetimepicker" />
-                                       <label for="datetime">Date & Time</label>
-                                   </div>
-                               </div>
-                               <div class="col-md-6">
-                                   <div class="form-floating">
-                                       <select class="form-select" id="select1">
-                                         <option value="1">People 1</option>
-                                         <option value="2">People 2</option>
-                                         <option value="3">People 3</option>
-                                       </select>
-                                       <label for="select1">No Of People</label>
-                                     </div>
-                               </div>
-                               <div class="col-12">
-                                   <div class="form-floating">
-                                       <textarea class="form-control" placeholder="Special Request" id="message" style="height: 100px"></textarea>
-                                       <label for="message">Special Request</label>
-                                   </div>
-                               </div>
-                               <div class="col-12">
-                                   <button class="btn btn-primary w-100 py-3" type="submit">Send Now</button>
-                               </div>
-                           </div>
-                       </form>
-                   </div>
-               </div>
-           </div>
-       </div>
 
        <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
            <div class="modal-dialog">

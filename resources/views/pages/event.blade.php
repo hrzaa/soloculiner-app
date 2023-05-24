@@ -27,6 +27,10 @@
      <!-- Event Start -->
         <div class="container-fluid bg-white py-5">
             <div class="container mt-3">
+                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Solo Foods</h5>
+                    <h1 class="mb-5">Our Event</h1>
+                 </div>
                 <div class="row g-4">
                     @php
                         $incrementCategory = 0
@@ -36,7 +40,7 @@
                         <div class="team-item rounded overflow-hidden">
                             <h4 class="mt-4 text-center">{{ $event->event_name }}</h4>
                             <div class="rounded overflow-hidden m-4">
-                                <a href="{{ route('event-detail', $event->id) }}"><img class="img-event" src="{{ Storage::url($event->event_galleries->first()->photos) }}" alt=""></a>
+                                <a href="{{ route('event-detail', $event->slug) }}"><img class="img-event" src="{{ Storage::url($event->event_galleries->first()->photos) }}" alt=""></a>
                             </div>
                             <div class="maps">
                                  <i class="fas fa-map-marked-alt p-3"></i><a href="">Kota Surakarta, Jawa Tengah</a> 
@@ -47,8 +51,8 @@
                         </div>
                     </div>
                     @empty
-                        <div class="col-12 text-center py-5">
-                            No Categories Found!
+                        <div class="col-12 text-center py-5 wow fadeInUp" data-wow-delay="0.1s">
+                            No Event Found!
                         </div>
                     @endforelse
 
