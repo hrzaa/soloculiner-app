@@ -17,6 +17,9 @@
                     <th>Uploader</th>
                     <th>Food</th>
                     <th>Price</th>
+                    <th>Address</th>
+                    <th>Longtitude</th>
+                    <th>Latitude</th>
                     <th>Aksi</th>
                   </tr>
                 </thead>
@@ -44,6 +47,9 @@
             {data:'user.name', name:'user.name'},
             {data:'food.food_name', name:'food.food_name'},
             {data:'price', name:'price'},
+            {data:'address', name:'address'},
+            {data:'longtitude', name:'longtitude'},
+            {data:'latitude', name:'latitude'},
             {
                 data:'action',
                 name:'action',

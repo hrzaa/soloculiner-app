@@ -28,20 +28,37 @@
     {{-- Script --}}
    <script>
       function password_show_hide() {
-        var x = document.getElementById("password");
-        var show_eye = document.getElementById("show_eye");
-        var hide_eye = document.getElementById("hide_eye");
-        hide_eye.classList.remove("d-none");
-        if (x.type === "password") {
-          x.type = "text";
-          show_eye.style.display = "none";
-          hide_eye.style.display = "block";
+        var passwordInput = document.getElementById("password");
+        var showEye = document.getElementById("show_eye");
+        var hideEye = document.getElementById("hide_eye");
+        
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+            confirmInput.type = "text";
+            showEye.classList.add("d-none");
+            hideEye.classList.remove("d-none");
         } else {
-          x.type = "password";
-          show_eye.style.display = "block";
-          hide_eye.style.display = "none";
+            passwordInput.type = "password";
+            confirmInput.type = "password";
+            showEye.classList.remove("d-none");
+            hideEye.classList.add("d-none");
         }
       }
+      function confirm_password_show_hide() {
+        var passwordConfirmInput = document.getElementById("password-confirm");
+        var showEyeConfirm = document.getElementById("show_eye_confirm");
+        var hideEyeConfirm = document.getElementById("hide_eye_confirm");
+
+        if (passwordConfirmInput.type === "password") {
+            passwordConfirmInput.type = "text";
+            showEyeConfirm.classList.add("d-none");
+            hideEyeConfirm.classList.remove("d-none");
+        } else {
+            passwordConfirmInput.type = "password";
+            showEyeConfirm.classList.remove("d-none");
+            hideEyeConfirm.classList.add("d-none");
+        }
+    }
    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

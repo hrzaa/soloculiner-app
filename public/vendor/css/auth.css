@@ -12,9 +12,14 @@
     border-radius: 10px;
 }
 
-.btn.btn-primary,
+.btn.btn-submit,
 .btn.btn-secondary {
+    background-color: var(--primary);
     color: #FFFFFF;
+}
+
+.btn.btn-submit:active {
+    background-color: #dd8b11; /* Menggunakan variabel warna gelap saat tombol diklik */
 }
 
 /* *{

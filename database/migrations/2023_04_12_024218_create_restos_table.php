@@ -20,9 +20,15 @@ return new class extends Migration
             $table->foreignId('users_id');
             $table->foreignId('food_id');
             $table->integer('price');
+            $table->string('address');
+            $table->decimal('latitude', 10, 8);
+            $table->decimal('longtitude', 11, 8);
             $table->string('slug');
 
             $table->timestamps();
+
+            $table->foreign('food_id')->references('id')->on('food')->onDelete('cascade');
+
         });
     }
 

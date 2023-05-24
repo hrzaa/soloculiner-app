@@ -58,7 +58,7 @@
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
-                    </div>
+                    </div>  
                 </div>
                 <div class="col-12">
                     <div class="input-group mb-3">
@@ -67,9 +67,9 @@
                     </div>
                     <input id="password-confirm" type="password" class="form-control shadow bg-white rounded" name="password_confirmation" placeholder="Confirm Password" required autocomplete="new-password">
                     <div class="input-group-append">
-                        <span class="input-group-text" onclick="password_show_hide();">
-                        <i class="fas fa-eye" id="show_eye"></i>
-                        <i class="fas fa-eye-slash d-none" id="hide_eye"></i>
+                        <span class="input-group-text" onclick="confirm_password_show_hide();">
+                        <i class="fas fa-eye" id="show_eye_confirm"></i>
+                        <i class="fas fa-eye-slash d-none" id="hide_eye_confirm"></i>
                         </span>
                     </div>
                     </div>
@@ -83,7 +83,7 @@
                     @endif
                 </div>
                 <div class="col-12 pt-3">
-                    <button type="submit" class="btn btn-primary text-white btn-block shadow rounded">Register</button>
+                    <button type="submit" class="btn btn-submit text-white btn-block shadow rounded">Register</button>
                 </div>
                 <p class="text-center">Have an account?
                   <a href="{{ route('login') }}">Login</a>

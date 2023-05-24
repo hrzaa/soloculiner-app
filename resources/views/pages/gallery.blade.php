@@ -43,7 +43,7 @@
                                 </div>
                             </div>  
                         @empty
-                            <div class="col-12 text-center py-5">
+                            <div class="col-12 text-center py-5 wow fadeInUp" data-wow-delay="0.1s">
                                 No Gallery Found!
                             </div>
                         @endforelse

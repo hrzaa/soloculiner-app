@@ -20,12 +20,16 @@ return new class extends Migration
             $table->foreignId('users_id');
             $table->date('date_start');
             $table->date('date_end');
-            $table->longText('event_history');
             $table->longText('event_desc');
+            $table->string('address');
+            $table->decimal('latitude', 10, 8);
+            $table->decimal('longitude', 11, 8);
             $table->string('slug');
 
             $table->softDeletes();
             $table->timestamps();
+
+            $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

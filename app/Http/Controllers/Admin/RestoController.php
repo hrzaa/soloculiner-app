@@ -86,11 +86,14 @@ class RestoController extends Controller
     public function store(RestoRequest $request)
     {
         $data = $request->all();
-
         $data['slug'] = Str::slug($request->resto_name);
-        // dd($data);
+        
+        $resto = Resto::create($data);
 
-        Resto::create($data);
+        $foodId = $request->input('food_id', []); // Ambil array id makanan dari form
+
+        // $resto->foods()->attach($foodId);
+        $resto->foods()->attach($foodId);
 
         return redirect()->route('resto.index');
     }
@@ -116,7 +119,7 @@ class RestoController extends Controller
     {
         $item = Resto::findOrFail($id);
         $users = User::all();
-         $foods = Food::all();
+        $foods = Food::all();
 
         return view('pages.admin.resto.edit', [
             'item' => $item,
