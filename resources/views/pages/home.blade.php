@@ -27,7 +27,7 @@
                 </div>
             </div>
         </section>
-        
+
         <!-- Category Start -->
         <div class="container-fluid py-5">
             <div class="container">
@@ -158,7 +158,7 @@
                            </div>
                            <h5 class="mb-0">Sate Kere </h5>
                             <!-- Add icon library -->
-                            <small> 
+                            <small>
                                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
                                 <span class="fa fa-star checked"></span>
                                 <span class="fa fa-star checked"></span>
@@ -180,7 +180,7 @@
                            </div>
                            <h5 class="mb-0">Serabi Notosuman</h5>
                             <!-- Add icon library -->
-                            <small> 
+                            <small>
                                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
                                 <span class="fa fa-star checked"></span>
                                 <span class="fa fa-star checked"></span>
@@ -202,7 +202,7 @@
                            </div>
                            <h5 class="mb-0">Es Dawet Mbok Darmi</h5>
                             <!-- Add icon library -->
-                            <small> 
+                            <small>
                                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
                                 <span class="fa fa-star checked"></span>
                                 <span class="fa fa-star checked"></span>
@@ -224,7 +224,7 @@
                            </div>
                            <h5 class="mb-0">Dimsum Ps. Gede</h5>
                             <!-- Add icon library -->
-                            <small> 
+                            <small>
                                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
                                 <span class="fa fa-star checked"></span>
                                 <span class="fa fa-star checked"></span>
@@ -243,8 +243,6 @@
            </div>
        </div>
        <!-- Popular End -->
-
-       
 
        <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
            <div class="modal-dialog">
@@ -323,10 +321,12 @@
        </div>
        <!-- Testimonial End -->
 
-      
+
        <!-- Back to Top -->
        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
    </div>
 
-  
+
 @endsection
+
+
