@@ -43,7 +43,7 @@
                                 <a href="{{ route('event-detail', $event->slug) }}"><img class="img-event" src="{{ Storage::url($event->event_galleries->first()->photos) }}" alt=""></a>
                             </div>
                             <div class="maps">
-                                 <i class="fas fa-map-marked-alt p-3"></i><a href="">Kota Surakarta, Jawa Tengah</a> 
+                                 <i class="fas fa-map-marked-alt p-3"></i><a href="">Kota Surakarta, Jawa Tengah</a>
                             </div>
                             <div class="date mb-2">
                                <i class="fas fa-calendar-alt p-3"></i>{{ date('d F Y', strtotime($event->date_start)) }} - {{ date('d F Y', strtotime($event->date_end)) }}
@@ -56,9 +56,9 @@
                         </div>
                     @endforelse
 
-                    
-                    
-                   
+
+
+
                 </div>
             </div>
         </div>

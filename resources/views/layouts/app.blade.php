@@ -10,6 +10,9 @@
       @include('includes.style')
       @stack('addon-style')
 
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+      <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+
     <title>@yield('title')</title>
   </head>
   <body>
@@ -28,7 +31,7 @@
     @stack('addon-script')
   </body>
 
-  <script>
+  {{-- <script>
 
         const map = L.map('map');
         map.setView([-7.5758611036093235, 110.82293324246046], 14);
@@ -56,6 +59,6 @@
         .bindPopup('timlo sastro')
         .addTo(map);
 
-    </script>
+    </script> --}}
 
 </html>

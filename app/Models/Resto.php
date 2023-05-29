@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Resto extends Model
 {
     protected $fillable =[
-        'resto_name', 'users_id', 'food_id', 'price','address', 'longtitude', 'latitude', 'slug'
+        'resto_name', 'users_id', 'food_id', 'price','address', 'slug', 'longitude', 'latitude'
     ];
 
     use HasFactory;
@@ -40,5 +40,5 @@ class Resto extends Model
         return $this->hasMany(RestoGallery::class);
     }
 
-    
+
 }

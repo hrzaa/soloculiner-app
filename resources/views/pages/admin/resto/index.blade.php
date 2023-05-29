@@ -18,7 +18,7 @@
                     <th>Food</th>
                     <th>Price</th>
                     <th>Address</th>
-                    <th>Longtitude</th>
+                    <th>Longitude</th>
                     <th>Latitude</th>
                     <th>Aksi</th>
                   </tr>
@@ -48,7 +48,7 @@
             {data:'food.food_name', name:'food.food_name'},
             {data:'price', name:'price'},
             {data:'address', name:'address'},
-            {data:'longtitude', name:'longtitude'},
+            {data:'longitude', name:'longitude'},
             {data:'latitude', name:'latitude'},
             {
                 data:'action',
@@ -57,8 +57,8 @@
                 searchable:false,
                 width:'15%'
             },
-        ]   
+        ]
         });
   </script>
-    
+
 @endpush

@@ -43,9 +43,9 @@ Route::get('/locations', [LocationController::class, 'index'])->name('location')
 // Route::get('/dashboard/culinary', [CulinaryController::class, 'index'])->name('dashboard-culinary');
 
 
-Route::group(['middleware' => ['auth']], function(){
+// Route::group(['middleware' => ['auth']], function(){
 
-});
+// });
 
 
 Route::prefix('admin')
