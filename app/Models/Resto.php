@@ -16,10 +16,10 @@ class Resto extends Model
 
     use HasFactory;
 
-    // public function food()
-    // {
-    //     return $this->belongsTo(Food::class);
-    // }
+    public function food()
+    {
+        return $this->belongsTo(Food::class);
+    }
 
     public function user()
     {
