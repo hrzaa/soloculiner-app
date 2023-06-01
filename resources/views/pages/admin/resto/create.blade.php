@@ -50,11 +50,11 @@
                   </div>
                   <div class="form-group">
                     <label>Longitude</label>
-                    <input type="text" name="longitude" class="form-control" required>
+                    <input type="text" step="0.01" name="longitude" class="form-control" required>
                   </div>
                   <div class="form-group">
                     <label>Latitude</label>
-                    <input type="text" name="latitude" class="form-control" required>
+                    <input type="text" step="0.01" name="latitude" class="form-control" required>
                   </div>
                   <div class="card-footer text-right">
                     <button class="btn btn-primary mr-1" type="submit">Submit</button>

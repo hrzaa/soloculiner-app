@@ -40,5 +40,5 @@ class Resto extends Model
     //     return $this->hasMany(RestoGallery::class);
     // }
 
-    
+
 }

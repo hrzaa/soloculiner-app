@@ -51,14 +51,13 @@
                   <input type="text" name="address" class="form-control"value="{{ $item->alamat }}">
                 </div>
                 <div class="form-group">
+                    <label>Longitude</label>
+                    <input type="text" step="0.01" name="longitude" class="form-control" value="{{ $item->longitude }}">
+                  </div>
+                <div class="form-group">
                   <label>Latitude</label>
                   <input type="text" step="0.01" name="latitude" class="form-control" value="{{ $item->latitude }}">
                 </div>
-                <div class="form-group">
-                  <label>Longitude</label>
-                  <input type="text" step="0.01" name="longitude" class="form-control" value="{{ $item->longtitude }}">
-                </div>
-
                 <div class="card-footer text-right">
                   <button class="btn btn-primary mr-1" type="submit">Submit</button>
                   <button class="btn btn-secondary" type="reset">Reset</button>

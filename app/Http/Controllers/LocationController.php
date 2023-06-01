@@ -9,10 +9,10 @@ class LocationController extends Controller
 {
      public function index()
     {
-        $resto = Resto::all();
+        $resto = Resto::take(9)->get();
 
         return view('pages.locations', [
-            'resto' => $resto,
+            'resto' => $resto
         ]);
     }
 }
