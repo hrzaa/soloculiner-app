@@ -55,6 +55,7 @@
                             No Event Found!
                         </div>
                     @endforelse
+                     {{ $events->links() }}
 
                     
                     

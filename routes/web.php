@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\CulinerController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\LocationController;
@@ -12,8 +13,10 @@ use App\Http\Controllers\Admin\EventController as EventAdminController;
 use App\Http\Controllers\Admin\RestoController as RestoAdminController;
 use App\Http\Controllers\Admin\CategoryController as CategoryAdminController;
 use App\Http\Controllers\Admin\DashboardController as DashboardAdminController;
+use App\Http\Controllers\Admin\FoodGalleryController as FoodGalleryAdminController;
 use App\Http\Controllers\Admin\EventGalleryController as EventGalleryAdminController;
 use App\Http\Controllers\Admin\RestoGalleryController as RestoGalleryAdminController;
+use App\Http\Controllers\Admin\ReviewController as ReviewAdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,12 +41,15 @@ Route::get('/event/{id}', [EventController::class, 'detail'])->name('event-detai
 Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
 Route::get('/locations', [LocationController::class, 'index'])->name('location');
 
+
+
+
 // Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 // Route::get('/dashboard/culinary', [CulinaryController::class, 'index'])->name('dashboard-culinary');
 
 
 Route::group(['middleware' => ['auth']], function(){
-   
+   Route::post('/review/{id}', [ReviewController::class, 'postReview'])->name('review');
 });
 
 
@@ -53,12 +59,17 @@ Route::prefix('admin')
     ->group(function(){
         Route::get('/', [DashboardAdminController::class, 'index'])->name('admin-dashboard');
         Route::resource('food', FoodAdminController::class);
+        Route::resource('food-gallery', FoodGalleryAdminController::class);
         Route::resource('resto', RestoAdminController::class);
         Route::resource('resto-gallery', RestoGalleryAdminController::class);
         Route::resource('event', EventAdminController::class);
         Route::resource('event-gallery', EventGalleryAdminController::class);
         Route::resource('category', CategoryAdminController::class);
         Route::resource('user', UserAdminController::class);
+        // Route::resource('review', ReviewAdminController::class);
+        Route::get('/review', [ReviewAdminController::class, 'index'])->name('review.index');
+        Route::get('/review/approve/{id}', [ReviewAdminController::class, 'approve'])->name('review.approve');
+        Route::delete('/review/destroy/{id}', [ReviewAdminController::class, 'destroy'])->name('review.destroy');
 });
 
 

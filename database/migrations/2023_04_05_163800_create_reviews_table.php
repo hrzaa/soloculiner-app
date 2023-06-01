@@ -18,14 +18,13 @@ return new class extends Migration
 
             $table->foreignId('users_id');
             $table->foreignId('food_id');
-            $table->longText('review_desc');
-            $table->string('review_photo')->nullable();
+            $table->longText('comment');
+            $table->string('photo')->nullable();
             $table->integer('rating');
-            $table->integer('status');
+            $table->boolean('is_aktif', [true, false])->default(false);
 
             $table->timestamps();
 
-            $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

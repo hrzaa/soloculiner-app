@@ -9,7 +9,7 @@ class EventController extends Controller
 {
     public function index()
     {
-        $events = Event::with('event_galleries')->take(8)->get();
+        $events = Event::with('event_galleries')->simplePaginate(8);
         return view('pages.event', [
             'events' => $events
         ]);

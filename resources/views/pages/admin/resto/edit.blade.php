@@ -55,8 +55,8 @@
                   <input type="text" step="0.01" name="latitude" class="form-control" value="{{ $item->latitude }}">
                 </div>
                 <div class="form-group">
-                  <label>Longtitude</label>
-                  <input type="text" step="0.01" name="longtitude" class="form-control" value="{{ $item->longtitude }}">
+                  <label>Longitude</label>
+                  <input type="text" step="0.01" name="longitude" class="form-control" value="{{ $item->longtitude }}">
                 </div>
 
                 <div class="card-footer text-right">

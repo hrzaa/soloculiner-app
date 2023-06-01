@@ -3,7 +3,11 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use App\Models\Category;
+use App\Models\Food;
+use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class DatabaseSeeder extends Seeder
@@ -22,6 +26,21 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@gmail.com',
             'password' => bcrypt('12345678'),
             'roles' => 'ADMIN'
+        ]);
+
+        Category::create([
+            'name' => 'Minuman',
+            'slug' => Str::slug('Minuman'),
+            'photo' => Storage::disk('public')->put('assets/category', public_path('vendor/img/default.png'))
+        ]);
+
+        Food::create([
+            'food_name' => 'Es Dawet',
+            'users_id' => '1', 
+            'food_history'=> 'Dawet berasal dari Desa Jabung, Ponorogo tanpa warna atau bening, tercatat dalam prasasti Taji Ponorogo pada abad 10. kemudian mulai dikenal kembali pada abad 15 pada zaman bupati Ponorogo Bathoro Katong, karena bermanfaat menyembuhkan orang sakit. Pada kala itu Warok Suro menggolo kembali pulih setelah luka melakukan perang, Kemudian Bathoro Katong memperkenalkan Dawet Jabung kepada kakanya Raden Fatah di Kesultanan Demak, Seketika Raden Fatah pun suka dengan minuman Dawet dan ingin menjadikan sebagai minuman keseharian di keraton Kesultanan Demak, kemudian dawet jabung yang berwarna bening diberi warna hijau, yang merupakan warna favorit Rasulallah Saw, Dawet yang berwarna hijau ini menyebar ke barbagai kota di Jawa Tengah.',
+            'food_desc'=> 'Dawet merupakan minuman khas Jawa dari desa Jabung, Ponorogo yang terbuat dari tepung beras ataupun tepung beras ketan, disajikan dengan es parut serta gula merah cair dan santan. Rasa minuman ini manis dan gurih.',
+            'categories_id'=> '1',
+            'slug'=> Str::slug('Es Dawet'),
         ]);
     }
 }

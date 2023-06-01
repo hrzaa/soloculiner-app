@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Models\User;
 use App\Models\Resto;
 use App\Models\Category;
+use App\Models\FoodGallery;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -37,5 +38,15 @@ class Food extends Model
     public function restos()
     {
         return $this->belongsToMany(Resto::class);
+    }
+
+    public function food_galleries()
+    {
+        return $this->hasMany(FoodGallery::class);
+    }
+
+   public function reviews()
+    {
+        return $this->hasMany(Review::class);
     }
 }

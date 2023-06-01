@@ -17,152 +17,52 @@
             </nav>
         </div>
     </div>
-
-        
+  
     <!-- Menu Start -->
     <div class="container-fluid py-5 bg-white">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h5 class="section-title ff-secondary text-center text-primary fw-normal">Food Menu</h5>
-                <h1 class="mb-5">Most Popular Items</h1>
+                <h1 class="mb-2">Most Popular Items</h1>
             </div>
-            <div class="tab-class text-center">
-                <div class="tab-content">
-                    <div id="tab-1" class="tab-pane p-0 active">
-                        <div class="row g-4">
-                            @php
-                                $incrementCategory = 0
-                            @endphp
-                            @forelse ($foods as $food)
-                                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="{{ $incrementCategory+=100 }}">
-                                    <div class="d-flex align-items-center">
-                                        {{-- image resto belum muncul --}}
-                                        <img class="flex-shrink-0 img-fluid rounded" src="{{ Storage::url($food->restos->first()->resto_galleries->first()->photos) }}" alt="" style="width: 80px;">
-                                        <div class="w-100 d-flex flex-column text-start ps-4">
-                                            <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                                <span>{{ $food->food_name }}</span>
-                                            </h5>
-                                            <small class="fst-italic">{!! Str::words($food->food_desc, 20) !!}</small>
-                                            <a href="{{ route('kuliner-detail', $food->id) }}" class="text-primary">Think to Try</a>
-                                        </div>
+             <div class="row gy-4">
+                @php
+                    $incrementCategory = 0
+                @endphp
+                @forelse ($foods as $food)
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="{{ $incrementCategory+=100 }}">
+                        <div class="d-flex align-items-center p-5" style="background-color: #f0f0f0; border-radius:8px">
+                            {{-- image resto belum muncul --}}
+                            <div class="img-fluid" style="box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;">
+                                @if($food->food_galleries->count())
+                                    <div class="img" style="background-image: url('{{ Storage::url($food->food_galleries->first()->photos) }}'); width: 150px; height:100px; background-size: cover">
+                                        {{-- <img class="flex-shrink-0 img-fluid rounded" src="{{ Storage::url($food->food_galleries->first()->photos) }}" alt="" style="width: 150px; height:auto;"> --}}
                                     </div>
-                                </div>
-                            @empty
-                                 <div class="col-12 text-center py-5 wow fadeInUp" data-wow-delay="0.1s">
-                                    No Culinary Found!
-                                </div>
-                            @endforelse
-
-                            {{-- @dd($restos) --}}
+                                @else
+                                    <img class="flex-shrink-0 img-fluid rounded" src="{{ url('/vendor/img/default.png') }}" alt="" style="width: 150px;">
+                                @endif
+                            </div>
+                            <div class="w-100 d-flex flex-column text-start ps-4">
+                                <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                    <span>{{ $food->food_name }}</span>
+                                </h5>
+                                <small class="fst-italic">{!! Str::words($food->food_desc, 20) !!}</small>
+                                <a href="{{ route('kuliner-detail', $food->slug) }}" class="text-primary">Think to Try</a>
                             </div>
                         </div>
                     </div>
-                    
+                @empty
+                        <div class="col-12 text-center py-5 wow fadeInUp" data-wow-delay="0.1s">
+                        No Culinary Found!
+                    </div>
+                @endforelse
+                {{ $foods->links() }}
+
+                {{-- @dd($restos) --}}
                 </div>
             </div>
         </div>
     <!-- Menu End -->
-
-    <!-- Popular Start -->
-    <div class="container-fluid pt-5 pb-3 bg-white">
-        <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h5 class="section-title ff-secondary text-center text-primary fw-normal">Solo Foods</h5>
-                <h1 class="mb-5">Most Popular Items</h1>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-item text-center rounded overflow-hidden">
-                        <div class="rounded overflow-hidden m-4">
-                            <img class="img-fluid" src="/vendor/img/satekere.jpg" alt="">
-                        </div>
-                        <h5 class="mb-0">Sate Kere</h5>
-                        <!-- Add icon library -->
-                        <small> 
-                            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                        </small>
-                        <div class="d-flex justify-content-center mt-3">
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item text-center rounded overflow-hidden">
-                        <div class="rounded overflow-hidden m-4">
-                            <img class="img-fluid" src="/vendor/img/satekere1.jpg" alt="">
-                        </div>
-                        <h5 class="mb-0">Serabi Notosuman</h5>
-                        <!-- Add icon library -->
-                        <small> 
-                            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                        </small>
-                        <div class="d-flex justify-content-center mt-3">
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="team-item text-center rounded overflow-hidden">
-                        <div class="rounded overflow-hidden m-4">
-                            <img class="img-fluid" src="/vendor/img/satekere2.jpg" alt="">
-                        </div>
-                        <h5 class="mb-0">Es Dawet Mbok Darmi</h5>
-                        <!-- Add icon library -->
-                        <small> 
-                            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                        </small>
-                        <div class="d-flex justify-content-center mt-3">
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="team-item text-center rounded overflow-hidden">
-                        <div class="rounded overflow-hidden m-4">
-                            <img class="img-fluid" src="/vendor/img/satekere3.jpg" alt="">
-                        </div>
-                        <h5 class="mb-0">Dimsum Ps. Gede</h5>
-                        <!-- Add icon library -->
-                        <small> 
-                            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                        </small>
-                        <div class="d-flex justify-content-center mt-3">
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Popular End -->
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>

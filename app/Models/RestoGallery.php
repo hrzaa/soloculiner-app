@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class RestoGallery extends Model
 {
-   protected $fillable = [
+    protected $fillable = [
         'photos', 'resto_id'
     ];
 

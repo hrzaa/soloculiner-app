@@ -31,7 +31,16 @@
 
     @push('addon-script')
         <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
-        <script>
+        <!-- map -->
+    <script>
+        const resto = [
+        @foreach($resto as $resto => $data)
+            [ "{{$data->longitude}}", "{{$data->latitude}}", "{{$data->address}}" ],
+        @endforeach
+        ];
+    </script>
+
+    <script>
         const map = L.map('map');
         map.setView([-7.5758611036093235, 110.82293324246046], 14);
 
@@ -40,22 +49,20 @@
         })
         .addTo(map);
 
-        L.marker([-7.563005436803856, 110.83613014890723], {
-            title: "mesen uns",
-        })
-        .bindPopup('mesen uns')
-        .addTo(map);
+        //add markers
+        if (resto.length) {
+        resto.forEach(function(data, i) {
+            let [longitude, latitude] = [data[0], data[1]];
+            let label = data[2];
+            if (longitude && latitude) {
+            marker = new L.marker([longitude, latitude])
+                .bindPopup(label)
+                .addTo(map);
 
-        L.marker([-7.570204732796178, 110.81683263885945], {
-            title: "pak manto",
+            } else {
+            console.log('no geo data available for: ' + label)
+            }
         })
-        .bindPopup('pak manto')
-        .addTo(map);
-
-        L.marker([-7.563088198525068, 110.82884242536625], {
-            title: "timlo sastro",
-        })
-        .bindPopup('timlo sastro')
-        .addTo(map);
-        </script>
+        }
+    </script>
     @endpush
