@@ -21,8 +21,8 @@ return new class extends Migration
             $table->foreignId('food_id');
             $table->integer('price');
             $table->string('address');
-            $table->float('longitude');
-            $table->float('latitude');
+            $table->decimal('longitude', 11, 8);
+            $table->decimal('latitude', 11, 8);
             $table->string('slug');
 
             $table->timestamps();

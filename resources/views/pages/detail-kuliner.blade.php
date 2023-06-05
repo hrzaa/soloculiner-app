@@ -87,7 +87,7 @@
                            Story of {{ $foods->food_name }}
                        </h1>
                        <p class="mb-4">
-                            {!! $foods->food_desc !!}
+                            {!! $foods->food_history !!}
                        </p>
                        
                    </div>
@@ -109,6 +109,8 @@
        </div>
        <!-- Story End -->
 
+       {{-- @dd($restos) --}}
+
             <!-- Popular Start -->
         <div class="container-xxl pt-5 pb-3">
            <div class="container">
@@ -117,12 +119,15 @@
                    <h1 class="mb-5">Most Popular Items</h1>
                </div>
                <div class="row g-4">
-                   <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                   @forelse ($restos as $resto)
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
                        <div class="team-item text-center rounded overflow-hidden">
                            <div class=" overflow-hidden m-4">
-                               <img class="img-fluid" src="/vendor/img/team-1.jpeg" alt="">
+                               <img class="img-fluid" src="{{ Storage::url($resto->resto_galleries->first()->photos ?? '') }}" alt="">
                            </div>
-                           <h5 class="mb-0">Sate Kere </h5>
+                           <h5 class="mb-0">{{ $resto->resto_name }}</h5>
+                           <p class="mb-1">{{ $resto->address }}</p>
+                           <h6>Rp{{ number_format($resto->price) }}</h6>
                             <!-- Add icon library -->
                             <small> 
                                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -139,72 +144,10 @@
                            </div>
                        </div>
                    </div>
-                   <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                       <div class="team-item text-center rounded overflow-hidden">
-                           <div class=" overflow-hidden m-4">
-                               <img class="img-fluid" src="/vendor/img/team-2.jpg" alt="">
-                           </div>
-                           <h5 class="mb-0">Serabi Notosuman</h5>
-                            <!-- Add icon library -->
-                            <small> 
-                                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                            </small>
-                           <div class="d-flex justify-content-center mt-3">
-                               <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                               <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                               <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                           </div>
-                       </div>
-                   </div>
-                   <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                       <div class="team-item text-center rounded overflow-hidden">
-                           <div class=" overflow-hidden m-4">
-                               <img class="img-fluid" src="/vendor/img/team-3.jpg" alt="">
-                           </div>
-                           <h5 class="mb-0">Es Dawet Mbok Darmi</h5>
-                            <!-- Add icon library -->
-                            <small> 
-                                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                            </small>
-                           <div class="d-flex justify-content-center mt-3">
-                               <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                               <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                               <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                           </div>
-                       </div>
-                   </div>
-                   <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                       <div class="team-item text-center rounded overflow-hidden">
-                           <div class=" overflow-hidden m-4">
-                               <img class="img-fluid" src="/vendor/img/team-4.jpeg" alt="">
-                           </div>
-                           <h5 class="mb-0">Dimsum Ps. Gede</h5>
-                            <!-- Add icon library -->
-                            <small> 
-                                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                            </small>
-                           <div class="d-flex justify-content-center mt-3">
-                               <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                               <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                               <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                           </div>
-                       </div>
-                   </div>
+                   @empty
+                       <h6 class="textcenter">data kosong</h6>
+                   @endforelse
+                   
                </div>
            </div>
        </div>

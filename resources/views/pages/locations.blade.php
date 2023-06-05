@@ -24,12 +24,13 @@
                 <h5 class="section-title ff-secondary text-center text-primary fw-normal">Solo Foods</h5>
                 <h1 class="mb-5">Our Resto Maps</h1>
             </div>
-            <div id="map" class="wow fadeInUp" data-wow-delay="0.2s"></div>
+            <div id="map" class="wow fadeInUp" data-wow-delay="0.2s" style="width: 100%; height: 400px; border: 3px solid black;"></div>
         </div>
     </div>
+    {{-- @dd($resto) --}}
 
     @push('addon-script')
-        <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
         <!-- map -->
     <script>
         const resto = [

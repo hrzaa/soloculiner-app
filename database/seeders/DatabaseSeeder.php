@@ -2,9 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
-use App\Models\Category;
 use App\Models\Food;
+use App\Models\User;
+use App\Models\Resto;
+use App\Models\Category;
 use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Storage;
@@ -22,8 +23,8 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
 
         User::create([
-            'name' => 'admin',
-            'email' => 'admin@gmail.com',
+            'name' => 'adminn',
+            'email' => 'adminn@gmail.com',
             'password' => bcrypt('12345678'),
             'roles' => 'ADMIN'
         ]);
@@ -41,6 +42,17 @@ class DatabaseSeeder extends Seeder
             'food_desc'=> 'Dawet merupakan minuman khas Jawa dari desa Jabung, Ponorogo yang terbuat dari tepung beras ataupun tepung beras ketan, disajikan dengan es parut serta gula merah cair dan santan. Rasa minuman ini manis dan gurih.',
             'categories_id'=> '1',
             'slug'=> Str::slug('Es Dawet'),
+        ]);
+
+        Resto::create([
+            'resto_name' => 'Dawet Telasih Bu Dermi, Pasar Gede',
+            'users_id' => '1', 
+            'food_id' => '1', 
+            'price' => '10000',
+            'address' => 'Pasar Gede Hardjonagoro, Lapak Galabo (Gladag Langen Bogan), Jl. Jend. Urip Sumoharjo, Kota Surakarta', 
+            'longitude' => '-7.569443318634531', 
+            'latitude' => '110.8317061408925', 
+            'slug' => Str::slug('Dawet Telasih Bu Dermi, Pasar Gede'),
         ]);
     }
 }
