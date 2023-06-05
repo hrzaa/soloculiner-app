@@ -16,8 +16,10 @@
                     <th>Nama Culinary</th>
                     <th>Uploader</th>
                     <th>Category</th>
-                    <th>Food Desc</th>
-                    <th>Food History</th>
+                    <th>Food Desc en</th>
+                    <th>Food History en</th>
+                    <th>Food Desc id</th>
+                    <th>Food History id</th>
                     <th>Aksi</th>
                   </tr>
                 </thead>
@@ -43,9 +45,11 @@
             {data:'id', name:'id'},
             {data:'food_name', name:'food_name'},
             {data:'user.name', name:'user.name'},
-            {data:'category.name', name:'category.name'},
-            {data:'food_desc', name:'food_desc'},
-            {data:'food_history', name:'food_history'},
+            {data:'category.name_id', name:'category.name_id'},
+            {data:'food_desc_en', name:'food_desc_en'},
+            {data:'food_history_en', name:'food_history_en'},
+            {data:'food_desc_id', name:'food_desc_id'},
+            {data:'food_history_id', name:'food_history_id'},
             {
                 data:'action',
                 name:'action',
@@ -53,8 +57,8 @@
                 searchable:false,
                 width:'15%'
             },
-        ]   
+        ]
         });
   </script>
-    
+
 @endpush

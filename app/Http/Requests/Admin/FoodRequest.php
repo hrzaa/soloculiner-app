@@ -24,11 +24,13 @@ class FoodRequest extends FormRequest
     public function rules()
     {
         return [
-            'food_name' => 'required|max:255', 
-            'users_id' => 'required|exists:users,id', 
-            'food_history' => 'required', 
-            'food_desc' => 'required',
-            'categories_id' => 'required|exists:categories,id', 
+            'food_name' => 'required|max:255',
+            'users_id' => 'required|exists:users,id',
+            'food_history_en' => 'required',
+            'food_desc_en' => 'required',
+            'food_history_id' => 'required',
+            'food_desc_id' => 'required',
+            'categories_id' => 'required|exists:categories,id',
         ];
     }
 }

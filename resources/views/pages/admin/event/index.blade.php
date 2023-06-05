@@ -17,6 +17,13 @@
                     <th>Uploader</th>
                     <th>Date Start</th>
                     <th>Date End</th>
+                    <th>Event desc en</th>
+                    <th>Event desc id</th>
+                    <th>Event history en</th>
+                    <th>Event history id</th>
+                    <th>Address</th>
+                    <th>Longitude</th>
+                    <th>Latitude</th>
                     <th>Aksi</th>
                   </tr>
                 </thead>
@@ -44,6 +51,13 @@
             {data:'user.name', name:'user.name'},
             {data:'date_start', name:'date_start'},
             {data:'date_end', name:'date_end'},
+            {data:'event_desc_en', name:'event_desc_en'},
+            {data:'event_desc_id', name:'event_desc_id'},
+            {data:'event_history_en', name:'event_history_en'},
+            {data:'event_history_id', name:'event_history_id'},
+            {data:'address', name:'address'},
+            {data:'longitude', name:'longitude'},
+            {data:'latitude', name:'latitude'},
             {
                 data:'action',
                 name:'action',
@@ -51,8 +65,8 @@
                 searchable:false,
                 width:'15%'
             },
-        ]   
+        ]
         });
   </script>
-    
+
 @endpush

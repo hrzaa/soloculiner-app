@@ -18,7 +18,7 @@
         </div>
     </div>
 
-        
+
     <!-- Menu Start -->
     <div class="container-fluid py-5 bg-white">
         <div class="container">
@@ -42,7 +42,7 @@
                                             <h5 class="d-flex justify-content-between border-bottom pb-2">
                                                 <span>{{ $food->food_name }}</span>
                                             </h5>
-                                            <small class="fst-italic">{!! Str::words($food->food_desc, 20) !!}</small>
+                                            <small class="fst-italic">{!! Str::words($food->{'food_desc_'.app()->getLocale()}, 20) !!}</small>
                                             <a href="{{ route('kuliner-detail', $food->id) }}" class="text-primary">Think to Try</a>
                                         </div>
                                     </div>
@@ -57,7 +57,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
@@ -78,7 +78,7 @@
                         </div>
                         <h5 class="mb-0">Sate Kere</h5>
                         <!-- Add icon library -->
-                        <small> 
+                        <small>
                             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
                             <span class="fa fa-star checked"></span>
                             <span class="fa fa-star checked"></span>
@@ -100,7 +100,7 @@
                         </div>
                         <h5 class="mb-0">Serabi Notosuman</h5>
                         <!-- Add icon library -->
-                        <small> 
+                        <small>
                             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
                             <span class="fa fa-star checked"></span>
                             <span class="fa fa-star checked"></span>
@@ -122,7 +122,7 @@
                         </div>
                         <h5 class="mb-0">Es Dawet Mbok Darmi</h5>
                         <!-- Add icon library -->
-                        <small> 
+                        <small>
                             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
                             <span class="fa fa-star checked"></span>
                             <span class="fa fa-star checked"></span>
@@ -144,7 +144,7 @@
                         </div>
                         <h5 class="mb-0">Dimsum Ps. Gede</h5>
                         <!-- Add icon library -->
-                        <small> 
+                        <small>
                             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
                             <span class="fa fa-star checked"></span>
                             <span class="fa fa-star checked"></span>

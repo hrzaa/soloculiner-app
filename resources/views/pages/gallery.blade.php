@@ -36,24 +36,24 @@
                             $incrementProduct = 0
                         @endphp
                         @forelse ($restos as $resto)
-                            
-                            <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="{{ $incrementProduct+=100 }}"> 
+
+                            <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="{{ $incrementProduct+=100 }}">
                               <div class="content bg-dark">
                                     <img src="{{ Storage::url($resto->photos) }}" class="img-content">
                                 </div>
-                            </div>  
+                            </div>
                         @empty
                             <div class="col-12 text-center py-5 wow fadeInUp" data-wow-delay="0.1s">
                                 No Gallery Found!
                             </div>
                         @endforelse
-                    </div> 
-                </div>  
+                    </div>
+                </div>
             </div>
         </div>
     <!-- Gallery End -->
 
-   
+
 
 
     <!-- Back to Top -->

@@ -41,21 +41,33 @@
                     </div>
                     </div>
                   <div class="form-group">
-                      <label>Event Desc</label>
-                      <textarea name="event_desc"></textarea>
-                        <script>
-                                CKEDITOR.replace( 'event_desc' );
-                        </script>
+                      <label>Event Desc en</label>
+                      <input type="text" name="event_desc_en" class="form-control" required>
+                    </div>
+                  <div class="form-group">
+                      <label>Event Desc id</label>
+                      <input type="text" name="event_desc_id" class="form-control" required>
                     </div>
                     <div class="form-group">
-                      <label>Event History</label>
-                       <textarea name="event_history"></textarea>
-                        <script>
-                                CKEDITOR.replace( 'event_history' );
-                        </script>
+                      <label>Event History en</label>
+                      <input type="text" name="event_history_en" class="form-control" required>
                     </div>
-                  
-                 
+                    <div class="form-group">
+                      <label>Event History id</label>
+                      <input type="text" name="event_history_id" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                      <label>Address</label>
+                        <input type="text" name="address" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                      <label>Longitude</label>
+                        <input type="text" name="longitude" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                      <label>latitude</label>
+                        <input type="text" name="latitude" class="form-control" required>
+                    </div>
                   <div class="card-footer text-right">
                     <button class="btn btn-primary mr-1" type="submit">Submit</button>
                     <button class="btn btn-secondary" type="reset">Reset</button>

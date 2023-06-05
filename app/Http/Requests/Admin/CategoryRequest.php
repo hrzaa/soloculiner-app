@@ -25,8 +25,9 @@ class CategoryRequest extends FormRequest
     {
         return [
              //Validasi'
-            'name' => 'required|string',
-            'photo' => 'required|image'
+            'name_en' => 'required|string',
+            'photo' => 'required|image',
+            'name_id' => 'required|string'
         ];
     }
 }

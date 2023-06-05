@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Facade;
 
+
 return [
 
     /*
@@ -83,6 +84,8 @@ return [
     */
 
     'locale' => 'en',
+
+    'available_locales' => ['en', 'id'],
 
     /*
     |--------------------------------------------------------------------------
@@ -191,7 +194,7 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
-        // ...
+        'App' => Illuminate\Support\Facades\App::class,
     ])->toArray(),
 
 ];

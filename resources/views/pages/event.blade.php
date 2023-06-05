@@ -40,10 +40,10 @@
                         <div class="team-item rounded overflow-hidden">
                             <h4 class="mt-4 text-center">{{ $event->event_name }}</h4>
                             <div class="rounded overflow-hidden m-4">
-                                <a href="{{ route('event-detail', $event->slug) }}"><img class="img-event" src="{{ Storage::url($event->event_galleries->first()->photos) }}" alt=""></a>
+                                <a href="{{ route('event-detail', $event->slug) }}"><img class="img-event" src="{{ Storage::url($event->photos) }}" alt=""></a>
                             </div>
                             <div class="maps">
-                                 <i class="fas fa-map-marked-alt p-3"></i><a href="">Kota Surakarta, Jawa Tengah</a>
+                                 <i class="fas fa-map-marked-alt p-3"></i><a href="{{ route('event-detail', $event->slug) }}">{{ $event->address }}</a>
                             </div>
                             <div class="date mb-2">
                                <i class="fas fa-calendar-alt p-3"></i>{{ date('d F Y', strtotime($event->date_start)) }} - {{ date('d F Y', strtotime($event->date_end)) }}
@@ -55,9 +55,6 @@
                             No Event Found!
                         </div>
                     @endforelse
-
-
-
 
                 </div>
             </div>

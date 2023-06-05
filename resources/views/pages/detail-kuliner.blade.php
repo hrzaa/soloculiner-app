@@ -22,7 +22,7 @@
             </nav>
         </div>
     </div>
-    
+
     <!-- About Start -->
         <div class="container-fluid py-5 bg-white">
            <div class="container">
@@ -31,20 +31,20 @@
                        <div class="row g-3">
 
                         {{-- {{ dd($restos) }} --}}
-                        
+
                         {{-- style gambar belum ketemu --}}
                         @foreach ($restos as $resto)
                             <div class="col-6 text-start">
                                <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.1s" src="{{ Storage::url($resto->photos) }}">
                            </div>
                         @endforeach
-                        
+
                        </div>
                    </div>
                    <div class="col-lg-6">
                     <h5 class="section-title ff-secondary text-start text-primary fw-normal">About Us</h5>
                     <h1 class="mb-4">What About {{ $foods->food_name }} <i class="fa fa-utensils text-primary me-2"></i></h1>
-                       <p class="mb-4">{!! $foods->food_desc !!}</p>
+                       <p class="mb-4">{!! $foods->{'food_desc_'.app()->getLocale()} !!}</p>
                        <div class="row g-4 mb-4">
                            <div class="col-sm-6">
                                <div class="d-flex align-items-center border-start border-5 border-primary px-3">
@@ -83,9 +83,9 @@
                            Story of {{ $foods->food_name }}
                        </h1>
                        <p class="mb-4">
-                            {!! $foods->food_desc !!}
+                            {!! $foods->{'food_desc_'.app()->getLocale()} !!}
                        </p>
-                       
+
                    </div>
                    <div class="col-lg-4">
                        <div class="row g-3">
@@ -99,7 +99,7 @@
                            </div>
                        </div>
                    </div>
-                  
+
                </div>
            </div>
        </div>
@@ -120,7 +120,7 @@
                            </div>
                            <h5 class="mb-0">Sate Kere</h5>
                             <!-- Add icon library -->
-                            <small> 
+                            <small>
                                 {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> --}}
                                 <span class="fa fa-star checked"></span>
                                 <span class="fa fa-star checked"></span>
@@ -142,7 +142,7 @@
                            </div>
                            <h5 class="mb-0">Serabi Notosuman</h5>
                             <!-- Add icon library -->
-                            <small> 
+                            <small>
                                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
                                 <span class="fa fa-star checked"></span>
                                 <span class="fa fa-star checked"></span>
@@ -164,7 +164,7 @@
                            </div>
                            <h5 class="mb-0">Es Dawet Mbok Darmi</h5>
                             <!-- Add icon library -->
-                            <small> 
+                            <small>
                                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
                                 <span class="fa fa-star checked"></span>
                                 <span class="fa fa-star checked"></span>
@@ -186,7 +186,7 @@
                            </div>
                            <h5 class="mb-0">Dimsum Ps. Gede</h5>
                             <!-- Add icon library -->
-                            <small> 
+                            <small>
                                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
                                 <span class="fa fa-star checked"></span>
                                 <span class="fa fa-star checked"></span>
@@ -206,7 +206,7 @@
        </div>
        <!-- Popular End -->
 
-       
+
         <!-- Location Start -->
         <div class="container-fluid py-5 bg-white">
             <div class="container">
@@ -285,7 +285,7 @@
                </div>
            </div>
        </div>
-        
+
 
        <!-- Testimonial Start -->
         <div class="container-fluid py-5 wow fadeInUp bg-white" data-wow-delay="0.1s">

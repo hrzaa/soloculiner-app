@@ -14,16 +14,18 @@ return new class extends Migration
     public function up()
     {
         Schema::create('events', function (Blueprint $table) {
-            $table->id();
 
+            $table->id();
             $table->string('event_name');
             $table->foreignId('users_id');
             $table->date('date_start');
             $table->date('date_end');
-            $table->longText('event_desc');
+            $table->longText('event_desc_en');
+            $table->longText('event_desc_id')->nullable();
+            $table->longText('event_history')->nullable();
             $table->string('address');
-            $table->decimal('latitude', 10, 8);
-            $table->decimal('longitude', 11, 8);
+            $table->double('longitude');
+            $table->double('latitude');
             $table->string('slug');
 
             $table->softDeletes();

@@ -14,7 +14,7 @@ class Food extends Model
     use SoftDeletes;
 
     protected $fillable = [
-        'food_name', 'users_id', 'food_history', 'food_desc','categories_id', 'slug'
+        'food_name', 'users_id', 'food_history_en', 'food_desc_en','categories_id', 'slug', 'food_history_id', 'food_desc_id',
     ];
 
     use HasFactory;
@@ -28,7 +28,7 @@ class Food extends Model
     {
         return $this->hasOne(User::class, 'id', 'users_id');
     }
-    
+
     public function category()
     {
         return $this->belongsTo(Category::class, 'categories_id', 'id');

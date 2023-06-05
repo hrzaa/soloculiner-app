@@ -19,8 +19,12 @@
              <form action="{{ route('category.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                   <div class="form-group">
-                    <label>Categories</label>
-                    <input type="text" name="name" class="form-control" required>
+                    <label>Nama kategori en</label>
+                    <input type="text" name="name_en" class="form-control" required>
+                  </div>
+                  <div class="form-group">
+                    <label>Nama kategori id</label>
+                    <input type="text" name="name_id" class="form-control" required>
                   </div>
                   <div class="form-group">
                     <label>Foto</label>

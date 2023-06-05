@@ -23,7 +23,7 @@ class CulinerController extends Controller
     {
         $foodId = $id;
         $foods = Food::query()
-            ->select('food.food_name', 'food.food_history', 'food.food_desc')
+            ->select('food.food_name', ('food.food_history_'.app()->getLocale()), ('food.food_desc_'.app()->getLocale()))
             ->where('food.id', $foodId)
             ->first();
 

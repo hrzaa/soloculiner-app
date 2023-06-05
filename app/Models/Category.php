@@ -9,9 +9,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Category extends Model
 {
     use SoftDeletes;
-    
+
     protected $fillable = [
-        'name', 'photo', 'slug'
+        'name_en', 'photo', 'slug', 'name_id',
     ];
     use HasFactory;
 }

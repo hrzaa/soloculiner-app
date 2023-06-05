@@ -13,15 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('event_galleries', function (Blueprint $table) {
+        Schema::create('food_galleries', function (Blueprint $table) {
 
             $table->id();
             $table->string('photos');
-            $table->foreignId('event_id');
-
+            $table->foreignId('food_id');
             $table->timestamps();
-
-            $table->foreign('event_id')->references('id')->on('events')->onDelete('cascade');
+            $table->foreign('food_id')->references('id')->on('food')->onDelete('cascade');
         });
     }
 
@@ -32,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('event_galleries');
+        Schema::dropIfExists('food_galleries');
     }
 };

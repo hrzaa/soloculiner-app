@@ -25,6 +25,14 @@
                     <a class="nav-link {{ (request()->is('locations')) ? 'active' : '' }}" href="{{ route('location') }}">Locations</a>
                 </li>
             </ul>
+
+            @foreach (config('app.available_locales') as $locale)
+            <a href="{{ request()->url() }}?language={{ $locale }}"
+               class="@if (app()->getLocale() == $locale) border-indigo-400 @endif inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium leading-5 focus:outline-none transition duration-150 ease-in-out">
+                [{{ strtoupper($locale) }}]
+            </a>
+            @endforeach
+
             @guest
                 {{-- <a class="nav-item nav-link" href="{{ route('register') }}">{{ __('Register') }}</a> --}}
                 <a class="btn btn-primary py-2 px-4" href="{{ route('login') }}">{{ __('Login') }}</a>

@@ -26,9 +26,9 @@
                   <div class="form-group">
                     <label>Category</label>
                     <select name="categories_id" class="form-control">
-                      <option value="{{ $item->categories_id }}" selected>{{ $item->category->name }}</option>
+                      <option value="{{ $item->categories_id }}" selected>{{ $item->category->name_id }}</option>
                        @foreach ($categories as $category)
-                          <option value="{{ $category->id }}">{{ $category->name }}</option>
+                          <option value="{{ $category->id }}">{{ $category->name_id }}</option>
                       @endforeach
                     </select>
                   </div>
@@ -43,20 +43,21 @@
                     </select>
                   </div>
                   <div class="form-group">
-                      <label>Food Desc</label>
-                      <textarea name="food_desc">{!! $item->food_desc !!}</textarea>
-                        <script>
-                                CKEDITOR.replace( 'food_desc' );
-                        </script>
+                      <label>Food Desc en</label>
+                      <input type="text" name="food_desc_en" class="form-control" value="{{ $item->food_desc_en }}">
                     </div>
                     <div class="form-group">
-                      <label>Food History</label>
-                       <textarea name="food_history">{!! $item->food_history !!}</textarea>
-                        <script>
-                                CKEDITOR.replace( 'food_history' );
-                        </script>
+                      <label>Food History en</label>
+                      <input type="text" name="food_history_en" class="form-control" value="{{ $item->food_history_en }}">
                     </div>
-
+                  <div class="form-group">
+                      <label>Food Desc id</label>
+                      <input type="text" name="food_desc_id" class="form-control" value="{{ $item->food_desc_id }}">
+                    </div>
+                    <div class="form-group">
+                      <label>Food History id</label>
+                      <input type="text" name="food_history_id" class="form-control" value="{{ $item->food_history_id }}">
+                    </div>
                   <div class="card-footer text-right">
                     <button class="btn btn-primary mr-1" type="submit">Submit</button>
                     <button class="btn btn-secondary" type="reset">Reset</button>

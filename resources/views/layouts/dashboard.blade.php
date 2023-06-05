@@ -83,7 +83,6 @@
               <li><a class="nav-link" href="{{ route('resto-gallery.index') }}"><i class="fas fa-store"></i></i> <span>Resto Gallery</span></a></li>
               <li><a class="nav-link" href="{{ route('event.index') }}"><i class="fas fa-store"></i></i> <span>Event</span></a></li>
               <li><a class="nav-link" href="{{ route('event-gallery.index') }}"><i class="fas fa-store"></i></i> <span>Event Gallery</span></a></li>
-              <li><a class="nav-link" href=""><i class="fas fa-store"></i></i> <span>Event Location</span></a></li>
               <li class="{{ (request()->is('admin/user*')) ? 'active' : '' }}"><a class="nav-link" href="{{ route('user.index') }}"><i class="fas fa-users"></i> <span>Users</span></a></li>
             </ul>
         </aside>

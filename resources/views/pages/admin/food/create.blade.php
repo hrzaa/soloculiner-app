@@ -26,7 +26,7 @@
                     <label>Category</label>
                     <select name="categories_id" class="form-control">
                        @foreach ($categories as $category)
-                          <option value="{{ $category->id }}">{{ $category->name }}</option>
+                          <option value="{{ $category->id }}">{{ $category->name_en }}</option>
                       @endforeach
                     </select>
                   </div>
@@ -36,19 +36,21 @@
                       <option value="{{ Auth::user()->id }}">{{ Auth::user()->name }}</option>
                     </select>
                   </div>
-                  <div class="form-group">
-                      <label>Food Desc</label>
-                      <textarea name="food_desc"></textarea>
-                        <script>
-                                CKEDITOR.replace( 'food_desc' );
-                        </script>
+                    <div class="form-group">
+                      <label>Food Desc en</label>
+                      <input type="text" name="food_desc_en" class="form-control" required>
                     </div>
                     <div class="form-group">
-                      <label>Food History</label>
-                       <textarea name="food_history"></textarea>
-                        <script>
-                                CKEDITOR.replace( 'food_history' );
-                        </script>
+                      <label>Food History en</label>
+                      <input type="text" name="food_history_en" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                      <label>Food Desc id</label>
+                      <input type="text" name="food_desc_id" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                      <label>Food History id</label>
+                      <input type="text" name="food_history_id" class="form-control" required>
                     </div>
                   <div class="card-footer text-right">
                     <button class="btn btn-primary mr-1" type="submit">Submit</button>

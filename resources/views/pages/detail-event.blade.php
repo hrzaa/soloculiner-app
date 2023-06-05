@@ -36,7 +36,7 @@
                                    src="{{ Storage::url($event->event_galleries->first()->photos) }}" />
                            </div>
                        </div>
-                       
+
                    </div>
                    <div class="col-lg-6">
                       <h5 class="section-title ff-secondary text-start text-primary fw-normal">
@@ -46,16 +46,16 @@
                            Welcome to {{ $event->event_name }}
                        </h1>
                        <p class="mb-4">
-                           {!! $event->event_desc !!}
+                           {!! $event->{'event_desc_'.app()->getLocale()} !!}
                        </p>
-                       
+
                    </div>
-                  
+
                </div>
            </div>
        </div>
        <!-- About End -->
-    
+
     <!-- About Start -->
         <div class="container-fluid py-5 bg-white">
            <div class="container py-2">
@@ -63,13 +63,13 @@
                    <div class="col-lg-6">
                         <h5 class="section-title ff-secondary text-start text-primary fw-normal">Theme</h5>
                     <h1 class="mb-4">What About {{ $event->event_name }} <i class="fa fa-utensils text-primary me-2"></i></h1>
-                       <p class="mb-4">{!! $event->event_history !!}</p>
-                      
+                       <p class="mb-4">{!! $event->{'event_history_'.app()->getLocale()} !!}</p>
+
                    </div>
                    <div class="col-lg-6">
                     <div class="row g-3">
                            <div class="col-6 text-start">
-                               <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.1s" src="{{ Storage::url($event->event_galleries->skip(1)->first()->photos) }}">
+                               {{-- <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.1s" src="{{ Storage::url($event->event_galleries->skip(1)->first()->photos) }}"> --}}
                            </div>
                            {{-- <div class="col-6 text-start">
                                <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.3s" src="/vendor/img/about-2.jpg" style="margin-top: 25%;">
@@ -81,13 +81,13 @@
                                <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.3s" src="/vendor/img/about-4.jpg">
                            </div> --}}
                        </div>
-                   
+
                    </div>
                </div>
            </div>
        </div>
        <!-- About End -->
-       
+
         <!-- Location Start -->
         <div class="container-fluid py-5 bg-white">
             <div class="container">

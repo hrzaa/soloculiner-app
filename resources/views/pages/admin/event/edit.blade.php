@@ -43,20 +43,33 @@
                   </div>
                   </div>
                 <div class="form-group">
-                    <label>Event Desc</label>
-                    <textarea name="event_desc">{!! $item->event_desc !!}</textarea>
-                      <script>
-                              CKEDITOR.replace( 'event_desc' );
-                      </script>
-                  </div>
-                  <div class="form-group">
-                    <label>Event History</label>
-                      <textarea name="event_history">{!! $item->event_history !!}</textarea>
-                      <script>
-                              CKEDITOR.replace( 'event_history' );
-                      </script>
-                  </div>
-
+                    <label>Event Desc en</label>
+                    <input type="text" name="event_desc_en" class="form-control" value="{{ $item->event_desc_en }}">
+                    </div>
+                <div class="form-group">
+                    <label>Event Desc id</label>
+                    <input type="text" name="event_desc_id" class="form-control" value="{{ $item->event_desc_id }}">
+                    </div>
+                <div class="form-group">
+                    <label>Event History en</label>
+                    <input type="text" name="event_history" class="form-control" value="{{ $item->event_history_en }}">
+                    </div>
+                <div class="form-group">
+                    <label>Event History id</label>
+                    <input type="text" name="event_history" class="form-control" value="{{ $item->event_history_id }}">
+                    </div>
+                <div class="form-group">
+                    <label>Address</label>
+                    <input type="text" name="address" class="form-control" value="{{ $item->address }}">
+                    </div>
+                <div class="form-group">
+                    <label>Longitude</label>
+                    <input type="text" name="longitude" class="form-control" value="{{ $item->longitude }}">
+                    </div>
+                <div class="form-group">
+                    <label>Latitude</label>
+                    <input type="text" name="latitude" class="form-control" value="{{ $item->latitude }}">
+                    </div>
                   <div class="card-footer text-right">
                     <button class="btn btn-primary mr-1" type="submit">Submit</button>
                     <button class="btn btn-secondary" type="reset">Reset</button>

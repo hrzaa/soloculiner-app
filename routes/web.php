@@ -31,7 +31,6 @@ use App\Http\Controllers\Admin\RestoGalleryController as RestoGalleryAdminContro
 // });
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/mappu', [HomeController::class, 'index2'])->name('mappu');
 Route::get('/kuliner', [CulinerController::class, 'index'])->name('kuliner');
 Route::get('/kuliner/{id}', [CulinerController::class, 'detail'])->name('kuliner-detail');
 Route::get('/event', [EventController::class, 'index'])->name('event');
