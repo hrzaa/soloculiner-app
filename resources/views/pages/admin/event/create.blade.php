@@ -41,21 +41,16 @@
                     </div>
                     </div>
                   <div class="form-group">
-                      <label>Event Desc</label>
-                      <textarea name="event_desc"></textarea>
-                        <script>
-                                CKEDITOR.replace( 'event_desc' );
-                        </script>
-                    </div>
-                    <div class="form-group">
-                      <label>Event History</label>
-                       <textarea name="event_history"></textarea>
-                        <script>
-                                CKEDITOR.replace( 'event_history' );
-                        </script>
-                    </div>
-                  
-                 
+                    <label>Event Desc</label>
+                    <textarea name="event_desc"></textarea>
+                      <script>
+                              CKEDITOR.replace( 'event_desc' );
+                      </script>
+                  </div>
+                  <div class="form-group">
+                    <label>alamat</label>
+                    <input type="text" name="address" class="form-control" required>
+                  </div>                   
                   <div class="card-footer text-right">
                     <button class="btn btn-primary mr-1" type="submit">Submit</button>
                     <button class="btn btn-secondary" type="reset">Reset</button>

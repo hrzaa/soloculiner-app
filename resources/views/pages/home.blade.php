@@ -143,106 +143,148 @@
        </div>
        <!-- About End -->
 
+        {{-- <!-- Popular Start -->
+            <div class="container-xxl pt-5 pb-3">
+            <div class="container">
+                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Solo Foods</h5>
+                    <h1 class="mb-5">Most Popular Items</h1>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="team-item text-center rounded overflow-hidden">
+                            <div class=" overflow-hidden m-4">
+                                <img class="img-fluid" src="/vendor/img/team-1.jpeg" alt="">
+                            </div>
+                            <h5 class="mb-0">Sate Kere </h5>
+                                <!-- Add icon library -->
+                                <small>
+                                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </small>
+                            <div class="d-flex justify-content-center mt-3">
+                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="team-item text-center rounded overflow-hidden">
+                            <div class=" overflow-hidden m-4">
+                                <img class="img-fluid" src="/vendor/img/team-2.jpg" alt="">
+                            </div>
+                            <h5 class="mb-0">Serabi Notosuman</h5>
+                                <!-- Add icon library -->
+                                <small>
+                                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </small>
+                            <div class="d-flex justify-content-center mt-3">
+                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="team-item text-center rounded overflow-hidden">
+                            <div class=" overflow-hidden m-4">
+                                <img class="img-fluid" src="/vendor/img/team-3.jpg" alt="">
+                            </div>
+                            <h5 class="mb-0">Es Dawet Mbok Darmi</h5>
+                                <!-- Add icon library -->
+                                <small>
+                                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </small>
+                            <div class="d-flex justify-content-center mt-3">
+                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                        <div class="team-item text-center rounded overflow-hidden">
+                            <div class=" overflow-hidden m-4">
+                                <img class="img-fluid" src="/vendor/img/team-4.jpeg" alt="">
+                            </div>
+                            <h5 class="mb-0">Dimsum Ps. Gede</h5>
+                                <!-- Add icon library -->
+                                <small>
+                                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </small>
+                            <div class="d-flex justify-content-center mt-3">
+                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Popular End --> --}}
+
         <!-- Popular Start -->
-        <div class="container-xxl pt-5 pb-3">
-           <div class="container">
-               <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                   <h5 class="section-title ff-secondary text-center text-primary fw-normal">Solo Foods</h5>
-                   <h1 class="mb-5">Most Popular Items</h1>
-               </div>
-               <div class="row g-4">
-                   <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                       <div class="team-item text-center rounded overflow-hidden">
-                           <div class=" overflow-hidden m-4">
-                               <img class="img-fluid" src="/vendor/img/team-1.jpeg" alt="">
-                           </div>
-                           <h5 class="mb-0">Sate Kere </h5>
-                            <!-- Add icon library -->
-                            <small>
-                                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                            </small>
-                           <div class="d-flex justify-content-center mt-3">
-                               <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                               <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                               <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                           </div>
-                       </div>
-                   </div>
-                   <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                       <div class="team-item text-center rounded overflow-hidden">
-                           <div class=" overflow-hidden m-4">
-                               <img class="img-fluid" src="/vendor/img/team-2.jpg" alt="">
-                           </div>
-                           <h5 class="mb-0">Serabi Notosuman</h5>
-                            <!-- Add icon library -->
-                            <small>
-                                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                            </small>
-                           <div class="d-flex justify-content-center mt-3">
-                               <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                               <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                               <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                           </div>
-                       </div>
-                   </div>
-                   <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                       <div class="team-item text-center rounded overflow-hidden">
-                           <div class=" overflow-hidden m-4">
-                               <img class="img-fluid" src="/vendor/img/team-3.jpg" alt="">
-                           </div>
-                           <h5 class="mb-0">Es Dawet Mbok Darmi</h5>
-                            <!-- Add icon library -->
-                            <small>
-                                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                            </small>
-                           <div class="d-flex justify-content-center mt-3">
-                               <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                               <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                               <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                           </div>
-                       </div>
-                   </div>
-                   <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                       <div class="team-item text-center rounded overflow-hidden">
-                           <div class=" overflow-hidden m-4">
-                               <img class="img-fluid" src="/vendor/img/team-4.jpeg" alt="">
-                           </div>
-                           <h5 class="mb-0">Dimsum Ps. Gede</h5>
-                            <!-- Add icon library -->
-                            <small>
-                                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                            </small>
-                           <div class="d-flex justify-content-center mt-3">
-                               <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                               <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                               <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                           </div>
-                       </div>
-                   </div>
-               </div>
-           </div>
-       </div>
-       <!-- Popular End -->
+            <div class="container-xxl pt-5 pb-3">
+            <div class="container">
+                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Solo Foods</h5>
+                    <h1 class="mb-5">Most Popular Items</h1>
+                </div>
+                <div class="row g-4">
+                    @forelse ($restos as $resto)
+                        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                        <div class="team-item text-center rounded overflow-hidden">
+                            <div class=" overflow-hidden m-4">
+                                <img class="img-fluid" src="{{ Storage::url($resto->resto_galleries->first()->photos ?? '') }}" alt="">
+                            </div>
+                            <h5 class="mb-0">{{ $resto->resto_name }}</h5>
+                            <p class="mb-1">{{ $resto->address }}</p>
+                            <h6>Rp{{ number_format($resto->price) }}</h6>
+                                <!-- Add icon library -->
+                                <small> 
+                                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </small>
+                            <div class="d-flex justify-content-center mt-3">
+                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    @empty
+                        <h6 class="textcenter">data kosong</h6>
+                    @endforelse
+                    
+                </div>
+            </div>
+        </div>
+        <!-- Popular End -->
 
        <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
            <div class="modal-dialog">
@@ -264,7 +306,7 @@
        <!-- Ulasan Start -->
 
 
-        <!-- Testimonial Start -->
+        {{-- <!-- Testimonial Start -->
         <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
            <div class="container">
                <div class="text-center">
@@ -318,8 +360,44 @@
                    </div>
                </div>
            </div>
-       </div>
-       <!-- Testimonial End -->
+        </div>
+        <!-- Testimonial End --> --}}
+        
+          <!-- Testimonial Start -->
+        <div class="container-fluid py-5 wow fadeInUp bg-white" data-wow-delay="0.1s">
+           <div class="container">
+               <div class="text-center">
+                   <h5 class="section-title ff-secondary text-center text-primary fw-normal">Testimonial</h5>
+                   <h1 class="mb-5">Suggestions and Critics!!!</h1>
+               </div>
+               <div class="row">
+                    <div class="col-12 col-lg-8">
+                        <div class="review">
+                            @forelse ($reviews as $review)
+                                <div class="testimonial-item bg-transparent rounded p-3">
+                                    <div class="d-flex align-items-center">
+                                        <img class="img-fluid flex-shrink-0 rounded-circle" src="/vendor/img/testimonial-1.jpg" style="width: 50px; height: 50px;">
+                                        <div class="ps-3">
+                                            <h5 class="mb-1">{{ $review->user->name }}</h5>
+                                            <p>{{ $review->comment }}</p>
+                                                <small>{{ $review->updated_at->diffForHumans() }}</small>
+                                        </div>
+                                    </div>
+                                </div>   
+                            @empty
+                                <div class="col-12 text-center py-5 wow fadeInUp" data-wow-delay="0.1s">
+                                    No Review Found!
+                                </div>
+                            @endforelse
+                        
+                        </div>
+                    </div>
+               </div>
+              
+           </div>
+        </div>
+        <!-- Testimonial End -->
+
 
 
        <!-- Back to Top -->

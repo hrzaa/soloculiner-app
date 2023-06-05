@@ -32,8 +32,13 @@
                  <div class="col-lg-6">
                      <div class="row g-3">
                            <div class="col-6 text-end static">
-                               <img class="img-fluid rounded w-250 wow zoomIn" data-wow-delay="0.5s"
-                                   src="{{ Storage::url($event->event_galleries->first()->photos) }}" />
+                                @if ($event->event_galleries->isEmpty())
+                                    <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.1s" src="{{ url('/vendor/img/default.png') }}" alt="">
+                                @else
+                                    @foreach ($event->event_galleries as $gallery)
+                                        <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.1s" src="{{ Storage::url($gallery->photos) }}" alt="">
+                                    @endforeach
+                                @endif
                            </div>
                        </div>
                        
@@ -55,39 +60,7 @@
            </div>
        </div>
        <!-- About End -->
-    
-    <!-- About Start -->
-        <div class="container-fluid py-5 bg-white">
-           <div class="container py-2">
-               <div class="row g-5 align-items-center">
-                   <div class="col-lg-6">
-                        <h5 class="section-title ff-secondary text-start text-primary fw-normal">Theme</h5>
-                    <h1 class="mb-4">What About {{ $event->event_name }} <i class="fa fa-utensils text-primary me-2"></i></h1>
-                       <p class="mb-4">{!! $event->event_history !!}</p>
-                      
-                   </div>
-                   <div class="col-lg-6">
-                    <div class="row g-3">
-                           <div class="col-6 text-start">
-                               <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.1s" src="{{ Storage::url($event->event_galleries->skip(1)->first()->photos) }}">
-                           </div>
-                           {{-- <div class="col-6 text-start">
-                               <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.3s" src="/vendor/img/about-2.jpg" style="margin-top: 25%;">
-                           </div>
-                           <div class="col-6 text-end">
-                               <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.1s" src="/vendor/img/about-3.jpg">
-                           </div>
-                           <div class="col-6 text-end">
-                               <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.3s" src="/vendor/img/about-4.jpg">
-                           </div> --}}
-                       </div>
-                   
-                   </div>
-               </div>
-           </div>
-       </div>
-       <!-- About End -->
-       
+
         <!-- Location Start -->
         <div class="container-fluid py-5 bg-white">
             <div class="container">

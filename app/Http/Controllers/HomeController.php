@@ -27,10 +27,18 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $categories = Category::take(6)->get();
-        $foods = Food::take(4)->get();
-        $restos = Resto::take(4)->get();
-        $reviews = Review::all();
+        $categories = Category::take(6)
+            ->get();
+        $foods = Food::take(4)
+            ->get();
+        $restos = Resto::with(['resto_galleries', 'food'])
+            ->take(4)
+            ->get();
+        $reviews = Review::with(['user', 'food'])
+            ->where('is_aktif', true)
+            ->orderBy('created_at', 'desc') // Sorting by 'created_at' column in descending order
+            ->get();
+
         return view('pages.home', [
             'categories' => $categories, 
             'restos' => $restos,

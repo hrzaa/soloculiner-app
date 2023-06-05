@@ -22,8 +22,6 @@ return new class extends Migration
             $table->date('date_end');
             $table->longText('event_desc');
             $table->string('address');
-            $table->decimal('latitude', 10, 8);
-            $table->decimal('longitude', 11, 8);
             $table->string('slug');
 
             $table->softDeletes();

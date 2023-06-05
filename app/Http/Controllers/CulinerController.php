@@ -11,7 +11,7 @@ class CulinerController extends Controller
 {
     public function index()
     {
-        $foods = Food::with('food_galleries')->simplePaginate(9);
+        $foods = Food::with('food_galleries')->simplePaginate(6);
 
         return view('pages.kuliner',[
             'foods' => $foods,

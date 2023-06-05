@@ -17,6 +17,7 @@
                     <th>Uploader</th>
                     <th>Date Start</th>
                     <th>Date End</th>
+                    <th>Address</th>
                     <th>Aksi</th>
                   </tr>
                 </thead>
@@ -44,6 +45,7 @@
             {data:'user.name', name:'user.name'},
             {data:'date_start', name:'date_start'},
             {data:'date_end', name:'date_end'},
+            {data:'address', name:'address'},
             {
                 data:'action',
                 name:'action',

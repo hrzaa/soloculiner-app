@@ -111,47 +111,47 @@
 
        {{-- @dd($restos) --}}
 
-            <!-- Popular Start -->
-        <div class="container-xxl pt-5 pb-3">
-           <div class="container">
-               <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                   <h5 class="section-title ff-secondary text-center text-primary fw-normal">Solo Foods</h5>
-                   <h1 class="mb-5">Most Popular Items</h1>
-               </div>
-               <div class="row g-4">
-                   @forelse ($restos as $resto)
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                       <div class="team-item text-center rounded overflow-hidden">
-                           <div class=" overflow-hidden m-4">
-                               <img class="img-fluid" src="{{ Storage::url($resto->resto_galleries->first()->photos ?? '') }}" alt="">
-                           </div>
-                           <h5 class="mb-0">{{ $resto->resto_name }}</h5>
-                           <p class="mb-1">{{ $resto->address }}</p>
-                           <h6>Rp{{ number_format($resto->price) }}</h6>
-                            <!-- Add icon library -->
-                            <small> 
-                                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                            </small>
-                           <div class="d-flex justify-content-center mt-3">
-                               <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                               <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                               <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                           </div>
-                       </div>
-                   </div>
-                   @empty
-                       <h6 class="textcenter">data kosong</h6>
-                   @endforelse
-                   
-               </div>
-           </div>
-       </div>
-       <!-- Popular End -->
+        <!-- Popular Start -->
+            <div class="container-xxl pt-5 pb-3">
+            <div class="container">
+                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Solo Foods</h5>
+                    <h1 class="mb-5">Most Popular Items</h1>
+                </div>
+                <div class="row g-4">
+                    @forelse ($restos as $resto)
+                        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                        <div class="team-item text-center rounded overflow-hidden">
+                            <div class=" overflow-hidden m-4">
+                                <img class="img-fluid" src="{{ Storage::url($resto->resto_galleries->first()->photos ?? '') }}" alt="">
+                            </div>
+                            <h5 class="mb-0">{{ $resto->resto_name }}</h5>
+                            <p class="mb-1">{{ $resto->address }}</p>
+                            <h6>Rp{{ number_format($resto->price) }}</h6>
+                                <!-- Add icon library -->
+                                <small> 
+                                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </small>
+                            <div class="d-flex justify-content-center mt-3">
+                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    @empty
+                        <h6 class="textcenter">data kosong</h6>
+                    @endforelse
+                    
+                </div>
+            </div>
+        </div>
+        <!-- Popular End -->
 
        
         <!-- Location Start -->
@@ -204,8 +204,9 @@
                </div>
               
            </div>
-       </div>
-       <!-- Testimonial End -->
+        </div>
+        <!-- Testimonial End -->
+
        {{-- <h3>{{ $foods->id }}</h3> --}}
         <div class="container-xxl py-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
            <div class="row g-0">

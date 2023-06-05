@@ -56,7 +56,10 @@
                         No Culinary Found!
                     </div>
                 @endforelse
-                {{ $foods->links() }}
+                <div class="col-12 text-center py-5">
+                    {{ $foods->links() }}
+                </div>
+               
 
                 {{-- @dd($restos) --}}
                 </div>
