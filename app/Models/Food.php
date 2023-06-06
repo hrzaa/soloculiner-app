@@ -15,7 +15,7 @@ class Food extends Model
     use SoftDeletes;
 
     protected $fillable = [
-        'food_name', 'users_id', 'food_history', 'food_desc','categories_id', 'slug'
+        'users_id','categories_id','food_name', 'food_desc_id', 'food_history_id', 'food_desc_en', 'food_history_en',  'slug'
     ];
 
     use HasFactory;

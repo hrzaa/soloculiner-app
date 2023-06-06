@@ -46,7 +46,7 @@
                                 <h5 class="d-flex justify-content-between border-bottom pb-2">
                                     <span>{{ $food->food_name }}</span>
                                 </h5>
-                                <small class="fst-italic">{!! Str::words($food->food_desc, 20) !!}</small>
+                                <small class="fst-italic">{!! Str::words($food->{'food_desc_'.app()->getLocale()}, 20) !!}</small>
                                 <a href="{{ route('kuliner-detail', $food->slug) }}" class="text-primary">Think to Try</a>
                             </div>
                         </div>

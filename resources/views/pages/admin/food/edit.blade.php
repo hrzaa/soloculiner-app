@@ -26,37 +26,50 @@
                   <div class="form-group">
                     <label>Category</label>
                     <select name="categories_id" class="form-control">
-                      <option value="{{ $item->categories_id }}" selected>{{ $item->category->name }}</option>
+                      <option value="{{ $item->categories_id }}" selected>{{ $item->category->name_id }}</option>
                        @foreach ($categories as $category)
-                          <option value="{{ $category->id }}">{{ $category->name }}</option>
+                          <option value="{{ $category->id }}">{{ $category->name_id }}</option>
                       @endforeach
                     </select>
                   </div>
                   <div class="form-group">
                     <label>Uploader</label>
-                    {{-- <option value="{{ $item->users_id }}" selected>{{ $item->user->name }}</option> --}}
                     <select name="users_id" class="form-control">
                        <option value="{{ Auth::user()->id }}" selected>{{ Auth::user()->name }}</option>
-                      {{-- @foreach ($users as $user)
-                          <option value="{{ $user->id }}">{{ $user->name }}</option>
-                      @endforeach --}}
                     </select>
                   </div>
-                  <div class="form-group">
-                      <label>Food Desc</label>
-                      <textarea name="food_desc">{!! $item->food_desc !!}</textarea>
+                   <div class="form-row">
+                     <div class="form-group col-md-6">
+                      <label>Food Desc ID</label>
+                      <textarea name="food_desc_id">{!! $item->food_desc_id !!}</textarea>
                         <script>
-                                CKEDITOR.replace( 'food_desc' );
+                                CKEDITOR.replace( 'food_desc_id' );
                         </script>
                     </div>
-                    <div class="form-group">
-                      <label>Food History</label>
-                       <textarea name="food_history">{!! $item->food_history !!}</textarea>
+                    <div class="form-group col-md-6">
+                      <label>Food History ID</label>
+                        <textarea name="food_history_id">{!! $item->food_history_id !!}</textarea>
                         <script>
-                                CKEDITOR.replace( 'food_history' );
+                                CKEDITOR.replace( 'food_history_id' );
                         </script>
                     </div>
-
+                  </div>
+                  <div class="form-row">
+                     <div class="form-group col-md-6">
+                      <label>Food Desc EN</label>
+                      <textarea name="food_desc_en">{!! $item->food_desc_en !!}</textarea>
+                        <script>
+                                CKEDITOR.replace( 'food_desc_en' );
+                        </script>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label>Food History EN</label>
+                        <textarea name="food_history_en">{!! $item->food_desc_en !!}</textarea>
+                        <script>
+                                CKEDITOR.replace( 'food_history_en' );
+                        </script>
+                    </div>
+                  </div>
                   <div class="card-footer text-right">
                     <button class="btn btn-primary mr-1" type="submit">Submit</button>
                     <button class="btn btn-secondary" type="reset">Reset</button>

@@ -48,7 +48,7 @@
                     <h5 class="section-title ff-secondary text-start text-primary fw-normal">About Us</h5>
                     <h1 class="mb-4">What About {{ $foods->food_name }} <i class="fa fa-utensils text-primary me-2"></i></h1>
                      <div class="uploader">By {{ $foods->user->name }}</div>   
-                    <p class="mb-4">{!! $foods->food_desc !!}</p>
+                    <p class="mb-4">{!! $foods->{'food_desc_'.app()->getLocale()} !!}</p>
                        <div class="row g-4 mb-4">
                            <div class="col-sm-6">
                                {{-- <div class="d-flex align-items-center border-start border-5 border-primary px-3">
@@ -87,7 +87,7 @@
                            Story of {{ $foods->food_name }}
                        </h1>
                        <p class="mb-4">
-                            {!! $foods->food_history !!}
+                            {!! $foods->{'food_history_'.app()->getLocale()} !!}
                        </p>
                        
                    </div>

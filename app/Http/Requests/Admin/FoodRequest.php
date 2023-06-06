@@ -26,8 +26,10 @@ class FoodRequest extends FormRequest
         return [
             'food_name' => 'required|max:255', 
             'users_id' => 'required|exists:users,id', 
-            'food_history' => 'required', 
-            'food_desc' => 'required',
+            'food_history_id' => 'required', 
+            'food_history_id' => 'required', 
+            'food_desc_en' => 'required',
+            'food_desc_en' => 'required',
             'categories_id' => 'required|exists:categories,id', 
         ];
     }

@@ -43,9 +43,9 @@
             {data:'id', name:'id'},
             {data:'food_name', name:'food_name'},
             {data:'user.name', name:'user.name'},
-            {data:'category.name', name:'category.name'},
-            {data:'food_desc', name:'food_desc'},
-            {data:'food_history', name:'food_history'},
+            {data:'category.name_id', name:'category.name_id'},
+            {data:'food_desc_id', name:'food_desc_id'},
+            {data:'food_history_id', name:'food_history_id'},
             {
                 data:'action',
                 name:'action',

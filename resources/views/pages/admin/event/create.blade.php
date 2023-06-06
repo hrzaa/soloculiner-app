@@ -39,18 +39,27 @@
                       <label for="date_end">Date End</label>
                       <input type="date" class="form-control" id="date_end" name="date_end">
                     </div>
-                    </div>
-                  <div class="form-group">
-                    <label>Event Desc</label>
-                    <textarea name="event_desc"></textarea>
-                      <script>
-                              CKEDITOR.replace( 'event_desc' );
-                      </script>
                   </div>
                   <div class="form-group">
                     <label>alamat</label>
                     <input type="text" name="address" class="form-control" required>
-                  </div>                   
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label>Event Desc ID</label>
+                      <textarea name="event_desc_id"></textarea>
+                        <script>
+                                CKEDITOR.replace( 'event_desc_id' );
+                        </script>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label>Event Desc EN</label>
+                      <textarea name="event_desc_en"></textarea>
+                        <script>
+                                CKEDITOR.replace( 'event_desc_en' );
+                        </script>
+                    </div>
+                  </div>                 
                   <div class="card-footer text-right">
                     <button class="btn btn-primary mr-1" type="submit">Submit</button>
                     <button class="btn btn-secondary" type="reset">Reset</button>

@@ -24,11 +24,13 @@ class EventRequest extends FormRequest
     public function rules()
     {
         return [
-            'event_name' => 'required|max:255', 
+            'event_name_id' => 'required|max:255', 
+            'event_name_en' => 'required|max:255', 
             'users_id' => 'required|exists:users,id', 
             'date_start' => 'required', 
             'date_end' => 'required', 
-            'event_desc' => 'required', 
+            'event_desc_id' => 'required', 
+            'event_desc_en' => 'required', 
         ];
     }
 }

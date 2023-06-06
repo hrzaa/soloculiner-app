@@ -40,7 +40,6 @@ Route::get('/kuliner/{id}', [CulinerController::class, 'detail'])->name('kuliner
 Route::get('/event', [EventController::class, 'index'])->name('event');
 Route::get('/event/{id}', [EventController::class, 'detail'])->name('event-detail');
 Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
-Route::get('/locations', [LocationController::class, 'index'])->name('location');
 
 
 

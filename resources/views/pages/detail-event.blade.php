@@ -51,7 +51,7 @@
                            Welcome to {{ $event->event_name }}
                        </h1>
                        <p class="mb-4">
-                           {!! $event->event_desc !!}
+                           {!! $event->{'event_desc_'.app()->getLocale()} !!}
                        </p>
                        
                    </div>

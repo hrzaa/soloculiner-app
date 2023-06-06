@@ -21,12 +21,21 @@
                 <li class="nav-item">
                     <a class="nav-link {{ (request()->is('gallery')) ? 'active' : '' }}" href="{{ route('gallery') }}">Gallery</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link {{ (request()->is('locations')) ? 'active' : '' }}" href="{{ route('location') }}">Locations</a>
-                </li>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                        {{ strtoupper(app()->getLocale()) }}
+                    </a>
+                    <div class="dropdown-menu m-0">
+                        @foreach (config('app.available_locales') as $locale)
+                            <a href="{{ request()->url() }}?language={{ $locale }}"
+                            class="dropdown-item @if (app()->getLocale() == $locale) active @endif">
+                                {{ strtoupper($locale) }}
+                            </a>
+                        @endforeach
+                    </div>
+                </div>
             </ul>
             @guest
-                {{-- <a class="nav-item nav-link" href="{{ route('register') }}">{{ __('Register') }}</a> --}}
                 <a class="btn btn-primary py-2 px-4" href="{{ route('login') }}">{{ __('Login') }}</a>
             @else
             <img alt="image" src="{{ url('assets/img/avatar/avatar-1.png') }}" style="max-height: 40px" class="rounded-circle mr-1">

@@ -45,7 +45,7 @@
                             <div class="categories-images">
                                 <img src="{{ Storage::url($category->photo) }}" alt="" class="w-100"/>
                             </div>
-                            <p class="categories-text">{{ $category->name }}</p>
+                            <p class="categories-text">{{ $category->{'name_'.app()->getLocale()} }}</p>
                         </a>
                     </div>
                 @empty
@@ -389,11 +389,9 @@
                                     No Review Found!
                                 </div>
                             @endforelse
-                        
                         </div>
                     </div>
                </div>
-              
            </div>
         </div>
         <!-- Testimonial End -->
