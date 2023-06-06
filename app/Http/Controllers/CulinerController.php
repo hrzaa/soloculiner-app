@@ -5,37 +5,31 @@ namespace App\Http\Controllers;
 use App\Models\Food;
 use App\Models\Resto;
 use App\Models\Review;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class CulinerController extends Controller
 {
     public function index()
     {
+        $categories = Category::all();
         $foods = Food::with('food_galleries')->simplePaginate(6);
 
-        return view('pages.kuliner',[
+        return view('pages.culinary',[
             'foods' => $foods,
+            'categories' => $categories
         ]);
     }
 
-    public function detail(Request $request, $id)
+    public function detail(Request $request, $slug)
     {
-        $foods = Food::with(['food_galleries', 'user'])
-            ->where('slug', $id)
-            ->firstOrFail();
-        $restos = Resto::with(['resto_galleries', 'food'])
-            ->where('food_id', $foods->id) // Menambahkan kondisi where untuk memfilter berdasarkan ID makanan
-            ->take(4)
-            ->get();
-        $reviews = Review::with(['user', 'food'])
-            ->where('is_aktif', true)
-            ->orderBy('created_at', 'desc') // Sorting by 'created_at' column in descending order
-            ->get();
-        return view('pages.detail-kuliner', [
-            'foods' => $foods,
-            'reviews' => $reviews,
-            'restos' => $restos
-        ]);
+        $categories = Category::all();
+        $category = Category::where('slug', $slug)->firstOrFail();
+        $foods = Food::with('food_galleries')->where('categories_id', $category->id)->paginate(32);
 
+        return view('pages.culinary', [
+            'categories' => $categories,
+            'foods' => $foods 
+        ]);
     }
 }

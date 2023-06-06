@@ -3,20 +3,20 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\DetailController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\CulinerController;
 use App\Http\Controllers\GalleryController;
-use App\Http\Controllers\LocationController;
 use App\Http\Controllers\Admin\FoodController as FoodAdminController;
 use App\Http\Controllers\Admin\UserController as UserAdminController;
 use App\Http\Controllers\Admin\EventController as EventAdminController;
 use App\Http\Controllers\Admin\RestoController as RestoAdminController;
+use App\Http\Controllers\Admin\ReviewController as ReviewAdminController;
 use App\Http\Controllers\Admin\CategoryController as CategoryAdminController;
 use App\Http\Controllers\Admin\DashboardController as DashboardAdminController;
 use App\Http\Controllers\Admin\FoodGalleryController as FoodGalleryAdminController;
 use App\Http\Controllers\Admin\EventGalleryController as EventGalleryAdminController;
 use App\Http\Controllers\Admin\RestoGalleryController as RestoGalleryAdminController;
-use App\Http\Controllers\Admin\ReviewController as ReviewAdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,11 +34,16 @@ use App\Http\Controllers\Admin\ReviewController as ReviewAdminController;
 // });
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/mappu', [HomeController::class, 'index2'])->name('mappu');
-Route::get('/kuliner', [CulinerController::class, 'index'])->name('kuliner');
-Route::get('/kuliner/{id}', [CulinerController::class, 'detail'])->name('kuliner-detail');
+
+// Route::get('/categories', [CategoryController::class, 'index'])->name('categories');
+Route::get('/culinary', [CulinerController::class, 'index'])->name('culinary');
+Route::get('/culinary/categories/{id}', [CulinerController::class, 'detail'])->name('culinary-categories-detail');
+
+Route::get('culinary/detail/{id}', [DetailController::class, 'detail'])->name('culinary-detail');
+
 Route::get('/event', [EventController::class, 'index'])->name('event');
 Route::get('/event/{id}', [EventController::class, 'detail'])->name('event-detail');
+
 Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
 
 

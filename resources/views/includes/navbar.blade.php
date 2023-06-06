@@ -13,7 +13,7 @@
                     <a class="nav-link {{ (request()->is('/')) ? 'active' : '' }}" aria-current="page" href="{{ route('home') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ (request()->is('kuliner*')) ? 'active' : '' }}" href="{{ route('kuliner') }}">Kuliner</a>
+                    <a class="nav-link {{ (request()->is('culinary*')) ? 'active' : '' }}" href="{{ route('culinary') }}">Kuliner</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ (request()->is('event*')) ? 'active' : '' }}" href="{{ route('event') }}">Event</a>
@@ -36,6 +36,7 @@
                 </div>
             </ul>
             @guest
+
                 <a class="btn btn-primary py-2 px-4" href="{{ route('login') }}">{{ __('Login') }}</a>
             @else
             <img alt="image" src="{{ url('assets/img/avatar/avatar-1.png') }}" style="max-height: 40px" class="rounded-circle mr-1">

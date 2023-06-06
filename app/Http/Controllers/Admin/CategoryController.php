@@ -76,7 +76,7 @@ class CategoryController extends Controller
     public function store(CategoryRequest $request)
     {
         $data = $request->all();
-        $data['slug'] = Str::slug($request->name);
+        $data['slug'] = Str::slug($request->name_id);
         $data['photo'] = $request->file('photo')->store('assets/category', 'public');
 
         Category::create($data);
@@ -119,7 +119,7 @@ class CategoryController extends Controller
     public function update(CategoryRequest $request, $id)
     {
         $data = $request->all();
-        $data['slug'] = Str::slug($request->name);
+        $data['slug'] = Str::slug($request->name_id);
         $data['photo'] = $request->file('photo')->store('assets/category', 'public');
 
         $item = Category::findOrFail($id);

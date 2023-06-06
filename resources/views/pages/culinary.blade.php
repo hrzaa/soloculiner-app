@@ -17,13 +17,43 @@
             </nav>
         </div>
     </div>
+
+      <!-- Category Start -->
+        <div class="container-fluid py-5 bg-white">
+            <div class="container">
+                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                   <h5 class="section-title ff-secondary text-center text-primary fw-normal">Solo Foods</h5>
+                   <h1 class="mb-5">All Categories</h1>
+                </div>
+                <div class="row">
+                @php
+                    $incrementCategory = 0
+                @endphp
+                @forelse ($categories as $category)
+                    <div class="col-6 col-md-3 col-lg-2" data-aos="fade-up" data-aos-delay="{{ $incrementCategory+=100 }}">
+                        <a href="{{ route('culinary-categories-detail', $category->slug) }}" class="component-categories d-block">
+                            <div class="categories-images">
+                                <img src="{{ Storage::url($category->photo) }}" alt="" class="w-100"/>
+                            </div>
+                            <p class="categories-text">{{ $category->{'name_'.app()->getLocale()} }}</p>
+                        </a>
+                    </div>
+                @empty
+                     <div class="col-12 text-center py-5 wow fadeInUp" data-wow-delay="0.1s">
+                    No Categories Found!
+                    </div>
+                @endforelse
+            </div>
+        </div>
+        <!-- Category End -->
+
   
     <!-- Menu Start -->
     <div class="container-fluid py-5 bg-white">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h5 class="section-title ff-secondary text-center text-primary fw-normal">Food Menu</h5>
-                <h1 class="mb-2">Most Popular Items</h1>
+                <h1 class="mb-2">All Foods Available</h1>
             </div>
              <div class="row gy-4">
                 @php
@@ -47,7 +77,7 @@
                                     <span>{{ $food->food_name }}</span>
                                 </h5>
                                 <small class="fst-italic">{!! Str::words($food->{'food_desc_'.app()->getLocale()}, 20) !!}</small>
-                                <a href="{{ route('kuliner-detail', $food->slug) }}" class="text-primary">Think to Try</a>
+                                <a href="{{ route('culinary-detail', $food->slug) }}" class="text-primary">Think to Try</a>
                             </div>
                         </div>
                     </div>

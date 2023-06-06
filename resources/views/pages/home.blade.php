@@ -41,7 +41,7 @@
                 @endphp
                 @forelse ($categories as $category)
                     <div class="col-6 col-md-3 col-lg-2" data-aos="fade-up" data-aos-delay="{{ $incrementCategory+=100 }}">
-                        <a href="{{ route('kuliner') }}" class="component-categories d-block">
+                        <a href="{{ route('culinary') }}" class="component-categories d-block">
                             <div class="categories-images">
                                 <img src="{{ Storage::url($category->photo) }}" alt="" class="w-100"/>
                             </div>
