@@ -627,3 +627,36 @@
 .rate > label:hover ~ input:checked ~ label {
     color: #c59b08;
 }
+
+/*  */
+.store-gallery {
+    margin-top: 20px;
+}
+
+.store-gallery img {
+    border-radius: 10px;
+}
+
+.store-gallery .thumbnail-image {
+    margin-bottom: 20px;
+    border: 2px solid transparent;
+}
+
+.store-gallery .thumbnail-image:hover,
+.store-gallery .thumbnail-image.active {
+    border: 2px solid #ff7158;
+}
+
+.slide-fade-enter-active {
+    transition: all 0.2s ease;
+}
+
+.slide-fade-leave-active {
+    transition: all 0.1s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter,
+.slide-fade-leave-to {
+    transform: translateY(10px);
+    opacity: 0.5;
+}

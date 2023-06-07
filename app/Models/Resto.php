@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Resto extends Model
 {
     protected $fillable =[
-        'resto_name', 'users_id', 'food_id', 'price','address', 'longitude', 'latitude', 'slug'
+        'resto_name', 'users_id', 'food_id', 'price','address', 'address_link', 'slug'
     ];
 
     use HasFactory;

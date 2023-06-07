@@ -19,6 +19,7 @@
                     <th>Date End</th>
                     <th>Event Desc</th>
                     <th>Address</th>
+                    <th>Address</th>
                     <th>Aksi</th>
                   </tr>
                 </thead>
@@ -48,6 +49,7 @@
             {data:'date_end', name:'date_end'},
             {data:'event_desc_id', name:'event_desc_id'},
             {data:'address', name:'address'},
+            {data:'address_link', name:'address_link'},
             {
                 data:'action',
                 name:'action',

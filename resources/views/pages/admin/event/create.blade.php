@@ -40,10 +40,17 @@
                       <input type="date" class="form-control" id="date_end" name="date_end">
                     </div>
                   </div>
-                  <div class="form-group">
-                    <label>alamat</label>
-                    <input type="text" name="address" class="form-control" required>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label>alamat</label>
+                      <input type="text" name="address" class="form-control" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label>alamat (maps)</label>
+                      <input type="text" name="address_link" class="form-control" required>
+                    </div>
                   </div>
+                 
                   <div class="form-row">
                     <div class="form-group col-md-6">
                       <label>Event Desc ID</label>

@@ -18,8 +18,7 @@
                     <th>Food</th>
                     <th>Price</th>
                     <th>Address</th>
-                    <th>Longitude</th>
-                    <th>Latitude</th>
+                    <th>Address Link</th>
                     <th>Aksi</th>
                   </tr>
                 </thead>
@@ -48,8 +47,8 @@
             {data:'food.food_name', name:'food.food_name'},
             {data:'price', name:'price'},
             {data:'address', name:'address'},
-            {data:'longitude', name:'longitude'},
-            {data:'latitude', name:'latitude'},
+            {data:'address_link', name:'address_link'},
+            
             {
                 data:'action',
                 name:'action',

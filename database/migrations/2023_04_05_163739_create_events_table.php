@@ -28,6 +28,7 @@ return new class extends Migration
             $table->date('date_start');
             $table->date('date_end');
             $table->string('address');
+            $table->string('address_link');
 
             $table->string('slug');
 

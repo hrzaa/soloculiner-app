@@ -28,6 +28,8 @@ class RestoRequest extends FormRequest
             'users_id' => 'required|exists:users,id',
             'food_id' => 'required|exists:food,id',
             'price' => 'required|integer',
+            'address' => 'required',
+            'address_link' => 'required',
         ];
     }
 }

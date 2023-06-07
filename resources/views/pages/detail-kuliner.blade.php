@@ -15,8 +15,8 @@
             <h1 class="display-3 text-white mb-3 animated slideInDown">Sate Kere</h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb justify-content-center text-uppercase">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                    <li class="breadcrumb-item"><a href="">Home</a></li>
+                    <li class="breadcrumb-item"><a href="">Pages</a></li>
                     <li class="breadcrumb-item text-white active" aria-current="page">About</li>
                 </ol>
             </nav>
@@ -29,15 +29,48 @@
                <div class="row g-5 align-items-center">
                    <div class="col-lg-6">
                        <div class="row g-3">
+                            <section class="store-gallery" id="gallery">
+                            <div class="container">
+                            <div class="row">
+                                <div class="col-lg-10" data-aos="zoom-in">
+                                <transition name="slide-fade" mode="out-in">
+                                    <img 
+                                    :src="photos[activePhoto].url" 
+                                    :key="photos[activePhoto].id" 
+                                    class="w-100 main-image"
+                                    alt="">
+                                </transition>
+                                </div>
+                                <div class="col-lg-2">
+                                <div class="row">
+                                    <div class="col-3 col-lg-12 mt-2 mt-lg-0" 
+                                    v-for="(photo, index) in photos"
+                                    :key="photo.id"
+                                    data-aos="zoom-in"
+                                    data-aos-delay="100"
+                                    >
+                                    <a href="#" @click="changeActive(index)">
+                                    <img 
+                                    :src="photo.url" class="w-100 thumbnail-image" 
+                                    :class="{active:index == activePhoto}" 
+                                    alt=""
+                                    >
+                                    </a>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+                        </section>
 
                         {{-- {{ dd($foods) }} --}}
-                        @if ($foods->food_galleries->isEmpty())
+                        {{-- @if ($foods->food_galleries->isEmpty())
                             <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.1s" src="{{ url('/vendor/img/default.png') }}" alt="">
                         @else
                             @foreach ($foods->food_galleries as $gallery)
                                 <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.1s" src="{{ Storage::url($gallery->photos) }}" alt="">
                             @endforeach
-                        @endif
+                        @endif --}}
                        
                         {{-- <div class="date">{{ $foods->updated_at->diffForHumans() }}</div> --}}
                         {{-- style gambar belum ketemu --}}
@@ -91,7 +124,7 @@
                        </p>
                        
                    </div>
-                   <div class="col-lg-4">
+                   {{-- <div class="col-lg-4">
                        <div class="row g-3">
                            <div class="col-6 text-end static">
                                <img class="img-fluid rounded w-250 wow zoomIn" data-wow-delay="0.7s"
@@ -102,12 +135,13 @@
                                    src="/vendor/img/satekere.jpg" />
                            </div>
                        </div>
-                   </div>
+                   </div> --}}
                   
                </div>
            </div>
        </div>
        <!-- Story End -->
+      
 
        {{-- @dd($restos) --}}
 
@@ -116,17 +150,18 @@
             <div class="container">
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                     <h5 class="section-title ff-secondary text-center text-primary fw-normal">Solo Foods</h5>
-                    <h1 class="mb-5">Most Popular Items</h1>
+                    <h1 class="mb-5">Most Popular Resto</h1>
                 </div>
                 <div class="row g-4">
                     @forelse ($restos as $resto)
                         <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                        <div class="team-item text-center rounded overflow-hidden">
+                        <div class="team-item text-center rounded overflow-hidden p-2">
                             <div class=" overflow-hidden m-4">
                                 <img class="img-fluid" src="{{ Storage::url($resto->resto_galleries->first()->photos ?? '') }}" alt="">
                             </div>
                             <h5 class="mb-0">{{ $resto->resto_name }}</h5>
-                            <p class="mb-1">{{ $resto->address }}</p>
+                            <a href="{{ $resto->address_link }}" class="mb-1">{{ $resto->address }}</a>
+                            {{-- <a class="mb-1">{{ $resto->address }}</a> --}}
                             <h6>Rp{{ number_format($resto->price) }}</h6>
                                 <!-- Add icon library -->
                                 <small> 
@@ -136,16 +171,14 @@
                                     <span class="fa fa-star checked"></span>
                                     <span class="fa fa-star"></span>
                                     <span class="fa fa-star"></span>
-                                </small>
-                            <div class="d-flex justify-content-center mt-3">
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
+                                </small>    
+                           
                         </div>
                     </div>
                     @empty
-                        <h6 class="textcenter">data kosong</h6>
+                        <div class="col-12 text-center py-5 wow fadeInUp" data-wow-delay="0.1s">
+                            No Resto Found!
+                        </div>
                     @endforelse
                     
                 </div>
@@ -154,24 +187,6 @@
         <!-- Popular End -->
 
        
-        <!-- Location Start -->
-        <div class="container-fluid py-5 bg-white">
-            <div class="container">
-                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Contact Us</h5>
-                    <h1 class="mb-5">Contact For Any Query</h1>
-                </div>
-                <div class="row g-4">
-                    <div class="col-md-12 wow fadeIn" data-wow-delay="0.1s">
-                        <iframe class="position-relative rounded w-100 h-100"
-                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.1098190545263!2d110.83339197465479!3d-7.563004192450958!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a17bfca3568f1%3A0x52872ee12cf2fa57!2sKampus%20UNS%20Mesen!5e0!3m2!1sen!2sid!4v1683777846264!5m2!1sen!2sid" frameborder="0" style="min-height: 350px; border:0;" allowfullscreen="" aria-hidden="false"
-                            tabindex="0"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Contact End -->
-
         <!-- Testimonial Start -->
         <div class="container-fluid py-5 wow fadeInUp bg-white" data-wow-delay="0.1s">
            <div class="container">
@@ -271,3 +286,32 @@
        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
 @endsection
+
+@push('addon-script')
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14"></script>
+    <script>
+      var gallery = new Vue({
+        el: "#gallery", 
+        mounted(){
+           AOS.init();
+        },
+        data:{
+          activePhoto: 0, 
+          photos:[
+           @foreach($foods->food_galleries as $gallery)
+            {
+              id:{{ $gallery->id }},
+              url:"{{ Storage::url($gallery->photos) }}",
+            },
+           @endforeach
+          ],
+        },
+        methods:{
+          changeActive(id){
+            this.activePhoto = id;
+          },
+        },
+      });
+    </script>
+
+@endpush

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Food;
+use App\Models\Event;
 use App\Models\Resto;
 use App\Models\Review;
 use App\Models\Category;
@@ -29,19 +30,22 @@ class HomeController extends Controller
     {
         $categories = Category::take(6)
             ->get();
-        $foods = Food::take(4)
-            ->get();
+        $foods = Food::with(['food_galleries'])
+            ->simplePaginate(6);
         $restos = Resto::with(['resto_galleries', 'food'])
             ->take(4)
             ->get();
+        $events = Event::with(['event_galleries'])
+            ->simplePaginate(4);
         $reviews = Review::with(['user', 'food'])
             ->where('is_aktif', true)
             ->orderBy('created_at', 'desc') // Sorting by 'created_at' column in descending order
             ->get();
-
+        
         return view('pages.home', [
             'categories' => $categories, 
             'restos' => $restos,
+            'events' => $events,
             'foods' => $foods,  
             'reviews' => $reviews,  
         ]);

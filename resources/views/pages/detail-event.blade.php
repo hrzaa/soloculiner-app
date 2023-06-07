@@ -28,20 +28,15 @@
       <!-- About Start -->
        <div class="container-fluid py-5 bg-white">
            <div class="container">
-               <div class="row g-5 align-items-center">
+               <div class="row g-5">
                  <div class="col-lg-6">
-                     <div class="row g-3">
-                           <div class="col-6 text-end static">
-                                @if ($event->event_galleries->isEmpty())
-                                    <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.1s" src="{{ url('/vendor/img/default.png') }}" alt="">
-                                @else
-                                    @foreach ($event->event_galleries as $gallery)
-                                        <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.1s" src="{{ Storage::url($gallery->photos) }}" alt="">
-                                    @endforeach
-                                @endif
-                           </div>
-                       </div>
-                       
+                    @if ($event->event_galleries->isEmpty())
+                        <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.1s" src="{{ url('/vendor/img/default.png') }}" alt="">
+                    @else
+                        @foreach ($event->event_galleries as $gallery)
+                            <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.1s" src="{{ Storage::url($gallery->photos) }}" alt="">
+                        @endforeach
+                    @endif
                    </div>
                    <div class="col-lg-6">
                       <h5 class="section-title ff-secondary text-start text-primary fw-normal">
@@ -53,33 +48,13 @@
                        <p class="mb-4">
                            {!! $event->{'event_desc_'.app()->getLocale()} !!}
                        </p>
-                       
                    </div>
-                  
                </div>
            </div>
        </div>
        <!-- About End -->
 
-        <!-- Location Start -->
-        <div class="container-fluid py-5 bg-white">
-            <div class="container">
-                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Contact Us</h5>
-                    <h1 class="mb-5">Contact For Any Query</h1>
-                </div>
-                <div class="row g-4">
-                    <div class="col-md-12 wow fadeIn" data-wow-delay="0.1s">
-
-                            <iframe class="position-relative rounded w-100 h-100"
-                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.1098190545263!2d110.83339197465479!3d-7.563004192450958!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a17bfca3568f1%3A0x52872ee12cf2fa57!2sKampus%20UNS%20Mesen!5e0!3m2!1sen!2sid!4v1683777846264!5m2!1sen!2sid" frameborder="0" style="min-height: 350px; border:0;" allowfullscreen="" aria-hidden="false"
-                            tabindex="0"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Location End -->
-
+      
        <!-- Testimonial Start -->
         <div class="container-fluid py-5 wow fadeInUp bg-white" data-wow-delay="0.1s">
            <div class="container">

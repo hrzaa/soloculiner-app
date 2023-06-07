@@ -56,6 +56,7 @@ class DatabaseSeeder extends Seeder
             'date_start' => '2023-06-01 ',
             'date_end' => '2023-06-05',
             'address' => 'Jl. Ir. Juanda No.49, Purwodiningratan, Kec. Jebres, Kota Surakarta',
+            'address_link' => 'https://goo.gl/maps/LA5AtBcRZg1xNuaV9',
             'slug' => Str::slug('Solo Culinary Festival'),
         ]);
 
@@ -65,8 +66,7 @@ class DatabaseSeeder extends Seeder
             'food_id' => '1', 
             'price' => '10000',
             'address' => 'Pasar Gede Hardjonagoro, Lapak Galabo (Gladag Langen Bogan), Jl. Jend. Urip Sumoharjo, Kota Surakarta', 
-            'longitude' => '-7.569443318634531', 
-            'latitude' => '110.8317061408925', 
+            'address_link' => 'https://goo.gl/maps/LA5AtBcRZg1xNuaV9',
             'slug' => Str::slug('Dawet Telasih Bu Dermi, Pasar Gede'),
         ]);
     }

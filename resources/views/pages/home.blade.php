@@ -63,20 +63,20 @@
            <div class="container">
                <div class="row g-5 align-items-center">
                    <div class="col-lg-6">
-                       <div class="row g-3">
-                           <div class="col-6 text-start">
-                               <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.1s" src="/vendor/img/about-1.jpg">
-                           </div>
-                           <div class="col-6 text-start">
-                               <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.3s" src="/vendor/img/about-2.jpg" style="margin-top: 25%;">
-                           </div>
-                           <div class="col-6 text-end">
-                               <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.1s" src="/vendor/img/about-3.jpg">
-                           </div>
-                           <div class="col-6 text-end">
-                               <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.3s" src="/vendor/img/about-4.jpg">
-                           </div>
-                       </div>
+                        <div class="row g-3">
+                            <div class="col-6 text-start">
+                                <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.1s" src="/vendor/img/about-1.jpg">
+                            </div>
+                            <div class="col-6 text-start">
+                                <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.3s" src="/vendor/img/about-2.jpg" style="margin-top: 25%;">
+                            </div>
+                            <div class="col-6 text-end">
+                                <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.1s" src="/vendor/img/about-3.jpg">
+                            </div>
+                            <div class="col-6 text-end">
+                                <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.3s" src="/vendor/img/about-4.jpg">
+                            </div>
+                        </div>
                    </div>
                    <div class="col-lg-6">
                     <h5 class="section-title ff-secondary text-start text-primary fw-normal">About Us</h5>
@@ -143,113 +143,95 @@
        </div>
        <!-- About End -->
 
-        {{-- <!-- Popular Start -->
-            <div class="container-xxl pt-5 pb-3">
-            <div class="container">
-                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Solo Foods</h5>
-                    <h1 class="mb-5">Most Popular Items</h1>
+       <!-- Menu Start -->
+    <div class="container-fluid py-5 bg-white">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h5 class="section-title ff-secondary text-center text-primary fw-normal">Food Menu</h5>
+                <h1 class="mb-4">All Foods Available</h1>
+            </div>
+             <div class="row g-4">
+                @php
+                    $incrementCategory = 0
+                @endphp
+                @forelse ($foods as $food)
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="{{ $incrementCategory+=100 }}">
+                        <div class="d-flex align-items-center p-5" style="background-color: #f0f0f0; border-radius:8px">
+                            {{-- image resto belum muncul --}}
+                            <div class="img-fluid" style="box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;">
+                                @if($food->food_galleries->count())
+                                    <div class="img" style="background-image: url('{{ Storage::url($food->food_galleries->first()->photos) }}'); width: 150px; height:100px; background-size: cover">
+                                        {{-- <img class="flex-shrink-0 img-fluid rounded" src="{{ Storage::url($food->food_galleries->first()->photos) }}" alt="" style="width: 150px; height:auto;"> --}}
+                                    </div>
+                                @else
+                                    <img class="flex-shrink-0 img-fluid rounded" src="{{ url('/vendor/img/default.png') }}" alt="" style="width: 150px;">
+                                @endif
+                            </div>
+                            <div class="w-100 d-flex flex-column text-start ps-4">
+                                <h5 class="d-flex justify-content-between border-bottom pb-2">
+                                    <span>{{ $food->food_name }}</span>
+                                </h5>
+                                <small class="fst-italic">{!! Str::words($food->{'food_desc_'.app()->getLocale()}, 20) !!}</small>
+                                <a href="{{ route('culinary-detail', $food->slug) }}" class="text-primary">Think to Try</a>
+                            </div>
+                        </div>
+                    </div>
+                @empty
+                        <div class="col-12 text-center py-5 wow fadeInUp" data-wow-delay="0.1s">
+                        No Culinary Found!
+                    </div>
+                @endforelse
+                <div class="col-12 text-center py-5">
+                    {{ $foods->links() }}
                 </div>
-                <div class="row g-4">
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="team-item text-center rounded overflow-hidden">
-                            <div class=" overflow-hidden m-4">
-                                <img class="img-fluid" src="/vendor/img/team-1.jpeg" alt="">
-                            </div>
-                            <h5 class="mb-0">Sate Kere </h5>
-                                <!-- Add icon library -->
-                                <small>
-                                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                </small>
-                            <div class="d-flex justify-content-center mt-3">
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="team-item text-center rounded overflow-hidden">
-                            <div class=" overflow-hidden m-4">
-                                <img class="img-fluid" src="/vendor/img/team-2.jpg" alt="">
-                            </div>
-                            <h5 class="mb-0">Serabi Notosuman</h5>
-                                <!-- Add icon library -->
-                                <small>
-                                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                </small>
-                            <div class="d-flex justify-content-center mt-3">
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="team-item text-center rounded overflow-hidden">
-                            <div class=" overflow-hidden m-4">
-                                <img class="img-fluid" src="/vendor/img/team-3.jpg" alt="">
-                            </div>
-                            <h5 class="mb-0">Es Dawet Mbok Darmi</h5>
-                                <!-- Add icon library -->
-                                <small>
-                                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                </small>
-                            <div class="d-flex justify-content-center mt-3">
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                        <div class="team-item text-center rounded overflow-hidden">
-                            <div class=" overflow-hidden m-4">
-                                <img class="img-fluid" src="/vendor/img/team-4.jpeg" alt="">
-                            </div>
-                            <h5 class="mb-0">Dimsum Ps. Gede</h5>
-                                <!-- Add icon library -->
-                                <small>
-                                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                </small>
-                            <div class="d-flex justify-content-center mt-3">
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
-        <!-- Popular End --> --}}
+    <!-- Menu End -->
+
+    <!-- Event Start -->
+        <div class="container-fluid bg-white py-5">
+            <div class="container mt-3">
+                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Solo Foods</h5>
+                    <h1 class="mb-5">Our Event</h1>
+                 </div>
+                <div class="row g-4">
+                    @php
+                        $incrementCategory = 0
+                    @endphp
+                    @forelse ($events as $event)
+                    <div class="col-lg-3 col-md-6"  data-aos="fade-up" data-aos-delay="{{ $incrementCategory+=100 }}" style="color: #0c0d36;">
+                        <div class="team-item rounded overflow-hidden">
+                            <div class="rounded overflow-hidden m-4">
+                                <a href="{{ route('event-detail', $event->slug) }}"><img class="img-event" src="{{ Storage::url($event->event_galleries->first()->photos ?? '') }}" alt=""></a>
+                            </div>
+                            <h4 class="mt-4 text-center">{{ $event->event_name }}</h4>
+                            <div class="maps">
+                                 <i class="fas fa-map-marked-alt p-3"></i><a href="">Kota Surakarta, Jawa Tengah</a>
+                            </div>
+                            <div class="date mb-2">
+                               <i class="fas fa-calendar-alt p-3"></i>{{ date('d F Y', strtotime($event->date_start)) }} - {{ date('d F Y', strtotime($event->date_end)) }}
+                            </div>
+                        </div>
+                    </div>
+                    @empty
+                        <div class="col-12 text-center py-5 wow fadeInUp" data-wow-delay="0.1s">
+                            No Event Found!
+                        </div>
+                    @endforelse
+                     {{ $events->links() }}
+                </div>
+            </div>
+        </div>
+        <!-- eVENT End -->
 
         <!-- Popular Start -->
             <div class="container-xxl pt-5 pb-3">
             <div class="container">
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                     <h5 class="section-title ff-secondary text-center text-primary fw-normal">Solo Foods</h5>
-                    <h1 class="mb-5">Most Popular Items</h1>
+                    <h1 class="mb-5">Most Popular Resto</h1>
                 </div>
                 <div class="row g-4">
                     @forelse ($restos as $resto)
