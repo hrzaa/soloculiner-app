@@ -31,12 +31,12 @@ class HomeController extends Controller
         $categories = Category::take(6)
             ->get();
         $foods = Food::with(['food_galleries'])
-            ->simplePaginate(6);
+            ->Paginate(6);
         $restos = Resto::with(['resto_galleries', 'food'])
             ->take(4)
             ->get();
         $events = Event::with(['event_galleries'])
-            ->simplePaginate(4);
+            ->Paginate(4);
         $reviews = Review::with(['user', 'food'])
             ->where('is_aktif', true)
             ->orderBy('created_at', 'desc') // Sorting by 'created_at' column in descending order

@@ -182,7 +182,9 @@
                     </div>
                 @endforelse
                 <div class="col-12 text-center py-5">
-                    {{ $foods->links() }}
+                    <div class="d-flex justify-content-center">
+                        {{ $foods->links() }}
+                    </div>
                 </div>
                 </div>
             </div>
