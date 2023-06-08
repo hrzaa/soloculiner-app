@@ -28,8 +28,8 @@
         <div class="container-fluid bg-white py-5">
             <div class="container mt-3">
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Solo Foods</h5>
-                    <h1 class="mb-5">Our Event</h1>
+                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">@lang('lang.solo events')</h5>
+                    <h1 class="mb-5">@lang('lang.our event')</h1>
                  </div>
                 <div class="row g-4">
                     @php
@@ -70,9 +70,9 @@
             <div class="container">
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                     <h5 class="section-title ff-secondary text-center text-primary fw-normal">
-                        Team Event Is Over
+                        @lang('lang.finished events')
                     </h5>
-                    <h1 class="mb-5">Event Have Occured</h1>
+                    <h1 class="mb-5">@lang('lang.occured events')</h1>
                 </div>
                 <div class="row g-4">
                    <div class="container-fluid py-5 bg-dark hero-header mb-5" style="background: linear-gradient(0deg,

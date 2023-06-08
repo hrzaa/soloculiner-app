@@ -28,7 +28,7 @@
             <div class="container">
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                     <h5 class="section-title ff-secondary text-center text-primary fw-normal">Solo Foods</h5>
-                    <h1 class="mb-5">Our Resto Gallery</h1>
+                    <h1 class="mb-5">@lang('lang.resto gallery')</h1>
                  </div>
                  <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                     <div class="row mb-3">
@@ -36,24 +36,24 @@
                             $incrementProduct = 0
                         @endphp
                         @forelse ($restos as $resto)
-                            
-                            <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="{{ $incrementProduct+=100 }}"> 
+
+                            <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="{{ $incrementProduct+=100 }}">
                               <div class="content bg-dark">
                                     <img src="{{ Storage::url($resto->photos) }}" class="img-content">
                                 </div>
-                            </div>  
+                            </div>
                         @empty
                             <div class="col-12 text-center py-5 wow fadeInUp" data-wow-delay="0.1s">
                                 No Gallery Found!
                             </div>
                         @endforelse
-                    </div> 
-                </div>  
+                    </div>
+                </div>
             </div>
         </div>
     <!-- Gallery End -->
 
-   
+
 
 
     <!-- Back to Top -->
