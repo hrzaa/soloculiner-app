@@ -13,7 +13,7 @@ class CulinerController extends Controller
     public function index()
     {
         $categories = Category::all();
-        $foods = Food::with('food_galleries')->simplePaginate(6);
+        $foods = Food::with('food_galleries')->Paginate(6);
 
         return view('pages.culinary',[
             'foods' => $foods,
@@ -25,7 +25,7 @@ class CulinerController extends Controller
     {
         $categories = Category::all();
         $category = Category::where('slug', $slug)->firstOrFail();
-        $foods = Food::with('food_galleries')->where('categories_id', $category->id)->paginate(32);
+        $foods = Food::with('food_galleries')->where('categories_id', $category->id)->Paginate(32);
 
         return view('pages.culinary', [
             'categories' => $categories,

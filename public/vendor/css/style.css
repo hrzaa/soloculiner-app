@@ -235,6 +235,20 @@
     transform: scale(1.05);
     text-decoration: none;
 }
+.img-card{
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+.img-culiner {
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+}
+
+.img-culiner:hover {
+    transform: scale(1.05);
+    text-decoration: none;
+}
 
 .component-categories {
     background: #f4f4f4;

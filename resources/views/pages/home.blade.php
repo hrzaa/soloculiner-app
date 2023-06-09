@@ -143,36 +143,36 @@
        </div>
        <!-- About End -->
 
-       <!-- Menu Start -->
+    <!-- Menu Start -->
     <div class="container-fluid py-5 bg-white">
         <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <div class="text-center" data-aos="fade-up" data-aos-delay="200">
                 <h5 class="section-title ff-secondary text-center text-primary fw-normal">Food Menu</h5>
-                <h1 class="mb-4">All Foods Available</h1>
+                <h1 class="mb-5">Newest Foods Available</h1>
             </div>
-             <div class="row g-4">
+             <div class="row g-4 justify-content-center">
                 @php
                     $incrementCategory = 0
                 @endphp
                 @forelse ($foods as $food)
-                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="{{ $incrementCategory+=100 }}">
-                        <div class="d-flex align-items-center p-5" style="background-color: #f0f0f0; border-radius:8px">
-                            {{-- image resto belum muncul --}}
-                            <div class="img-fluid" style="box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;">
-                                @if($food->food_galleries->count())
-                                    <div class="img" style="background-image: url('{{ Storage::url($food->food_galleries->first()->photos) }}'); width: 150px; height:100px; background-size: cover">
-                                        {{-- <img class="flex-shrink-0 img-fluid rounded" src="{{ Storage::url($food->food_galleries->first()->photos) }}" alt="" style="width: 150px; height:auto;"> --}}
-                                    </div>
+                   <div class="card mx-3 my-3 border-0" data-aos="fade-up" data-aos-delay="{{ $incrementCategory+=200 }}" style="border-radius : 8px; background-color: #f0f0f0; max-width: 600px;">
+                        <div class="row g-0">
+                            <div class="col-md-4 img-card">
+                               <div class="overflow-hidden text-center m-2">
+                                @if ($food->food_galleries->count())
+                                    <a href="{{ route('culinary-detail', $food->slug) }}"><img class="img-fluid img-culiner" src="{{ Storage::url($food->food_galleries->first()->photos) }}" alt=""></a>
                                 @else
-                                    <img class="flex-shrink-0 img-fluid rounded" src="{{ url('/vendor/img/default.png') }}" alt="" style="width: 150px;">
+                                    <a href="{{ route('culinary-detail', $food->slug) }}"><img class="img-fluid img-culiner" src="{{ url('/vendor/img/default.png') }}" alt=""></a>
                                 @endif
+                                    
+                                </div>
                             </div>
-                            <div class="w-100 d-flex flex-column text-start ps-4">
-                                <h5 class="d-flex justify-content-between border-bottom pb-2">
-                                    <span>{{ $food->food_name }}</span>
-                                </h5>
-                                <small class="fst-italic">{!! Str::words($food->{'food_desc_'.app()->getLocale()}, 20) !!}</small>
-                                <a href="{{ route('culinary-detail', $food->slug) }}" class="text-primary">Think to Try</a>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ $food->food_name }}</h5>
+                                    <p class="card-text">{!! Str::words($food->{'food_desc_'.app()->getLocale()}, 20) !!} <span><a href="{{ route('culinary-detail', $food->slug) }}" class="text-primary">Think to Try</a></span></p>
+                                    <p class="card-text"><small class="text-muted">Last update{{ $food->updated_at->diffForHumans() }}</small></p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -181,14 +181,10 @@
                         No Culinary Found!
                     </div>
                 @endforelse
-                <div class="col-12 text-center py-5">
-                    <div class="d-flex justify-content-center">
-                        {{ $foods->links() }}
-                    </div>
-                </div>
+               
                 </div>
             </div>
-        </div>
+    </div>
     <!-- Menu End -->
 
     <!-- Event Start -->
@@ -196,7 +192,7 @@
             <div class="container mt-3">
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                     <h5 class="section-title ff-secondary text-center text-primary fw-normal">Solo Foods</h5>
-                    <h1 class="mb-5">Our Event</h1>
+                    <h1 class="mb-5">Event Coming Soon</h1>
                  </div>
                 <div class="row g-4">
                     @php
@@ -222,7 +218,7 @@
                             No Event Found!
                         </div>
                     @endforelse
-                     {{ $events->links() }}
+                   
                 </div>
             </div>
         </div>
@@ -270,82 +266,84 @@
         </div>
         <!-- Popular End -->
 
-       <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-           <div class="modal-dialog">
-               <div class="modal-content rounded-0">
-                   <div class="modal-header">
-                       <h5 class="modal-title" id="exampleModalLabel">Youtube Video</h5>
-                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                   </div>
-                   <div class="modal-body">
-                       <!-- 16:9 aspect ratio -->
-                       <div class="ratio ratio-16x9">
-                           <iframe class="embed-responsive-item" src="" id="video" allowfullscreen allowscriptaccess="always"
-                               allow="autoplay"></iframe>
-                       </div>
-                   </div>
-               </div>
-           </div>
-       </div>
-       <!-- Ulasan Start -->
-
-
-        {{-- <!-- Testimonial Start -->
-        <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
-           <div class="container">
-               <div class="text-center">
-                   <h5 class="section-title ff-secondary text-center text-primary fw-normal">Testimonial</h5>
-                   <h1 class="mb-5">Suggestions and Critics!!!</h1>
-               </div>
-               <div class="owl-carousel testimonial-carousel">
-                   <div class="testimonial-item bg-transparent border rounded p-4">
-                       <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-                       <p>Bagus</p>
-                       <div class="d-flex align-items-center">
-                           <img class="img-fluid flex-shrink-0 rounded-circle" src="/vendor/img/testimonial-1.jpg" style="width: 50px; height: 50px;">
-                           <div class="ps-3">
-                               <h5 class="mb-1">Eri</h5>
-                               <small>Mahasiswa</small>
-                           </div>
-                       </div>
-                   </div>
-                   <div class="testimonial-item bg-transparent border rounded p-4">
-                       <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-                       <p>Keren</p>
-                       <div class="d-flex align-items-center">
-                           <img class="img-fluid flex-shrink-0 rounded-circle" src="/vendor/img/testimonial-2.jpg" style="width: 50px; height: 50px;">
-                           <div class="ps-3">
-                               <h5 class="mb-1">Hareza</h5>
-                               <small>Wirausahawan</small>
-                           </div>
-                       </div>
-                   </div>
-                   <div class="testimonial-item bg-transparent border rounded p-4">
-                       <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-                       <p>Sangat Bagus</p>
-                       <div class="d-flex align-items-center">
-                           <img class="img-fluid flex-shrink-0 rounded-circle" src="/vendor/img/testimonial-3.jpg" style="width: 50px; height: 50px;">
-                           <div class="ps-3">
-                               <h5 class="mb-1">Hikmal</h5>
-                               <small>Bos</small>
-                           </div>
-                       </div>
-                   </div>
-                   <div class="testimonial-item bg-transparent border rounded p-4">
-                       <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-                       <p>EnaK buangettt</p>
-                       <div class="d-flex align-items-center">
-                           <img class="img-fluid flex-shrink-0 rounded-circle" src="/vendor/img/testimonial-4.jpg" style="width: 50px; height: 50px;">
-                           <div class="ps-3">
-                               <h5 class="mb-1">Mei</h5>
-                               <small>Diplomat</small>
-                           </div>
-                       </div>
-                   </div>
-               </div>
-           </div>
+               <!-- Reservation Start -->
+        <div class="container-xxl py-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="row g-0">
+                <div class="col-md-6">
+                    <div class="video">
+                        <button type="button" class="btn-play" data-bs-toggle="modal" data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-bs-target="#videoModal">
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-6 bg-dark d-flex align-items-center">
+                    <div class="p-5 wow fadeInUp" data-wow-delay="0.2s">
+                        <h5 class="section-title ff-secondary text-start text-primary fw-normal">Reservation</h5>
+                        <h1 class="text-white mb-4">Book A Table Online</h1>
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                        <label for="name">Your Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                        <label for="email">Your Email</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating date" id="date3" data-target-input="nearest">
+                                        <input type="text" class="form-control datetimepicker-input" id="datetime" placeholder="Date & Time" data-target="#date3" data-toggle="datetimepicker" />
+                                        <label for="datetime">Date & Time</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="select1">
+                                          <option value="1">People 1</option>
+                                          <option value="2">People 2</option>
+                                          <option value="3">People 3</option>
+                                        </select>
+                                        <label for="select1">No Of People</label>
+                                      </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" placeholder="Special Request" id="message" style="height: 100px"></textarea>
+                                        <label for="message">Special Request</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3" type="submit">Book Now</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- Testimonial End --> --}}
+
+        <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content rounded-0">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Youtube Video</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- 16:9 aspect ratio -->
+                        <div class="ratio ratio-16x9">
+                            <iframe class="embed-responsive-item" src="" id="video" allowfullscreen allowscriptaccess="always"
+                                allow="autoplay"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Reservation Start -->
         
           <!-- Testimonial Start -->
         <div class="container-fluid py-5 wow fadeInUp bg-white" data-wow-delay="0.1s">
