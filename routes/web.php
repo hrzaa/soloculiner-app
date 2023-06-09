@@ -17,6 +17,7 @@ use App\Http\Controllers\Admin\DashboardController as DashboardAdminController;
 use App\Http\Controllers\Admin\FoodGalleryController as FoodGalleryAdminController;
 use App\Http\Controllers\Admin\EventGalleryController as EventGalleryAdminController;
 use App\Http\Controllers\Admin\RestoGalleryController as RestoGalleryAdminController;
+use App\Http\Middleware\SetLocale;
 
 /*
 |--------------------------------------------------------------------------
