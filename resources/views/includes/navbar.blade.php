@@ -13,13 +13,13 @@
                     <a class="nav-link {{ (request()->is('/')) ? 'active' : '' }}" aria-current="page" href="{{ route('home') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ (request()->is('culinary*')) ? 'active' : '' }}" href="{{ route('culinary') }}">Kuliner</a>
+                    <a class="nav-link {{ (request()->is('culinary*')) ? 'active' : '' }}" href="{{ route('culinary') }}">@lang('lang.nav kuliner') </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ (request()->is('event*')) ? 'active' : '' }}" href="{{ route('event') }}">Event</a>
+                    <a class="nav-link {{ (request()->is('event*')) ? 'active' : '' }}" href="{{ route('event') }}">@lang('lang.nav events')</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ (request()->is('gallery')) ? 'active' : '' }}" href="{{ route('gallery') }}">Gallery</a>
+                    <a class="nav-link {{ (request()->is('gallery')) ? 'active' : '' }}" href="{{ route('gallery') }}">@lang('lang.nav gallery')</a>
                 </li>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">

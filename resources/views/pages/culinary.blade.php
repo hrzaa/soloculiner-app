@@ -22,8 +22,8 @@
         <div class="container-fluid py-5 bg-white">
             <div class="container">
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                   <h5 class="section-title ff-secondary text-center text-primary fw-normal">Solo Foods</h5>
-                   <h1 class="mb-5">All Categories</h1>
+                   <h5 class="section-title ff-secondary text-center text-primary fw-normal">@lang('lang.header solo foods')</h5>
+                   <h1 class="mb-5">@lang('lang.header category2')</h1>
                 </div>
                 <div class="row">
                 @php
@@ -47,13 +47,13 @@
         </div>
         <!-- Category End -->
 
-  
+
     <!-- Menu Start -->
     <div class="container-fluid py-5 bg-white">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h5 class="section-title ff-secondary text-center text-primary fw-normal">Food Menu</h5>
-                <h1 class="mb-2">All Foods Available</h1>
+                <h5 class="section-title ff-secondary text-center text-primary fw-normal">@lang('lang.food menu')</h5>
+                <h1 class="mb-2">@lang('lang.all foods available')</h1>
             </div>
              <div class="row gy-4">
                 @php
@@ -89,7 +89,7 @@
                 <div class="col-12 text-center py-5">
                     {{ $foods->links() }}
                 </div>
-               
+
 
                 {{-- @dd($restos) --}}
                 </div>

@@ -40,7 +40,7 @@
                    </div>
                    <div class="col-lg-6">
                       <h5 class="section-title ff-secondary text-start text-primary fw-normal">
-                           About Us
+                        @lang('lang.about us')
                        </h5>
                        <h1 class="mb-4">
                            Welcome to {{ $event->event_name }}
@@ -54,7 +54,7 @@
        </div>
        <!-- About End -->
 
-      
+
        <!-- Testimonial Start -->
         <div class="container-fluid py-5 wow fadeInUp bg-white" data-wow-delay="0.1s">
            <div class="container">

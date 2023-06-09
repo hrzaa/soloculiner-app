@@ -16,9 +16,9 @@
                 <div class="container my-5 py-5">
                     <div class="row align-items-center g-5">
                         <div class="col-lg-6 text-center text-lg-start">
-                            <h1 class="display-3 text-white animated slideInLeft">Ragam Cita Rasa Kuliner Nusantara Bukti Kebhinekaan Bangsa</h1>
-                            <p class="text-white animated slideInLeft mb-4 pb-2">Keberagaman dan kelezatan kuliner Nusantara merupakan gambaran cita rasa budaya bangsa indonesia di samping kekayaan alam.</p>
-                            <a href="" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">Read More</a>
+                            <h1 class="display-3 text-white animated slideInLeft">@lang('lang.header home')</h1>
+                            <p class="text-white animated slideInLeft mb-4 pb-2">@lang('lang.paragraf home')</p>
+                            <a href="" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">@lang('lang.read more')</a>
                         </div>
                         <div class="col-lg-6 text-center text-lg-end overflow-hidden animated slideInRight">
                             <img class="img-fluid" src="/vendor/img/group-92.png" alt="">
@@ -32,8 +32,8 @@
         <div class="container-fluid py-5">
             <div class="container">
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                   <h5 class="section-title ff-secondary text-center text-primary fw-normal">Solo Foods</h5>
-                   <h1 class="mb-5">Trends Categories</h1>
+                   <h5 class="section-title ff-secondary text-center text-primary fw-normal">@lang('lang.header solo foods')</h5>
+                   <h1 class="mb-5">@lang('lang.header category')</h1>
                 </div>
                 <div class="row">
                 @php
@@ -79,16 +79,16 @@
                         </div>
                    </div>
                    <div class="col-lg-6">
-                    <h5 class="section-title ff-secondary text-start text-primary fw-normal">About Us</h5>
-                    <h1 class="mb-4">Kuliner Nusantara <i class="fa fa-utensils text-primary me-2"></i></h1>
-                       <p class="mb-4">Indonesia awalnya dikenal sebagai negeri penghasil rempah yang berlimpah. Dari bumbu berdasar rempah inilah, banyak masakan khas asli Indonesia yang tercipta. Dan rasa makanan tradisional Indonesia begitu beragam dan unik karena terdapat banyak kombinasi rempah-rempah dan bumbu yang dikombinasikan dengan suku dan budaya yang berbeda.</p>
+                    <h5 class="section-title ff-secondary text-start text-primary fw-normal">@lang('lang.about us')</h5>
+                    <h1 class="mb-4">@lang('lang.header kuliner nusantara')<i class="fa fa-utensils text-primary me-2"></i></h1>
+                       <p class="mb-4">@lang('lang.paragraf kuliner nusantara')</p>
                        <div class="row g-4 mb-4">
                            <div class="col-sm-6">
                                <div class="d-flex align-items-center border-start border-5 border-primary px-3">
                                    <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">{{ $foods->count() }}</h1>
                                    <div class="ps-4">
-                                       <p class="mb-0">Typical</p>
-                                       <h6 class="text-uppercase mb-0">Solo Foods</h6>
+                                       <p class="mb-0">@lang('lang.p.k.n typical')</p>
+                                       <h6 class="text-uppercase mb-0">@lang('lang.p.k.n foods')</h6>
                                    </div>
                                </div>
                            </div>
@@ -96,13 +96,13 @@
                                <div class="d-flex align-items-center border-start border-5 border-primary px-3">
                                    <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">{{ $restos->count() }}</h1>
                                    <div class="ps-4">
-                                       <p class="mb-0">Popular</p>
-                                       <h6 class="text-uppercase mb-0">Place to Eat</h6>
+                                       <p class="mb-0">@lang('lang.p.k.n popular')</p>
+                                       <h6 class="text-uppercase mb-0">@lang('lang.p.k.n place to eat')</h6>
                                    </div>
                                </div>
                            </div>
                        </div>
-                       <a class="btn btn-primary py-3 px-5 mt-2" href="">Read More</a>
+                       <a class="btn btn-primary py-3 px-5 mt-2" href="">@lang('lang.read more')</a>
                    </div>
                </div>
            </div>
@@ -127,15 +127,13 @@
                    </div>
                    <div class="col-lg-6">
                        <h5 class="section-title ff-secondary text-start text-primary fw-normal">
-                           About Us
+                            @lang('lang.about us')
                        </h5>
                        <h1 class="mb-4">
-                           History of Solo
+                            @lang('lang.history of solo')
                        </h1>
                        <p class="mb-4">
-                           The ancient history of Solo dates back to the time series of events, started when the first “Java Man” was found in Sangiran, Sragen Regency. Then, a research that mentioned that Surakarta was established in a village called Village Sala, on the edge of the River Solo.
-                           Up until 1744, Solo was little more than a quiet backwater village, 10km east of Kartasura, the contemporary capital of the Mataram kingdom. But in that year the Mataram susuhunan (king), Pakubuwono II , backed the Chinese against the Dutch, and the court at Kartasura was sacked as a result. Pakubuwono II searched for a more auspicious spot to rebuild his capital, and in 1745 the entire court was dismantled and transported in a great procession to Surakarta, on the banks of the Kali Solo.
-                           However, the decline continued, and in 1757 a rival royal house of Mangkunegoro was established right in the centre of Solo. Thereafter, Solo’s royal houses wisely avoided fighting and instead threw their energies into the arts, developing a highly sophisticated and graceful court culture. The gamelan pavilions became the new theatres of war, with each city competing to produce the more refined court culture – a situation that continues to this day.
+                        @lang('lang.paragraf solo')
                        </p>
                    </div>
                </div>
@@ -147,8 +145,8 @@
     <div class="container-fluid py-5 bg-white">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h5 class="section-title ff-secondary text-center text-primary fw-normal">Food Menu</h5>
-                <h1 class="mb-4">All Foods Available</h1>
+                <h5 class="section-title ff-secondary text-center text-primary fw-normal">@lang('lang.food menu')</h5>
+                <h1 class="mb-4">@lang('lang.all foods available')</h1>
             </div>
              <div class="row g-4">
                 @php
@@ -195,8 +193,8 @@
         <div class="container-fluid bg-white py-5">
             <div class="container mt-3">
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Solo Foods</h5>
-                    <h1 class="mb-5">Our Event</h1>
+                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">@lang('lang.solo events')</h5>
+                    <h1 class="mb-5">@lang('lang.our event')</h1>
                  </div>
                 <div class="row g-4">
                     @php
@@ -232,8 +230,8 @@
             <div class="container-xxl pt-5 pb-3">
             <div class="container">
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Solo Foods</h5>
-                    <h1 class="mb-5">Most Popular Resto</h1>
+                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">@lang('lang.solo restaurants')</h5>
+                    <h1 class="mb-5">@lang('lang.most popular restaurants')</h1>
                 </div>
                 <div class="row g-4">
                     @forelse ($restos as $resto)
@@ -246,7 +244,7 @@
                             <p class="mb-1">{{ $resto->address }}</p>
                             <h6>Rp{{ number_format($resto->price) }}</h6>
                                 <!-- Add icon library -->
-                                <small> 
+                                <small>
                                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
                                     <span class="fa fa-star checked"></span>
                                     <span class="fa fa-star checked"></span>
@@ -262,9 +260,11 @@
                         </div>
                     </div>
                     @empty
-                        <h6 class="textcenter">data kosong</h6>
+                    <div class="col-12 text-center py-5 wow fadeInUp" data-wow-delay="0.1s">
+                        No Resto Found!
+                    </div>
                     @endforelse
-                    
+
                 </div>
             </div>
         </div>
@@ -346,13 +346,13 @@
            </div>
         </div>
         <!-- Testimonial End --> --}}
-        
+
           <!-- Testimonial Start -->
         <div class="container-fluid py-5 wow fadeInUp bg-white" data-wow-delay="0.1s">
            <div class="container">
                <div class="text-center">
-                   <h5 class="section-title ff-secondary text-center text-primary fw-normal">Testimonial</h5>
-                   <h1 class="mb-5">Suggestions and Critics!!!</h1>
+                   <h5 class="section-title ff-secondary text-center text-primary fw-normal">@lang('lang.testimonial')</h5>
+                   <h1 class="mb-5">@lang('lang.suggestions and critics')</h1>
                </div>
                <div class="row">
                     <div class="col-12 col-lg-8">
@@ -367,7 +367,7 @@
                                                 <small>{{ $review->updated_at->diffForHumans() }}</small>
                                         </div>
                                     </div>
-                                </div>   
+                                </div>
                             @empty
                                 <div class="col-12 text-center py-5 wow fadeInUp" data-wow-delay="0.1s">
                                     No Review Found!
