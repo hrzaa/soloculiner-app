@@ -14,7 +14,8 @@
                 <thead>
                   <tr>
                     <th>ID</th>
-                    <th>Nama</th>
+                    <th>Category_id</th>
+                    <th>Category_en</th>
                     <th>Photo</th>
                     <th>Slug</th>
                     <th>Aksi</th>
@@ -40,7 +41,8 @@
         },
         columns:[
             {data:'id', name:'id'},
-            {data:'name', name:'name'},
+            {data:'name_id', name:'name_id'},
+            {data:'name_en', name:'name_en'},
             {data:'photo', name:'photo'},
             {data:'slug', name:'slug'},
             {

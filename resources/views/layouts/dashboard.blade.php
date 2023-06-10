@@ -8,7 +8,7 @@
 
   <!-- General CSS Files -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/all.min.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
   <!-- CSS Libraries -->
 
@@ -38,8 +38,8 @@
         </form>
         <ul class="navbar-nav navbar-right">
           <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-            <img alt="image" src="../assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
-            <div class="d-sm-none d-lg-inline-block">Hi, Ujang Maman</div></a>
+            <img alt="image" src="{{ url('assets/img/avatar/avatar-1.png') }}" class="rounded-circle mr-1">
+            <div class="d-sm-none d-lg-inline-block">Hi,{{ auth::user()->name }}</div></a>
             <div class="dropdown-menu dropdown-menu-right">
               {{-- <div class="dropdown-title">Logged in 5 min ago</div> --}}
               <a href="features-profile.html" class="dropdown-item has-icon">
@@ -52,9 +52,16 @@
                 <i class="fas fa-cog"></i> Settings
               </a>
               <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item has-icon text-danger">
-                <i class="fas fa-sign-out-alt"></i> Logout
+              <a class="dropdown-item  has-icon text-danger" href="{{ route('logout') }}"
+                  onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                   <i class="fas fa-sign-out-alt"></i>Logout
               </a>
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  @csrf
+              </form>
+              {{-- <a href="#" class="dropdown-item has-icon text-danger">
+                <i class="fas fa-sign-out-alt"></i> Logout
+              </a> --}}
             </div>
           </li>
         </ul>
@@ -62,7 +69,7 @@
       <div class="main-sidebar sidebar-style-2">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="index.html"><img src="/vendor/img/logo-image.png"  alt="" style="max-height: 30px"></a>
+            <a href="{{ route('home') }}"><img src="/vendor/img/logo1.png"  alt="" style="max-height: 60px"></a>
           </div>
           <div class="sidebar-brand sidebar-brand-sm">
             <a href="index.html">St</a>
@@ -72,20 +79,13 @@
               <li><a class="nav-link" href="{{ route('admin-dashboard') }}"><i class="fas fa-fire"></i> <span>Dashboard</span></a></li>
               <li class="{{ (request()->is('admin/category*')) ? 'active' : '' }}"><a class="nav-link" href="{{ route('category.index') }}"><i class="fas fa-clipboard-list"></i> <span>Categories</span></a></li>
               <li><a class="nav-link" href="{{ route('food.index') }}"><i class="fas fa-utensils"></i> <span>Culinary</span></a></li>
-              <li><a class="nav-link" href="{{ route('resto.index') }}"><i class="fas fa-store"></i></i> <span>Resto</span></a></li>
-              <li><a class="nav-link" href="{{ route('resto-gallery.index') }}"><i class="fas fa-store"></i></i> <span>Resto Gallery</span></a></li>
-              <li class="nav-item dropdown {{ (request()->is('admin/event*')) ? 'active' : '' }}">
-                <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire" class="{{ (request()->is('admin/event*')) ? 'active' : '' }}"></i><span>Event</span></a>
-                <ul class="dropdown-menu">
-                  <li><a class="nav-link" href="{{ route('event.index') }}">List</a></li>
-                  <li><a class="nav-link" href="{{ route('event.index') }}">Location</a></li>
-                  <li><a class="nav-link" href="{{ route('event-gallery.index') }}">Gallery</a></li>
-                </ul>
-              </li>
-              <li class="{{ (request()->is('admin/user*')) ? 'active' : '' }}"><a class="nav-link" href="{{ route('user.index') }}"><i class="fas fa-users"></i> <span>users</span></a></li>
-              <li><a class="nav-link" href="{{ url('galleries') }}"><i class="fas fa-camera"></i> <span>Galleries</span></a></li>
-              <li><a class="nav-link" href="{{ url('review') }}"><i class="fas fa-pen-square"></i> <span>Review</span></a></li>
-              <li><a class="nav-link" href="{{ url('SignOut') }}"><i class="fas fa-comments"></i> <span>SignOut</span></a></li>
+              <li><a class="nav-link" href="{{ route('food-gallery.index') }}"><i class="fas fa-utensils"></i> <span>Culinary Gallery</span></a></li>
+              <li><a class="nav-link" href="{{ route('resto.index') }}"><i class="fas fa-store"></i> <span>Resto</span></a></li>
+              <li><a class="nav-link" href="{{ route('resto-gallery.index') }}"><i class="fas fa-store"></i> <span>Resto Gallery</span></a></li>
+              <li><a class="nav-link" href="{{ route('event.index') }}"><i class="fas fa-calendar-alt"></i><span>Event</span></a></li>
+              <li><a class="nav-link" href="{{ route('event-gallery.index') }}"><i class="fas fa-calendar-alt"></i><span>Event Gallery</span></a></li>
+              <li><a class="nav-link" href="{{ route('review.index') }}"><i class="fas fa-comments"></i> <span>Review</span></a></li>
+              <li class="{{ (request()->is('admin/user*')) ? 'active' : '' }}"><a class="nav-link" href="{{ route('user.index') }}"><i class="fas fa-users"></i> <span>Users</span></a></li>
             </ul>
         </aside>
       </div>

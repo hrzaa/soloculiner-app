@@ -19,39 +19,55 @@
              <form action="{{ route('food.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                   <div class="form-group">
-                    <label>Nama Food</label>
-                    <input type="text" name="food_name" class="form-control" required>
+                    <label>Nama Culinary</label>
+                    <input type="text" name="food_name" class="form-control" autocomplete="off" required>
                   </div>
                   <div class="form-group">
                     <label>Category</label>
                     <select name="categories_id" class="form-control">
                        @foreach ($categories as $category)
-                          <option value="{{ $category->id }}">{{ $category->name }}</option>
+                          <option value="{{ $category->id }}">{{ $category->name_id }}</option>
                       @endforeach
                     </select>
                   </div>
                   <div class="form-group">
                     <label>Uploader</label>
                     <select name="users_id" class="form-control">
-                      @foreach ($users as $user)
-                          <option value="{{ $user->id }}">{{ $user->name }}</option>
-                      @endforeach
+                      <option value="{{ Auth::user()->id }}">{{ Auth::user()->name }}</option>
                     </select>
                   </div>
-                  <div class="form-group">
-                      <label>Food Desc</label>
-                      <textarea name="food_desc"></textarea>
+                  <div class="form-row">
+                     <div class="form-group col-md-6">
+                      <label>Food Desc ID</label>
+                      <textarea name="food_desc_id"></textarea>
                         <script>
-                                CKEDITOR.replace( 'food_desc' );
+                                CKEDITOR.replace( 'food_desc_id' );
                         </script>
                     </div>
-                    <div class="form-group">
-                      <label>Food History</label>
-                       <textarea name="food_history"></textarea>
+                    <div class="form-group col-md-6">
+                      <label>Food History ID</label>
+                        <textarea name="food_history_id"></textarea>
                         <script>
-                                CKEDITOR.replace( 'food_history' );
+                                CKEDITOR.replace( 'food_history_id' );
                         </script>
                     </div>
+                  </div>
+                  <div class="form-row">
+                     <div class="form-group col-md-6">
+                      <label>Food Desc EN</label>
+                      <textarea name="food_desc_en"></textarea>
+                        <script>
+                                CKEDITOR.replace( 'food_desc_en' );
+                        </script>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label>Food History EN</label>
+                        <textarea name="food_history_en"></textarea>
+                        <script>
+                                CKEDITOR.replace( 'food_history_en' );
+                        </script>
+                    </div>
+                  </div>
                   <div class="card-footer text-right">
                     <button class="btn btn-primary mr-1" type="submit">Submit</button>
                     <button class="btn btn-secondary" type="reset">Reset</button>

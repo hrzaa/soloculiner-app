@@ -16,16 +16,26 @@ return new class extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->id();
 
-            $table->string('event_name');
             $table->foreignId('users_id');
+            $table->string('event_name');
+
+            // table indo
+            $table->longText('event_desc_id');
+            
+            // table eng
+            $table->longText('event_desc_en');
+
             $table->date('date_start');
             $table->date('date_end');
-            $table->longText('event_history');
-            $table->longText('event_desc');
+            $table->string('address');
+            $table->string('address_link');
+
             $table->string('slug');
 
             $table->softDeletes();
             $table->timestamps();
+
+            // $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

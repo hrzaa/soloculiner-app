@@ -28,8 +28,10 @@ class EventRequest extends FormRequest
             'users_id' => 'required|exists:users,id', 
             'date_start' => 'required', 
             'date_end' => 'required', 
-            'event_history' => 'required', 
-            'event_desc' => 'required', 
+            'event_desc_id' => 'required', 
+            'event_desc_en' => 'required', 
+            'address' => 'required', 
+            'address_link' => 'required', 
         ];
     }
 }

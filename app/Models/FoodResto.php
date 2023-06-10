@@ -5,7 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class RestoLocation extends Model
+class FoodResto extends Model
 {
     use HasFactory;
+    protected $table = 'food_resto';
+
+    public $timestamps = false;
 }

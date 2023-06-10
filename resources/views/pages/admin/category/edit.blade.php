@@ -19,9 +19,15 @@
              <form action="{{ route('category.update', $item->id) }}" method="POST" enctype="multipart/form-data">
                 @method('PUT')
                 @csrf
-                  <div class="form-group">
-                    <label>Categories</label>
-                    <input type="text" name="name" class="form-control" value="{{ $item->name }}" required>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label>Categories_id</label>
+                      <input type="text" name="name_id" class="form-control" value="{{ $item->name_id }}" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label>Categories_en</label>
+                      <input type="text" name="name_en" class="form-control" value="{{ $item->name_en }}" required>
+                    </div>
                   </div>
                   <div class="form-group">
                     <label>Foto</label>

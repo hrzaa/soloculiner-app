@@ -32,7 +32,7 @@
                         </select>
                       </div>
                       <div class="form-group col-md-6">
-                        <label>Food Category </label>
+                        <label>Food</label>
                         <select name="food_id" class="form-control">
                           @foreach ($foods as $food)
                               <option value="{{ $food->id }}">{{ $food->food_name }}</option>
@@ -40,11 +40,20 @@
                         </select>
                       </div>
                   </div>
-                   <div class="form-group">
+                  <div class="form-group">
                     <label>Harga Menu</label>
                     <input type="number" name="price" class="form-control" required>
                   </div>
-
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label>Alamat</label>
+                      <input type="text" name="address" class="form-control" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label>Alamat(Link Maps)</label>
+                      <input type="text" name="address-link" class="form-control" required>
+                    </div>
+                  </div>                 
                   <div class="card-footer text-right">
                     <button class="btn btn-primary mr-1" type="submit">Submit</button>
                     <button class="btn btn-secondary" type="reset">Reset</button>

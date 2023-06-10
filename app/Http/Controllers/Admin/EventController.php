@@ -23,7 +23,7 @@ class EventController extends Controller
     {
         if(request()->ajax())
         {
-            $query = Event::with(['user', 'event_galleries', 'location']);
+            $query = Event::with(['user', 'event_galleries']);
             return Datatables::of($query)
                 ->addColumn('action', function ($item) {
                     return '

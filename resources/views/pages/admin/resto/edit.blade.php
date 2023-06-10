@@ -46,11 +46,20 @@
                   <label>Harga Menu</label>
                   <input type="number" name="price" class="form-control" value="{{ $item->price }}">
                 </div>
-
-                  <div class="card-footer text-right">
-                    <button class="btn btn-primary mr-1" type="submit">Submit</button>
-                    <button class="btn btn-secondary" type="reset">Reset</button>
+               <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label>Alamat</label>
+                      <input type="text" name="address" class="form-control" value="{{ $item->address }}">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label>Alamat(Link Maps)</label>
+                      <input type="text" name="address-link" class="form-control" value="{{ $item->address }}">
+                    </div>
                   </div>
+                <div class="card-footer text-right">
+                  <button class="btn btn-primary mr-1" type="submit">Submit</button>
+                  <button class="btn btn-secondary" type="reset">Reset</button>
+                </div>
                 </form>
           </div>
         </div>
